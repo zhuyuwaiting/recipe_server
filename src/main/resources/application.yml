@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: recipemanage
+  datasource:
+    url: jdbc:mysql://localhost:3306/recipe_manage?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis:
+  typeAliasesPackage: com.zhuyuwaiting.recipemanage.model
+  mapperLocations: classpath:mapping/*.xml
+
+server:
+  servlet:
+    session:
+      timeout: 30m
+logging:
+  level:
+    com.zhuyuwaiting.recipemanage.mapper : DEBUG

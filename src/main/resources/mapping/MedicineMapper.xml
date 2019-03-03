@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhuyuwaiting.recipemanage.mapper.MedicineMapper" >
+  <resultMap id="BaseResultMap" type="com.zhuyuwaiting.recipemanage.model.Medicine" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="medicine_no" property="medicineNo" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="english_name" property="englishName" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="unit" property="unit" jdbcType="VARCHAR" />
+    <result column="cell_unit" property="cellUnit" jdbcType="VARCHAR" />
+    <result column="cell_num" property="cellNum" jdbcType="INTEGER" />
+    <result column="cell_weight" property="cellWeight" jdbcType="INTEGER" />
+    <result column="each_dose" property="eachDose" jdbcType="INTEGER" />
+    <result column="taking_way" property="takingWay" jdbcType="VARCHAR" />
+    <result column="daily_times" property="dailyTimes" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <insert id="insert" parameterType="com.zhuyuwaiting.recipemanage.model.Medicine" >
+    insert into medicine (id, medicine_no, name, 
+      english_name, type, unit, 
+      cell_unit, cell_num, cell_weight, 
+      each_dose, taking_way, daily_times, 
+      status, create_time, update_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{medicineNo,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{englishName,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{unit,jdbcType=VARCHAR}, 
+      #{cellUnit,jdbcType=VARCHAR}, #{cellNum,jdbcType=INTEGER}, #{cellWeight,jdbcType=INTEGER}, 
+      #{eachDose,jdbcType=INTEGER}, #{takingWay,jdbcType=VARCHAR}, #{dailyTimes,jdbcType=INTEGER}, 
+      #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhuyuwaiting.recipemanage.model.Medicine" >
+    insert into medicine
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="medicineNo != null" >
+        medicine_no,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="englishName != null" >
+        english_name,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="unit != null" >
+        unit,
+      </if>
+      <if test="cellUnit != null" >
+        cell_unit,
+      </if>
+      <if test="cellNum != null" >
+        cell_num,
+      </if>
+      <if test="cellWeight != null" >
+        cell_weight,
+      </if>
+      <if test="eachDose != null" >
+        each_dose,
+      </if>
+      <if test="takingWay != null" >
+        taking_way,
+      </if>
+      <if test="dailyTimes != null" >
+        daily_times,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="medicineNo != null" >
+        #{medicineNo,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="englishName != null" >
+        #{englishName,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="unit != null" >
+        #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="cellUnit != null" >
+        #{cellUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="cellNum != null" >
+        #{cellNum,jdbcType=INTEGER},
+      </if>
+      <if test="cellWeight != null" >
+        #{cellWeight,jdbcType=INTEGER},
+      </if>
+      <if test="eachDose != null" >
+        #{eachDose,jdbcType=INTEGER},
+      </if>
+      <if test="takingWay != null" >
+        #{takingWay,jdbcType=VARCHAR},
+      </if>
+      <if test="dailyTimes != null" >
+        #{dailyTimes,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+
+  <select id="selectByParams" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+    select
+    *
+    from medicine
+    <where>
+      <if test="id != null" >
+        id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="medicineNo != null" >
+        and medicine_no = #{medicineNo,jdbcType=VARCHAR}
+      </if>
+      <if test="name != null" >
+        and name = #{name,jdbcType=VARCHAR}
+      </if>
+      <if test="englishName != null" >
+        and english_name  = #{englishName,jdbcType=VARCHAR}
+      </if>
+      <if test="type != null" >
+        and type = #{type,jdbcType=VARCHAR}
+      </if>
+      <if test="unit != null" >
+        and unit = #{unit,jdbcType=VARCHAR}
+      </if>
+      <if test="cellUnit != null" >
+        and cell_unit = #{cellUnit,jdbcType=VARCHAR}
+      </if>
+      <if test="cellNum != null" >
+        and cell_num = #{cellNum,jdbcType=INTEGER}
+      </if>
+      <if test="cellWeight != null" >
+        and cell_weight = #{cellWeight,jdbcType=INTEGER}
+      </if>
+      <if test="eachDose != null" >
+        and each_dose = #{eachDose,jdbcType=INTEGER}
+      </if>
+      <if test="takingWay != null" >
+        and taking_way = #{takingWay,jdbcType=VARCHAR}
+      </if>
+      <if test="dailyTimes != null" >
+        and daily_times = #{dailyTimes,jdbcType=INTEGER}
+      </if>
+      <if test="status != null" >
+        and status = #{status,jdbcType=VARCHAR}
+      </if>
+      <if test="createTime != null" >
+        and create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateTime != null" >
+        and update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+    </where>
+    <if test="current != null and pageSize !=null " >
+      limit   #{currentIndex,jdbcType=INTEGER} , #{pageSize,jdbcType=INTEGER}
+    </if>
+    <if test="orderBy" >
+      order by ${orderBy}
+    </if>
+  </select>
+
+
+  <select id="countByParams" parameterType="java.util.HashMap" resultType="java.lang.Integer">
+    select
+    count(*)
+    from medicine
+    <where>
+      <if test="id != null" >
+        id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="medicineNo != null" >
+        and medicine_no = #{medicineNo,jdbcType=VARCHAR}
+      </if>
+      <if test="name != null" >
+        and name = #{name,jdbcType=VARCHAR}
+      </if>
+      <if test="englishName != null" >
+        and english_name  = #{englishName,jdbcType=VARCHAR}
+      </if>
+      <if test="type != null" >
+        and type = #{type,jdbcType=VARCHAR}
+      </if>
+      <if test="unit != null" >
+        and unit = #{unit,jdbcType=VARCHAR}
+      </if>
+      <if test="cellUnit != null" >
+        and cell_unit = #{cellUnit,jdbcType=VARCHAR}
+      </if>
+      <if test="cellNum != null" >
+        and cell_num = #{cellNum,jdbcType=INTEGER}
+      </if>
+      <if test="cellWeight != null" >
+        and cell_weight = #{cellWeight,jdbcType=INTEGER}
+      </if>
+      <if test="eachDose != null" >
+        and each_dose = #{eachDose,jdbcType=INTEGER}
+      </if>
+      <if test="takingWay != null" >
+        and taking_way = #{takingWay,jdbcType=VARCHAR}
+      </if>
+      <if test="dailyTimes != null" >
+        and daily_times = #{dailyTimes,jdbcType=INTEGER}
+      </if>
+      <if test="status != null" >
+        and status = #{status,jdbcType=VARCHAR}
+      </if>
+      <if test="createTime != null" >
+        and create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateTime != null" >
+        and update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+    </where>
+  </select>
+</mapper>

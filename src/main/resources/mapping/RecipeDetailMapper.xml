@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhuyuwaiting.recipemanage.mapper.RecipeDetailMapper" >
+  <resultMap id="BaseResultMap" type="com.zhuyuwaiting.recipemanage.model.RecipeDetail" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="recipe_no" property="recipeNo" jdbcType="VARCHAR" />
+    <result column="medicine_no" property="medicineNo" jdbcType="VARCHAR" />
+    <result column="medicine_num" property="medicineNum" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="com.zhuyuwaiting.recipemanage.model.RecipeDetail" >
+    insert into recipe_detail (id, recipe_no, medicine_no, 
+      medicine_num)
+    values (#{id,jdbcType=INTEGER}, #{recipeNo,jdbcType=VARCHAR}, #{medicineNo,jdbcType=VARCHAR}, 
+      #{medicineNum,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhuyuwaiting.recipemanage.model.RecipeDetail" >
+    insert into recipe_detail
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="recipeNo != null" >
+        recipe_no,
+      </if>
+      <if test="medicineNo != null" >
+        medicine_no,
+      </if>
+      <if test="medicineNum != null" >
+        medicine_num,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="recipeNo != null" >
+        #{recipeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="medicineNo != null" >
+        #{medicineNo,jdbcType=VARCHAR},
+      </if>
+      <if test="medicineNum != null" >
+        #{medicineNum,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>
