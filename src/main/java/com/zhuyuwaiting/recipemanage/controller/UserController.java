@@ -42,7 +42,7 @@ public class UserController {
     }
 
 
-    @RequestMapping("currentUser")
+    @RequestMapping("/currentUser")
     @ResponseBody
     public CurrentUserResponse currentUser(HttpSession session){
         CurrentUserResponse response = new CurrentUserResponse();
@@ -55,7 +55,7 @@ public class UserController {
     }
 
 
-    @RequestMapping("logout")
+    @RequestMapping("/logout")
     @ResponseBody
     public LogoutResponse logout(HttpSession session){
         LogoutResponse response = new LogoutResponse();

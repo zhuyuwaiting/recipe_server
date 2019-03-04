@@ -12,5 +12,5 @@ public interface MedicineService {
      * @param params
      * @return
      */
-    public BasePaginationResult<Medicine> list(Map<String,String> params);
+    public BasePaginationResult<Medicine> list(Map<String,Object> params);
 }
