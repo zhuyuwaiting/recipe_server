@@ -1,13 +1,17 @@
 package com.zhuyuwaiting.recipemanage.service.impl;
 
+import com.zhuyuwaiting.recipemanage.controller.req.EnumInfoListRequest;
+import com.zhuyuwaiting.recipemanage.controller.res.EnumInfoListResponse;
 import com.zhuyuwaiting.recipemanage.enums.CommonResultEnum;
 import com.zhuyuwaiting.recipemanage.exception.CommonException;
 import com.zhuyuwaiting.recipemanage.mapper.EnumInfoMapper;
 import com.zhuyuwaiting.recipemanage.model.EnumInfo;
 import com.zhuyuwaiting.recipemanage.service.EnumInfoService;
+import com.zhuyuwaiting.recipemanage.vo.Pagination;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
 
 import java.util.*;
 
@@ -28,6 +32,7 @@ public class EnumInfoServiceImpl implements EnumInfoService {
         }
         Map<String,Object> params = new HashMap<>();
         params.put("keys",keys);
+        params.put("nonValue",false);
         List<EnumInfo> enumInfos = enumInfoMapper.selectByParams(params);
         if(CollectionUtils.isEmpty(enumInfos)){
             return new HashMap<>();
@@ -42,5 +47,26 @@ public class EnumInfoServiceImpl implements EnumInfoService {
             temp.put(enumInfo.getValue(),enumInfo);
         });
         return result;
+    }
+
+    @Override
+    public EnumInfoListResponse queryEnumKeys(EnumInfoListRequest request) {
+        EnumInfoListResponse response = new EnumInfoListResponse();
+        Map<String,Object> params = new HashMap<>();
+        if(StringUtils.isEmpty(request.getKey())){
+            params.put("nonValue",true);
+            params.put("currentIndex", (request.getCurrent() - 1) * request.getPageSize());
+            params.put("pageSize", request.getPageSize());
+            Pagination pagination = new Pagination();
+            pagination.setTotal(enumInfoMapper.countByParams(params));
+            pagination.setCurrent(request.getCurrent());
+            pagination.setPageSize(request.getPageSize());
+            response.setPagination(pagination);
+        }else{
+            params.put("key",request.getKey());
+        }
+        List<EnumInfo> enumInfos = enumInfoMapper.selectByParams(params);
+        response.setEnumInfoList(enumInfos);
+        return response;
     }
 }

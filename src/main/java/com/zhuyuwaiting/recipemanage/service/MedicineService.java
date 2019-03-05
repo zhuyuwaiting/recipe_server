@@ -1,5 +1,7 @@
 package com.zhuyuwaiting.recipemanage.service;
 
+import com.zhuyuwaiting.recipemanage.controller.req.MedicineListQueryRequest;
+import com.zhuyuwaiting.recipemanage.controller.res.MedicineListQueryResponse;
 import com.zhuyuwaiting.recipemanage.model.Medicine;
 import com.zhuyuwaiting.recipemanage.vo.BasePaginationResult;
 
@@ -13,4 +15,12 @@ public interface MedicineService {
      * @return
      */
     public BasePaginationResult<Medicine> list(Map<String,Object> params);
+
+
+    /**
+     * 查询药品列表
+     * @param request
+     * @return
+     */
+    MedicineListQueryResponse list(MedicineListQueryRequest request);
 }
