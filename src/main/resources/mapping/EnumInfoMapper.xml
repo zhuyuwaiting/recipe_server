@@ -22,7 +22,7 @@
       #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
       )
   </insert>
-    <insert id="insertSelective" parameterType="com.zhuyuwaiting.recipemanage.model.EnumInfo">
+    <insert id="insertSelective"  keyProperty="id" useGeneratedKeys="true" parameterType="com.zhuyuwaiting.recipemanage.model.EnumInfo">
         insert into enum_info
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -189,4 +189,10 @@
         </where>
 
     </select>
+
+
+    <update id="deleteByKeyAndValue">
+        update  enum_info set state = 'INVALID' where
+        `key`  = #{key,jdbcType=VARCHAR} and `value`  = #{value,jdbcType=VARCHAR}
+    </update>
 </mapper>

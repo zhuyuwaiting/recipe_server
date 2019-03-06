@@ -24,7 +24,7 @@
       #{password,jdbcType=VARCHAR}, #{roleId,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{nick,jdbcType=VARCHAR}, #{avatar,jdbcType=VARCHAR})
   </insert>
-    <insert id="insertSelective" parameterType="com.zhuyuwaiting.recipemanage.model.UserInfo">
+    <insert id="insertSelective"  keyProperty="id" useGeneratedKeys="true" parameterType="com.zhuyuwaiting.recipemanage.model.UserInfo">
         insert into user_info
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">

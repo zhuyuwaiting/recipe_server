@@ -1,8 +1,11 @@
 package com.zhuyuwaiting.recipemanage.service.impl;
 
+import com.zhuyuwaiting.recipemanage.controller.req.EnumInfoAddRequest;
 import com.zhuyuwaiting.recipemanage.controller.req.EnumInfoListRequest;
+import com.zhuyuwaiting.recipemanage.controller.res.EnumInfoAddResponse;
 import com.zhuyuwaiting.recipemanage.controller.res.EnumInfoListResponse;
 import com.zhuyuwaiting.recipemanage.enums.CommonResultEnum;
+import com.zhuyuwaiting.recipemanage.enums.StatusEnum;
 import com.zhuyuwaiting.recipemanage.exception.CommonException;
 import com.zhuyuwaiting.recipemanage.mapper.EnumInfoMapper;
 import com.zhuyuwaiting.recipemanage.model.EnumInfo;
@@ -53,6 +56,7 @@ public class EnumInfoServiceImpl implements EnumInfoService {
     public EnumInfoListResponse queryEnumKeys(EnumInfoListRequest request) {
         EnumInfoListResponse response = new EnumInfoListResponse();
         Map<String,Object> params = new HashMap<>();
+        params.put("status", StatusEnum.VALID.getCode());
         if(StringUtils.isEmpty(request.getKey())){
             params.put("nonValue",true);
             params.put("currentIndex", (request.getCurrent() - 1) * request.getPageSize());
@@ -67,6 +71,31 @@ public class EnumInfoServiceImpl implements EnumInfoService {
         }
         List<EnumInfo> enumInfos = enumInfoMapper.selectByParams(params);
         response.setEnumInfoList(enumInfos);
+        return response;
+    }
+
+    @Override
+    public int deleteByKey(String key, String value) {
+        if(StringUtils.isEmpty(key) || StringUtils.isEmpty(value)){
+            throw new CommonException(CommonResultEnum.PARAM_ERROR);
+        }
+        return enumInfoMapper.deleteByKeyAndValue(key,value);
+    }
+
+    @Override
+    public EnumInfoAddResponse add(EnumInfoAddRequest request) {
+        EnumInfoAddResponse response = new EnumInfoAddResponse();
+        EnumInfo enumInfo = new EnumInfo();
+        enumInfo.setKey(request.getKey());
+        enumInfo.setKeyDesc(request.getKeyDesc());
+        enumInfo.setName(request.getName());
+        enumInfo.setValue(request.getValue());
+        enumInfo.setDesc(request.getDesc());
+        enumInfo.setStatus(StatusEnum.VALID.getCode());
+        enumInfo.setCreateTime(new Date());
+        enumInfo.setUpdateTime(new Date());
+        enumInfoMapper.insertSelective(enumInfo);
+        response.setEnumInfo(enumInfo);
         return response;
     }
 }

@@ -1,11 +1,14 @@
 package com.zhuyuwaiting.recipemanage.service.impl;
 
+import com.zhuyuwaiting.recipemanage.controller.req.MedicineAddRequest;
+import com.zhuyuwaiting.recipemanage.controller.req.MedicineDelRequest;
 import com.zhuyuwaiting.recipemanage.controller.req.MedicineListQueryRequest;
+import com.zhuyuwaiting.recipemanage.controller.req.MedicineUpdateRequest;
+import com.zhuyuwaiting.recipemanage.controller.res.MedicineAddResponse;
+import com.zhuyuwaiting.recipemanage.controller.res.MedicineDelResponse;
 import com.zhuyuwaiting.recipemanage.controller.res.MedicineListQueryResponse;
-import com.zhuyuwaiting.recipemanage.enums.EnumInfoKeyEnum;
-import com.zhuyuwaiting.recipemanage.enums.MedicineResultEnum;
-import com.zhuyuwaiting.recipemanage.enums.MedicineTypeEnum;
-import com.zhuyuwaiting.recipemanage.enums.StatusEnum;
+import com.zhuyuwaiting.recipemanage.controller.res.MedicineUpdateResponse;
+import com.zhuyuwaiting.recipemanage.enums.*;
 import com.zhuyuwaiting.recipemanage.exception.CommonException;
 import com.zhuyuwaiting.recipemanage.mapper.MedicineMapper;
 import com.zhuyuwaiting.recipemanage.model.EnumInfo;
@@ -53,6 +56,55 @@ public class MedicineServiceImpl implements MedicineService {
     }
 
     /**
+     * 删除药品
+     * @param request
+     * @return
+     */
+    public MedicineDelResponse del(MedicineDelRequest request){
+        MedicineDelResponse response = new MedicineDelResponse();
+        if(StringUtils.isEmpty(request.getMedicineNo())){
+            throw new CommonException(CommonResultEnum.PARAM_ERROR);
+        }
+        medicineMapper.deleteByMedicineNo(request.getMedicineNo());
+        return response;
+    }
+
+
+    /**
+     * 增加药品
+     * @param request
+     * @return
+     */
+    public MedicineAddResponse add(MedicineAddRequest request){
+        MedicineAddResponse response = new MedicineAddResponse();
+        Medicine medicine = new Medicine();
+        BeanUtils.copyProperties(request,medicine);
+        medicineMapper.insertSelective(medicine);
+        response.setMedicineVO(selectByMedicineNo(request.getMedicineNo()));
+        return response;
+    }
+
+    /**
+     * 增加药品
+     * @param request
+     * @return
+     */
+    public MedicineUpdateResponse update(MedicineUpdateRequest request){
+        MedicineUpdateResponse response = new MedicineUpdateResponse();
+        Medicine medicine = new Medicine();
+        BeanUtils.copyProperties(request,medicine);
+        medicineMapper.updateBySelective(medicine);
+        response.setMedicineVO(selectByMedicineNo(request.getMedicineNo()));
+        return response;
+    }
+
+    public MedicineVO selectByMedicineNo(String medicineNo){
+        Medicine result = medicineMapper.selelctByMedicineNo(medicineNo);
+        List<MedicineVO> medicineVOS = assebleMedicineInfo(Arrays.asList(result));
+       return medicineVOS.get(0);
+    }
+
+    /**
      * 查询医药列表
      *
      * @param request
@@ -78,7 +130,15 @@ public class MedicineServiceImpl implements MedicineService {
         if (CollectionUtils.isEmpty(list)) {
             return response;
         }
-        List<MedicineVO> medicineVOS = list.stream().map(medicine -> {
+        response.setMedicineVOS(assebleMedicineInfo(list));
+        return response;
+    }
+
+    /**
+     * 组装药品枚举信息
+     */
+    private  List<MedicineVO> assebleMedicineInfo(List<Medicine> medicines) {
+        List<MedicineVO> medicineVOS = medicines.stream().map(medicine -> {
             MedicineVO medicineVO = new MedicineVO();
             BeanUtils.copyProperties(medicine, medicineVO);
             //设置类型名称
@@ -89,11 +149,8 @@ public class MedicineServiceImpl implements MedicineService {
         }).collect(Collectors.toList());
         //获取enumInfos
         assebleMedicineEnumInfo(medicineVOS);
-        response.setMedicineVOS(medicineVOS);
-        return response;
+        return medicineVOS;
     }
-
-
     /**
      * 组装药品枚举信息
      */

@@ -7,6 +7,8 @@ import lombok.Setter;
 @Setter
 public class MedicineUpdateRequest extends BaseRequest {
 
+    private String medicineNo;
+
     /**
      * 单位
      */

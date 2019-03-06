@@ -1,9 +1,10 @@
 package com.zhuyuwaiting.recipemanage.mapper;
 
 import com.zhuyuwaiting.recipemanage.model.EnumInfo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-        import java.util.Map;
+import java.util.Map;
 
 public interface EnumInfoMapper {
     int insert(EnumInfo record);
@@ -13,4 +14,6 @@ public interface EnumInfoMapper {
     List<EnumInfo> selectByParams(Map params);
 
     int countByParams(Map params);
+
+    int deleteByKeyAndValue(@Param("key") String key,@Param("value") String value);
 }

@@ -1,12 +1,11 @@
 package com.zhuyuwaiting.recipemanage.service;
 
+import com.zhuyuwaiting.recipemanage.controller.req.EnumInfoAddRequest;
 import com.zhuyuwaiting.recipemanage.controller.req.EnumInfoListRequest;
+import com.zhuyuwaiting.recipemanage.controller.res.EnumInfoAddResponse;
 import com.zhuyuwaiting.recipemanage.controller.res.EnumInfoListResponse;
 import com.zhuyuwaiting.recipemanage.model.EnumInfo;
-import com.zhuyuwaiting.recipemanage.vo.BasePaginationResult;
-import com.zhuyuwaiting.recipemanage.vo.Pagination;
 
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -25,5 +24,20 @@ public interface EnumInfoService {
      * @return
      */
     EnumInfoListResponse queryEnumKeys(EnumInfoListRequest request);
+
+
+    /**
+     * 根据key value 删除enumInfo
+     * @param key
+     * @return
+     */
+    int deleteByKey(String key,String value);
+
+
+    /**
+     * 增加EnumInfo
+     * @return
+     */
+    EnumInfoAddResponse add(EnumInfoAddRequest request);
 
 }

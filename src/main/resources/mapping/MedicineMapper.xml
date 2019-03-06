@@ -32,7 +32,7 @@
       #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.zhuyuwaiting.recipemanage.model.Medicine" >
+  <insert id="insertSelective"  keyProperty="id" useGeneratedKeys="true" parameterType="com.zhuyuwaiting.recipemanage.model.Medicine" >
     insert into medicine
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -242,4 +242,31 @@
       </if>
     </where>
   </select>
+  <select id="selelctByMedicineNo" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select * from medicine where medicine_no = #{medicineNo}
+  </select>
+  <update id="deleteByKeyAndValue">
+        update  medicine set state = 'INVALID' where
+        `medicine_no`  = #{medicineNo,jdbcType=VARCHAR}
+  </update>
+
+  <update id="updateBySelective" parameterType="com.zhuyuwaiting.recipemanage.model.Medicine">
+    UPDATE medicine
+    <trim prefix="set" suffixOverrides=",">
+      <if test="name!=null">`name`=#{name},</if>
+      <if test="englishName!=null">english_name=#{englishName},</if>
+      <if test="type!=null">`type`=#{type},</if>
+      <if test="unit!=null">unit=#{unit},</if>
+      <if test="cellUnit!=null">cell_unit=#{cellUnit},</if>
+      <if test="cellNum!=null">cell_num=#{cellNum},</if>
+      <if test="cellWeight!=null">cell_weight=#{cellWeight},</if>
+      <if test="eachDose!=null">each_dose=#{eachDose},</if>
+      <if test="takingWay!=null">taking_way=#{takingWay},</if>
+      <if test="dailyTimes!=null">daily_times=#{dailyTimes},</if>
+      <if test="status!=null">status=#{status},</if>
+    </trim>
+    WHERE medicine_no=#{medicineNo}
+  </update>
+
+
 </mapper>

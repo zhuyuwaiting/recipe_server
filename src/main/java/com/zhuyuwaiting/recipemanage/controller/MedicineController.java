@@ -44,25 +44,28 @@ public class MedicineController {
     @RequestMapping("/add")
     @ResponseBody
     public MedicineAddResponse add(@RequestBody  MedicineAddRequest request){
-        MedicineAddResponse response = new MedicineAddResponse();
-
-        return response;
+        if(StringUtils.isEmpty(request.getMedicineNo())){
+            throw new CommonException(CommonResultEnum.PARAM_ERROR);
+        }
+        return medicineService.add(request);
     }
 
     @RequestMapping("/update")
     @ResponseBody
     public MedicineUpdateResponse update(@RequestBody MedicineUpdateRequest request){
-        MedicineUpdateResponse response = new MedicineUpdateResponse();
-
-        return response;
+        if(StringUtils.isEmpty(request.getMedicineNo())){
+            throw new CommonException(CommonResultEnum.PARAM_ERROR);
+        }
+        return medicineService.update(request);
     }
 
 
     @RequestMapping("/del")
     @ResponseBody
     public MedicineDelResponse del(@RequestBody MedicineDelRequest request){
-        MedicineDelResponse response = new MedicineDelResponse();
-
-        return response;
+        if(StringUtils.isEmpty(request.getMedicineNo())){
+            throw new CommonException(CommonResultEnum.PARAM_ERROR);
+        }
+        return medicineService.del(request);
     }
 }

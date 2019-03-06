@@ -11,4 +11,8 @@ public class EnumInfoAddRequest extends BaseRequest {
     private String value;
 
     private String name;
+
+    private String keyDesc;
+
+    private String desc;
 }

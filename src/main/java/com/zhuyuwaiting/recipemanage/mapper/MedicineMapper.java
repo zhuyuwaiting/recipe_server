@@ -13,4 +13,10 @@ public interface MedicineMapper {
     List<Medicine> selectByParams(Map params);
 
     int countByParams(Map params);
+
+    int deleteByMedicineNo(String medicineNo);
+
+    Medicine selelctByMedicineNo(String medicineNo);
+
+    int updateBySelective(Medicine medicine);
 }

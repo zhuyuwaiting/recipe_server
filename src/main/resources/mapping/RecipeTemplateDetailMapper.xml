@@ -13,7 +13,7 @@
     values (#{id,jdbcType=INTEGER}, #{recipeTemplateNo,jdbcType=VARCHAR}, #{medicineNo,jdbcType=VARCHAR}, 
       #{medicineNum,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.zhuyuwaiting.recipemanage.model.RecipeTemplateDetail" >
+  <insert id="insertSelective"  keyProperty="id" useGeneratedKeys="true" parameterType="com.zhuyuwaiting.recipemanage.model.RecipeTemplateDetail" >
     insert into recipe_template_detail
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
