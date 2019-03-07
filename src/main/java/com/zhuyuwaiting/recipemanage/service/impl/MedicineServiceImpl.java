@@ -15,6 +15,7 @@ import com.zhuyuwaiting.recipemanage.model.EnumInfo;
 import com.zhuyuwaiting.recipemanage.model.Medicine;
 import com.zhuyuwaiting.recipemanage.service.EnumInfoService;
 import com.zhuyuwaiting.recipemanage.service.MedicineService;
+import com.zhuyuwaiting.recipemanage.util.NoUtils;
 import com.zhuyuwaiting.recipemanage.vo.BasePaginationResult;
 import com.zhuyuwaiting.recipemanage.vo.MedicineVO;
 import com.zhuyuwaiting.recipemanage.vo.Pagination;
@@ -79,6 +80,7 @@ public class MedicineServiceImpl implements MedicineService {
         MedicineAddResponse response = new MedicineAddResponse();
         Medicine medicine = new Medicine();
         BeanUtils.copyProperties(request,medicine);
+        medicine.setMedicineNo(NoUtils.genNO(SceneNoEnum.MEDICINE_NO));
         medicineMapper.insertSelective(medicine);
         response.setMedicineVO(selectByMedicineNo(request.getMedicineNo()));
         return response;
