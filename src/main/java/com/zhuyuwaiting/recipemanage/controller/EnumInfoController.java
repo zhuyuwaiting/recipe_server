@@ -53,7 +53,7 @@ public class EnumInfoController {
 
     @RequestMapping("/list")
     @ResponseBody
-    public EnumInfoListResponse list(@RequestBody EnumInfoListRequest request){
+    public EnumInfoListResponse list(EnumInfoListRequest request){
         EnumInfoListResponse response = enumInfoService.queryEnumKeys(request);
         return response;
     }
