@@ -13,8 +13,8 @@
         <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
     </resultMap>
     <insert id="insert" parameterType="com.zhuyuwaiting.recipemanage.model.EnumInfo">
-    insert into enum_info (id, key, key_desc, 
-      value, name, desc, 
+    insert into enum_info (id, `key`, key_desc,
+      `value`, `name`, `desc`,
       status, create_time, update_time
       )
     values (#{id,jdbcType=INTEGER}, #{key,jdbcType=VARCHAR}, #{keyDesc,jdbcType=VARCHAR}, 
@@ -29,20 +29,20 @@
                 id,
             </if>
             <if test="key != null">
-                key,
+                `key`,
             </if>
             <if test="keyDesc != null">
                 key_desc,
             </if>
 
             <if test="value != null">
-                value,
+                `value`,
             </if>
             <if test="name != null">
-                name,
+                `name`,
             </if>
             <if test="desc != null">
-                desc,
+                `desc`,
             </if>
             <if test="status != null">
                 status,
@@ -192,7 +192,7 @@
 
 
     <update id="deleteByKeyAndValue">
-        update  enum_info set state = 'INVALID' where
+        update  enum_info set status = 'INVALID' where
         `key`  = #{key,jdbcType=VARCHAR} and `value`  = #{value,jdbcType=VARCHAR}
     </update>
 </mapper>

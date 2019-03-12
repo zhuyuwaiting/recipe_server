@@ -31,7 +31,7 @@ public class MedicineController {
 
     @RequestMapping("/list")
     @ResponseBody
-    public MedicineListQueryResponse list(@RequestBody  MedicineListQueryRequest request){
+    public MedicineListQueryResponse list(MedicineListQueryRequest request){
         MedicineListQueryResponse response = new MedicineListQueryResponse();
         // 参数检查
         if(StringUtils.isEmpty(request.getType()) || MedicineTypeEnum.getByCode(request.getType())==null){

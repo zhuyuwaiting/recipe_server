@@ -10,13 +10,16 @@ import com.zhuyuwaiting.recipemanage.exception.CommonException;
 import com.zhuyuwaiting.recipemanage.mapper.EnumInfoMapper;
 import com.zhuyuwaiting.recipemanage.model.EnumInfo;
 import com.zhuyuwaiting.recipemanage.service.EnumInfoService;
+import com.zhuyuwaiting.recipemanage.vo.EnumInfoVO;
 import com.zhuyuwaiting.recipemanage.vo.Pagination;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -25,61 +28,105 @@ public class EnumInfoServiceImpl implements EnumInfoService {
     @Autowired
     private EnumInfoMapper enumInfoMapper;
 
-    public Map<String, Map<String,EnumInfo>> queryEnumInfosWithKeys(Set<String> keys){
-        if(CollectionUtils.isEmpty(keys)){
+    public Map<String, Map<String, EnumInfo>> queryEnumInfosWithKeys(Set<String> keys) {
+        if (CollectionUtils.isEmpty(keys)) {
             return new HashMap<>();
         }
         // 最多不可超过20个key
-        if(keys.size()>20){
-            throw  new CommonException(CommonResultEnum.PARAM_ERROR);
+        if (keys.size() > 20) {
+            throw new CommonException(CommonResultEnum.PARAM_ERROR);
         }
-        Map<String,Object> params = new HashMap<>();
-        params.put("keys",keys);
-        params.put("nonValue",false);
+        Map<String, Object> params = new HashMap<>();
+        params.put("keys", keys);
+        params.put("nonValue", false);
         List<EnumInfo> enumInfos = enumInfoMapper.selectByParams(params);
-        if(CollectionUtils.isEmpty(enumInfos)){
+        if (CollectionUtils.isEmpty(enumInfos)) {
             return new HashMap<>();
         }
-        Map<String,Map<String,EnumInfo>> result = new HashMap<>();
+        Map<String, Map<String, EnumInfo>> result = new HashMap<>();
         enumInfos.stream().forEach(enumInfo -> {
-            Map<String,EnumInfo> temp = result.get(enumInfo.getKey());
-            if(temp == null){
+            Map<String, EnumInfo> temp = result.get(enumInfo.getKey());
+            if (temp == null) {
                 temp = new HashMap<>();
-                result.put(enumInfo.getKey(),temp);
+                result.put(enumInfo.getKey(), temp);
             }
-            temp.put(enumInfo.getValue(),enumInfo);
+            temp.put(enumInfo.getValue(), enumInfo);
         });
         return result;
     }
 
+
     @Override
     public EnumInfoListResponse queryEnumKeys(EnumInfoListRequest request) {
         EnumInfoListResponse response = new EnumInfoListResponse();
-        Map<String,Object> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<>();
         params.put("status", StatusEnum.VALID.getCode());
-        if(StringUtils.isEmpty(request.getKey())){
-            params.put("nonValue",true);
-            params.put("currentIndex", (request.getCurrent() - 1) * request.getPageSize());
-            params.put("pageSize", request.getPageSize());
-            Pagination pagination = new Pagination();
-            pagination.setTotal(enumInfoMapper.countByParams(params));
-            pagination.setCurrent(request.getCurrent());
-            pagination.setPageSize(request.getPageSize());
-            response.setPagination(pagination);
-        }else{
-            params.put("key",request.getKey());
+        if (!StringUtils.isEmpty(request.getKey())) {
+            params.put("nonValue", false);
+            params.put("key", request.getKey());
+            List<EnumInfo> enumInfos = enumInfoMapper.selectByParams(params);
+            if (!CollectionUtils.isEmpty(enumInfos)) {
+                response.setEnumInfoList(enumInfos.stream().map(enumInfo -> {
+                    EnumInfoVO enumInfoVO = new EnumInfoVO();
+                    BeanUtils.copyProperties(enumInfo, enumInfoVO);
+                    return enumInfoVO;
+                }).collect(Collectors.toList()));
+            }
+            return response;
         }
+        params.put("nonValue", true);
+        params.put("currentIndex", (request.getCurrent() - 1) * request.getPageSize());
+        params.put("pageSize", request.getPageSize());
+        Pagination pagination = new Pagination();
+        pagination.setTotal(enumInfoMapper.countByParams(params));
+        pagination.setCurrent(request.getCurrent());
+        pagination.setPageSize(request.getPageSize());
+        response.setPagination(pagination);
         List<EnumInfo> enumInfos = enumInfoMapper.selectByParams(params);
-        response.setEnumInfoList(enumInfos);
+        if(CollectionUtils.isEmpty(enumInfos)){
+            return response;
+        }
+        List<EnumInfoVO> enumInfoVOS = enumInfos.stream().map(enumInfo -> {
+            EnumInfoVO enumInfoVO = new EnumInfoVO();
+            BeanUtils.copyProperties(enumInfo, enumInfoVO);
+            return enumInfoVO;
+        }).collect(Collectors.toList());
+        if(!CollectionUtils.isEmpty(enumInfos)){
+            Set<String> keys = enumInfos.stream().map(EnumInfo::getKey).collect(Collectors.toSet());
+            Map<String, Object> tempParams = new HashMap<>();
+            tempParams.put("keys", keys);
+            tempParams.put("nonValue", false);
+            tempParams.put("status",StatusEnum.VALID.getCode());
+            tempParams.put("orderBy","create_time desc");
+            List<EnumInfo> children = enumInfoMapper.selectByParams(tempParams);
+            if (!CollectionUtils.isEmpty(children)) {
+                Map<String,List<EnumInfoVO>> enumInfoVOMap = new HashMap<>();
+                children.stream().forEach(enumInfo -> {
+                    List<EnumInfoVO> temp = enumInfoVOMap.get(enumInfo.getKey());
+                    if(CollectionUtils.isEmpty(temp)){
+                        temp = new ArrayList<>();
+                        enumInfoVOMap.put(enumInfo.getKey(),temp);
+                    }
+                    EnumInfoVO enumInfoVO = new EnumInfoVO();
+                    BeanUtils.copyProperties(enumInfo,enumInfoVO);
+                    temp.add(enumInfoVO);
+                });
+                enumInfoVOS.stream().forEach(enumInfoVO -> {
+                   enumInfoVO.setEnumInfoVOList(enumInfoVOMap.get(enumInfoVO.getKey()));
+                });
+
+            }
+            response.setEnumInfoList(enumInfoVOS);
+        }
         return response;
     }
 
     @Override
     public int deleteByKey(String key, String value) {
-        if(StringUtils.isEmpty(key) || StringUtils.isEmpty(value)){
+        if (StringUtils.isEmpty(key) || StringUtils.isEmpty(value)) {
             throw new CommonException(CommonResultEnum.PARAM_ERROR);
         }
-        return enumInfoMapper.deleteByKeyAndValue(key,value);
+        return enumInfoMapper.deleteByKeyAndValue(key, value);
     }
 
     @Override
