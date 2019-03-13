@@ -132,12 +132,13 @@
             </if>
 
         </where>
-        <if test="current != null and pageSize !=null " >
-            limit   #{currentIndex,jdbcType=INTEGER} , #{pageSize,jdbcType=INTEGER}
-        </if>
         <if test="orderBy" >
             order by ${orderBy}
         </if>
+        <if test="current != null and pageSize !=null " >
+            limit   #{currentIndex,jdbcType=INTEGER} , #{pageSize,jdbcType=INTEGER}
+        </if>
+
     </select>
 
 
@@ -195,4 +196,9 @@
         update  enum_info set status = 'INVALID' where
         `key`  = #{key,jdbcType=VARCHAR} and `value`  = #{value,jdbcType=VARCHAR}
     </update>
+
+    <select id="selectByKeyAndValue" resultMap="BaseResultMap">
+        select * from enum_info where
+        `key`  = #{key,jdbcType=VARCHAR} and `value`  = #{value,jdbcType=VARCHAR}
+    </select>
 </mapper>

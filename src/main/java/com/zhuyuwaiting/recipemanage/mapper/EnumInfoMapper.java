@@ -16,4 +16,6 @@ public interface EnumInfoMapper {
     int countByParams(Map params);
 
     int deleteByKeyAndValue(@Param("key") String key,@Param("value") String value);
+
+    EnumInfo selectByKeyAndValue(@Param("key") String key,@Param("value") String value);
 }

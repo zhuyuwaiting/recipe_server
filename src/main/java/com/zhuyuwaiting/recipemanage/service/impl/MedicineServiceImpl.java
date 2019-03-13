@@ -17,6 +17,7 @@ import com.zhuyuwaiting.recipemanage.service.EnumInfoService;
 import com.zhuyuwaiting.recipemanage.service.MedicineService;
 import com.zhuyuwaiting.recipemanage.util.NoUtils;
 import com.zhuyuwaiting.recipemanage.vo.BasePaginationResult;
+import com.zhuyuwaiting.recipemanage.vo.EnumInfoVO;
 import com.zhuyuwaiting.recipemanage.vo.MedicineVO;
 import com.zhuyuwaiting.recipemanage.vo.Pagination;
 import lombok.extern.slf4j.Slf4j;
@@ -81,8 +82,11 @@ public class MedicineServiceImpl implements MedicineService {
         Medicine medicine = new Medicine();
         BeanUtils.copyProperties(request,medicine);
         medicine.setMedicineNo(NoUtils.genNO(SceneNoEnum.MEDICINE_NO));
+        medicine.setStatus(StatusEnum.VALID.getCode());
+        medicine.setCreateTime(new Date());
+        medicine.setUpdateTime(new Date());
         medicineMapper.insertSelective(medicine);
-        response.setMedicineVO(selectByMedicineNo(request.getMedicineNo()));
+        response.setMedicineVO(selectByMedicineNo(medicine.getMedicineNo()));
         return response;
     }
 
@@ -120,8 +124,9 @@ public class MedicineServiceImpl implements MedicineService {
         params.put("name", request.getName());
         params.put("type", request.getType());
         params.put("status", StatusEnum.VALID.getCode());
-        params.put("currentIndex", (request.getCurrent() - 1) * request.getPageSize());
+        params.put("current", (request.getCurrent() - 1) * request.getPageSize());
         params.put("pageSize", request.getPageSize());
+        params.put("orderBy", "create_time desc");
         List<Medicine> list = medicineMapper.selectByParams(params);
         int count = medicineMapper.countByParams(params);
         Pagination pagination = new Pagination();
@@ -133,6 +138,17 @@ public class MedicineServiceImpl implements MedicineService {
             return response;
         }
         response.setMedicineVOS(assebleMedicineInfo(list));
+        // 組裝enumInfo 信息返回
+        Map<String,List<EnumInfoVO>> enumInfos = enumInfoService.queryEnumInfoListWithKeys(new HashSet<String>(){{
+            if(org.apache.commons.lang3.StringUtils.equals(request.getType(),MedicineTypeEnum.CHINESE_MEDICINE.getCode())){
+                add(EnumInfoKeyEnum.MEDICINE_UNIT_CN.getCode());
+                add(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_CN.getCode());
+            }else{
+                add(EnumInfoKeyEnum.MEDICINE_UNIT_EN.getCode());
+                add(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_EN.getCode());
+            }
+        }});
+        response.setEnumInfos(enumInfos);
         return response;
     }
 
@@ -162,8 +178,10 @@ public class MedicineServiceImpl implements MedicineService {
         }
         Set<String> keys = new HashSet<>();
         keys.add(EnumInfoKeyEnum.MEDICINE_CELL_UNIT.getCode());
-        keys.add(EnumInfoKeyEnum.MEDICINE_UNIT.getCode());
-        keys.add(EnumInfoKeyEnum.MEDICINE_TAKING_WAY.getCode());
+        keys.add(EnumInfoKeyEnum.MEDICINE_UNIT_CN.getCode());
+        keys.add(EnumInfoKeyEnum.MEDICINE_UNIT_EN.getCode());
+        keys.add(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_CN.getCode());
+        keys.add(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_EN.getCode());
         Map<String, Map<String, EnumInfo>> enumInfoMap = enumInfoService.queryEnumInfosWithKeys(keys);
         if (CollectionUtils.isEmpty(enumInfoMap)) {
             throw new CommonException(MedicineResultEnum.MEDICINE_ENUM_QUERY_ERROR);
@@ -171,16 +189,24 @@ public class MedicineServiceImpl implements MedicineService {
 
         medicineVOS.stream().forEach(medicineVO -> {
             if (!StringUtils.isEmpty(medicineVO.getUnit())
-                    && enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_UNIT.getCode()) != null) {
-                medicineVO.setUnitInfo(enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_UNIT.getCode()).get(medicineVO.getUnit()));
+                    && enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_UNIT_CN.getCode()) != null) {
+                medicineVO.setUnitInfo(enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_UNIT_CN.getCode()).get(medicineVO.getUnit()));
+            }
+            if (!StringUtils.isEmpty(medicineVO.getUnit())
+                    && enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_UNIT_EN.getCode()) != null) {
+                medicineVO.setUnitInfo(enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_UNIT_EN.getCode()).get(medicineVO.getUnit()));
             }
             if (!StringUtils.isEmpty(medicineVO.getCellUnit())
                     && enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_CELL_UNIT.getCode()) != null) {
                 medicineVO.setCellUnitInfo(enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_CELL_UNIT.getCode()).get(medicineVO.getCellUnit()));
             }
             if (!StringUtils.isEmpty(medicineVO.getTakingWay())
-                    && enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_TAKING_WAY.getCode()) != null) {
-                medicineVO.setTakingWayInfo(enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_TAKING_WAY.getCode()).get(medicineVO.getTakingWay()));
+                    && enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_CN.getCode()) != null) {
+                medicineVO.setTakingWayInfo(enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_CN.getCode()).get(medicineVO.getTakingWay()));
+            }
+            if (!StringUtils.isEmpty(medicineVO.getTakingWay())
+                    && enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_EN.getCode()) != null) {
+                medicineVO.setTakingWayInfo(enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_EN.getCode()).get(medicineVO.getTakingWay()));
             }
         });
     }

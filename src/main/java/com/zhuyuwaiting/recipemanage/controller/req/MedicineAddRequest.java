@@ -8,10 +8,7 @@ import lombok.Setter;
 @Setter
 public class MedicineAddRequest extends BaseRequest {
 
-    /**
-     * 药品编号
-     */
-    private String medicineNo;
+
 
     /**
      * 中文名称
@@ -48,7 +45,6 @@ public class MedicineAddRequest extends BaseRequest {
 
     private Integer dailyTimes;
 
-    private String status;
 
 
 }

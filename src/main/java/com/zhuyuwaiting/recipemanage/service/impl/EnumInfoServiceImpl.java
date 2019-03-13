@@ -5,6 +5,8 @@ import com.zhuyuwaiting.recipemanage.controller.req.EnumInfoListRequest;
 import com.zhuyuwaiting.recipemanage.controller.res.EnumInfoAddResponse;
 import com.zhuyuwaiting.recipemanage.controller.res.EnumInfoListResponse;
 import com.zhuyuwaiting.recipemanage.enums.CommonResultEnum;
+import com.zhuyuwaiting.recipemanage.enums.EnumInfoKeyEnum;
+import com.zhuyuwaiting.recipemanage.enums.EnumInfoResultEnum;
 import com.zhuyuwaiting.recipemanage.enums.StatusEnum;
 import com.zhuyuwaiting.recipemanage.exception.CommonException;
 import com.zhuyuwaiting.recipemanage.mapper.EnumInfoMapper;
@@ -51,6 +53,36 @@ public class EnumInfoServiceImpl implements EnumInfoService {
                 result.put(enumInfo.getKey(), temp);
             }
             temp.put(enumInfo.getValue(), enumInfo);
+        });
+        return result;
+    }
+
+
+    public Map<String,List<EnumInfoVO>> queryEnumInfoListWithKeys(Set<String> keys) {
+        if (CollectionUtils.isEmpty(keys)) {
+            return new HashMap<>();
+        }
+        // 最多不可超过20个key
+        if (keys.size() > 20) {
+            throw new CommonException(CommonResultEnum.PARAM_ERROR);
+        }
+        Map<String, Object> params = new HashMap<>();
+        params.put("keys", keys);
+        params.put("nonValue", false);
+        List<EnumInfo> enumInfos = enumInfoMapper.selectByParams(params);
+        if (CollectionUtils.isEmpty(enumInfos)) {
+            return new HashMap<>();
+        }
+        Map<String, List<EnumInfoVO>> result = new HashMap<>();
+        enumInfos.stream().forEach(enumInfo -> {
+            List<EnumInfoVO> temp = result.get(enumInfo.getKey());
+            if (temp == null) {
+                temp = new ArrayList<>();
+                result.put(enumInfo.getKey(), temp);
+            }
+            EnumInfoVO enumInfoVO = new EnumInfoVO();
+            BeanUtils.copyProperties(enumInfo,enumInfoVO);
+            temp.add(enumInfoVO);
         });
         return result;
     }
@@ -132,6 +164,14 @@ public class EnumInfoServiceImpl implements EnumInfoService {
     @Override
     public EnumInfoAddResponse add(EnumInfoAddRequest request) {
         EnumInfoAddResponse response = new EnumInfoAddResponse();
+        EnumInfo temp = enumInfoMapper.selectByKeyAndValue(request.getKey(),request.getValue());
+        if(temp!=null){
+            if(StatusEnum.VALID.getCode().equals(temp.getStatus())){
+                throw new CommonException(EnumInfoResultEnum.ENUM_INFO_KEY_VALUE_EXIST);
+            }else{
+                throw new CommonException(EnumInfoResultEnum.ENUM_INFO_KEY_VALUE_EXIST_BAK);
+            }
+        }
         EnumInfo enumInfo = new EnumInfo();
         enumInfo.setKey(request.getKey());
         enumInfo.setKeyDesc(request.getKeyDesc());

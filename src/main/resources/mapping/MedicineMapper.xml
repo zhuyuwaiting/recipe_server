@@ -139,10 +139,10 @@
         id = #{id,jdbcType=INTEGER}
       </if>
       <if test="medicineNo != null" >
-        and medicine_no LIKE CONCAT('%',#{medicineNo,jdbcType=VARCHAR})
+        and medicine_no LIKE CONCAT(#{medicineNo,jdbcType=VARCHAR},'%')
       </if>
       <if test="name != null" >
-        and name LIKE CONCAT('%',#{name,jdbcType=VARCHAR})
+        and name LIKE CONCAT('%',#{name,jdbcType=VARCHAR},'%')
       </if>
       <if test="englishName != null" >
         and english_name LIKE CONCAT('%',#{englishName,jdbcType=VARCHAR})
@@ -181,11 +181,12 @@
         and update_time = #{updateTime,jdbcType=TIMESTAMP}
       </if>
     </where>
-    <if test="current != null and pageSize !=null " >
-      limit   #{currentIndex,jdbcType=INTEGER} , #{pageSize,jdbcType=INTEGER}
-    </if>
+
     <if test="orderBy" >
       order by ${orderBy}
+    </if>
+    <if test="current != null and pageSize !=null " >
+      limit   #{current,jdbcType=INTEGER} , #{pageSize,jdbcType=INTEGER}
     </if>
   </select>
 
@@ -264,6 +265,7 @@
       <if test="takingWay!=null">taking_way=#{takingWay},</if>
       <if test="dailyTimes!=null">daily_times=#{dailyTimes},</if>
       <if test="status!=null">status=#{status},</if>
+      uupdate_time = current_timestamp(),
     </trim>
     WHERE medicine_no=#{medicineNo}
   </update>

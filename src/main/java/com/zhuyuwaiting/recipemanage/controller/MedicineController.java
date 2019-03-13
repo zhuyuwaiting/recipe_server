@@ -44,7 +44,13 @@ public class MedicineController {
     @RequestMapping("/add")
     @ResponseBody
     public MedicineAddResponse add(@RequestBody  MedicineAddRequest request){
-        if(StringUtils.isEmpty(request.getMedicineNo())){
+        if(StringUtils.isEmpty(request.getType())){
+            throw new CommonException(CommonResultEnum.PARAM_ERROR);
+        }
+        if(StringUtils.isEmpty(request.getName())){
+            throw new CommonException(CommonResultEnum.PARAM_ERROR);
+        }
+        if(StringUtils.isEmpty(request.getUnit())){
             throw new CommonException(CommonResultEnum.PARAM_ERROR);
         }
         return medicineService.add(request);
