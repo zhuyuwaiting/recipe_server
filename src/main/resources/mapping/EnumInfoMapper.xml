@@ -193,7 +193,8 @@
 
 
     <update id="deleteByKeyAndValue">
-        update  enum_info set status = 'INVALID' where
+        update  enum_info set status = 'INVALID',
+         update_time = current_timestamp() where
         `key`  = #{key,jdbcType=VARCHAR} and `value`  = #{value,jdbcType=VARCHAR}
     </update>
 

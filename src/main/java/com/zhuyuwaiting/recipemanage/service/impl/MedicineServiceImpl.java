@@ -64,10 +64,10 @@ public class MedicineServiceImpl implements MedicineService {
      */
     public MedicineDelResponse del(MedicineDelRequest request){
         MedicineDelResponse response = new MedicineDelResponse();
-        if(StringUtils.isEmpty(request.getMedicineNo())){
+        if(StringUtils.isEmpty(request.getMedicineNos())){
             throw new CommonException(CommonResultEnum.PARAM_ERROR);
         }
-        medicineMapper.deleteByMedicineNo(request.getMedicineNo());
+        medicineMapper.deleteByMedicineNo(request.getMedicineNos());
         return response;
     }
 

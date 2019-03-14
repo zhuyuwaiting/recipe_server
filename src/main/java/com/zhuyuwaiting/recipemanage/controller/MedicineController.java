@@ -14,6 +14,7 @@ import com.zhuyuwaiting.recipemanage.exception.CommonException;
 import com.zhuyuwaiting.recipemanage.service.MedicineService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -69,7 +70,7 @@ public class MedicineController {
     @RequestMapping("/del")
     @ResponseBody
     public MedicineDelResponse del(@RequestBody MedicineDelRequest request){
-        if(StringUtils.isEmpty(request.getMedicineNo())){
+        if(CollectionUtils.isEmpty(request.getMedicineNos())){
             throw new CommonException(CommonResultEnum.PARAM_ERROR);
         }
         return medicineService.del(request);

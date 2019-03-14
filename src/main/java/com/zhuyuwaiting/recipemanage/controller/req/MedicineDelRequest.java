@@ -2,11 +2,12 @@ package com.zhuyuwaiting.recipemanage.controller.req;
 
 import lombok.Getter;
 import lombok.Setter;
+import java.util.List;
 
 @Getter
 @Setter
 public class MedicineDelRequest extends BaseRequest {
 
-    private String medicineNo;
+    private List<String> medicineNos;
 
 }

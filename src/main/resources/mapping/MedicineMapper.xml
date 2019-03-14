@@ -246,9 +246,13 @@
   <select id="selelctByMedicineNo" parameterType="java.lang.String" resultMap="BaseResultMap">
     select * from medicine where medicine_no = #{medicineNo}
   </select>
-  <update id="deleteByKeyAndValue">
-        update  medicine set state = 'INVALID' where
-        `medicine_no`  = #{medicineNo,jdbcType=VARCHAR}
+  <update id="deleteByMedicineNo">
+        update  medicine set status = 'INVALID',
+    update_time = current_timestamp() where
+    `medicine_no` in
+    <foreach item="item" index="index" collection="medicineNos" open="(" separator="," close=")">
+      #{item}
+    </foreach>
   </update>
 
   <update id="updateBySelective" parameterType="com.zhuyuwaiting.recipemanage.model.Medicine">
@@ -265,7 +269,7 @@
       <if test="takingWay!=null">taking_way=#{takingWay},</if>
       <if test="dailyTimes!=null">daily_times=#{dailyTimes},</if>
       <if test="status!=null">status=#{status},</if>
-      uupdate_time = current_timestamp(),
+      update_time = current_timestamp(),
     </trim>
     WHERE medicine_no=#{medicineNo}
   </update>

@@ -1,6 +1,7 @@
 package com.zhuyuwaiting.recipemanage.mapper;
 
 import com.zhuyuwaiting.recipemanage.model.Medicine;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
@@ -14,7 +15,7 @@ public interface MedicineMapper {
 
     int countByParams(Map params);
 
-    int deleteByMedicineNo(String medicineNo);
+    int deleteByMedicineNo(@Param("medicineNos")List<String> medicineNos);
 
     Medicine selelctByMedicineNo(String medicineNo);
 

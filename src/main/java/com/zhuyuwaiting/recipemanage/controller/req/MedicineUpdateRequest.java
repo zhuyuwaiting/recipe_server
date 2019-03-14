@@ -28,5 +28,9 @@ public class MedicineUpdateRequest extends BaseRequest {
 
     private Integer dailyTimes;
 
+    private String  name;
+
+    private String englishName;
+
 
 }
