@@ -69,6 +69,7 @@ public class EnumInfoServiceImpl implements EnumInfoService {
         Map<String, Object> params = new HashMap<>();
         params.put("keys", keys);
         params.put("nonValue", false);
+        params.put("status",StatusEnum.VALID.getCode());
         List<EnumInfo> enumInfos = enumInfoMapper.selectByParams(params);
         if (CollectionUtils.isEmpty(enumInfos)) {
             return new HashMap<>();

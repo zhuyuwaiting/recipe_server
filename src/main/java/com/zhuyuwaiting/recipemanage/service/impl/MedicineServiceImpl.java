@@ -146,6 +146,7 @@ public class MedicineServiceImpl implements MedicineService {
             }else{
                 add(EnumInfoKeyEnum.MEDICINE_UNIT_EN.getCode());
                 add(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_EN.getCode());
+                add(EnumInfoKeyEnum.MEDICINE_CELL_UNIT.getCode());
             }
         }});
         response.setEnumInfos(enumInfos);

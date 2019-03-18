@@ -2,26 +2,16 @@ package com.zhuyuwaiting.recipemanage.model;
 
 import java.util.Date;
 
-public class RecipeInfo {
+public class RecipeTemplate {
     private Integer id;
 
-    private String recipeNo;
+    private String recipeTemplateNo;
 
     private String recipeType;
-
-    private String patientName;
-
-    private Byte patientSex;
-
-    private Integer patientAge;
-
-    private String payType;
 
     private String disease;
 
     private String classfication;
-
-    private Integer num;
 
     private String status;
 
@@ -37,12 +27,12 @@ public class RecipeInfo {
         this.id = id;
     }
 
-    public String getRecipeNo() {
-        return recipeNo;
+    public String getRecipeTemplateNo() {
+        return recipeTemplateNo;
     }
 
-    public void setRecipeNo(String recipeNo) {
-        this.recipeNo = recipeNo == null ? null : recipeNo.trim();
+    public void setRecipeTemplateNo(String recipeTemplateNo) {
+        this.recipeTemplateNo = recipeTemplateNo == null ? null : recipeTemplateNo.trim();
     }
 
     public String getRecipeType() {
@@ -51,38 +41,6 @@ public class RecipeInfo {
 
     public void setRecipeType(String recipeType) {
         this.recipeType = recipeType == null ? null : recipeType.trim();
-    }
-
-    public String getPatientName() {
-        return patientName;
-    }
-
-    public void setPatientName(String patientName) {
-        this.patientName = patientName == null ? null : patientName.trim();
-    }
-
-    public Byte getPatientSex() {
-        return patientSex;
-    }
-
-    public void setPatientSex(Byte patientSex) {
-        this.patientSex = patientSex;
-    }
-
-    public Integer getPatientAge() {
-        return patientAge;
-    }
-
-    public void setPatientAge(Integer patientAge) {
-        this.patientAge = patientAge;
-    }
-
-    public String getPayType() {
-        return payType;
-    }
-
-    public void setPayType(String payType) {
-        this.payType = payType == null ? null : payType.trim();
     }
 
     public String getDisease() {
@@ -99,14 +57,6 @@ public class RecipeInfo {
 
     public void setClassfication(String classfication) {
         this.classfication = classfication == null ? null : classfication.trim();
-    }
-
-    public Integer getNum() {
-        return num;
-    }
-
-    public void setNum(Integer num) {
-        this.num = num;
     }
 
     public String getStatus() {

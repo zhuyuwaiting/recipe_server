@@ -13,7 +13,7 @@
     values (#{id,jdbcType=INTEGER}, #{recipeTemplateNo,jdbcType=VARCHAR}, #{medicineNo,jdbcType=VARCHAR}, 
       #{medicineNum,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective"  keyProperty="id" useGeneratedKeys="true" parameterType="com.zhuyuwaiting.recipemanage.model.RecipeTemplateDetail" >
+  <insert id="insertSelective" parameterType="com.zhuyuwaiting.recipemanage.model.RecipeTemplateDetail" >
     insert into recipe_template_detail
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -44,4 +44,64 @@
       </if>
     </trim>
   </insert>
+
+  <select id="selectByParams" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+    select
+    *
+    from recipe_template_detail
+    <where>
+      <if test="id != null" >
+        id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="recipeTemplateNo != null" >
+        and  recipeTemplate_no =  #{recipeTemplateNo,jdbcType=VARCHAR}
+      </if>
+      <if test="medicineNo != null" >
+        and medicine_no = #{medicineNo,jdbcType=VARCHAR}
+      </if>
+      <if test="medicineNum != null" >
+        and medicine_num = #{medicineNum,jdbcType=VARCHAR}
+      </if>
+    </where>
+
+    <if test="orderBy" >
+      order by ${orderBy}
+    </if>
+    <if test="current != null and pageSize !=null " >
+      limit   #{current,jdbcType=INTEGER} , #{pageSize,jdbcType=INTEGER}
+    </if>
+  </select>
+
+
+  <select id="countByParams" parameterType="java.util.HashMap" resultType="java.lang.Integer">
+    select
+    count(*)
+    from recipe_template_detail
+    <where>
+      <if test="id != null" >
+        id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="recipeTemplateNo != null" >
+        and  recipeTemplate_no =  #{recipeTemplateNo,jdbcType=VARCHAR}
+      </if>
+      <if test="medicineNo != null" >
+        and medicine_no = #{medicineNo,jdbcType=VARCHAR}
+      </if>
+      <if test="medicineNum != null" >
+        and medicine_num = #{medicineNum,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </select>
+
+  <update id="updateBySelective" parameterType="com.zhuyuwaiting.recipemanage.model.RecipeTemplateDetail">
+    UPDATE recipe_template_detail
+    <trim prefix="set" suffixOverrides=",">
+      <if test="medicineNum!=null">`medicine_num`=#{medicineNum},</if>
+    </trim>
+    WHERE recipe_template_no=#{recipeTemplateNo}
+    and medicine_no=#{medicineNo}
+  </update>
+
+
+
 </mapper>
