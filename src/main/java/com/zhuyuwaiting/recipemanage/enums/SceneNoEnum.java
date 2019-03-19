@@ -10,6 +10,9 @@ import lombok.NoArgsConstructor;
 public enum  SceneNoEnum {
     MEDICINE_NO("MEDICINE_NO","01","药品编号"),
 
+    RECIPE_TEMPLATE_NO("RECIPE_TEMPLATE_NO","02","处方模板编号"),
+
+    RECIPE_NO("RECIPE_NO","03","处方编号"),
     ;
     private String code;
     private String num;

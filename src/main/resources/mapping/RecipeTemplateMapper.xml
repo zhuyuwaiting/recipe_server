@@ -84,16 +84,16 @@
         id = #{id,jdbcType=INTEGER}
       </if>
       <if test="recipeTemplateNo != null" >
-       and  recipeTemplate_no =  #{recipeTemplateNo,jdbcType=VARCHAR}
+       and  recipeTemplate_no  LIKE CONCAT(#{recipeTemplateNo,jdbcType=VARCHAR},'%')
       </if>
       <if test="recipeType != null" >
         and recipe_type = #{recipeType,jdbcType=VARCHAR}
       </if>
       <if test="disease != null" >
-        and disease = #{disease,jdbcType=VARCHAR}
+        and disease LIKE CONCAT(#{disease,jdbcType=VARCHAR},'%')
       </if>
       <if test="classfication != null" >
-        and classfication = #{classfication,jdbcType=VARCHAR}
+        and classfication LIKE CONCAT(#{classfication,jdbcType=VARCHAR},'%')
       </if>
       <if test="status != null" >
         and status = #{status,jdbcType=VARCHAR}
@@ -124,16 +124,16 @@
         id = #{id,jdbcType=INTEGER}
       </if>
       <if test="recipeTemplateNo != null" >
-        and  recipeTemplate_no =  #{recipeTemplateNo,jdbcType=VARCHAR}
+        and  recipeTemplate_no  LIKE CONCAT(#{recipeTemplateNo,jdbcType=VARCHAR},'%')
       </if>
       <if test="recipeType != null" >
         and recipe_type = #{recipeType,jdbcType=VARCHAR}
       </if>
       <if test="disease != null" >
-        and disease = #{disease,jdbcType=VARCHAR}
+        and disease LIKE CONCAT(#{disease,jdbcType=VARCHAR},'%')
       </if>
       <if test="classfication != null" >
-        and classfication = #{classfication,jdbcType=VARCHAR}
+        and classfication LIKE CONCAT(#{classfication,jdbcType=VARCHAR},'%')
       </if>
       <if test="status != null" >
         and status = #{status,jdbcType=VARCHAR}
