@@ -84,9 +84,9 @@
         id = #{id,jdbcType=INTEGER}
       </if>
       <if test="recipeTemplateNo != null" >
-       and  recipeTemplate_no  LIKE CONCAT(#{recipeTemplateNo,jdbcType=VARCHAR},'%')
+       and  recipe_template_no  LIKE CONCAT(#{recipeTemplateNo,jdbcType=VARCHAR},'%')
       </if>
-      <if test="recipeType != null" >
+      <if test="recipeType != null and recipeType != ''" >
         and recipe_type = #{recipeType,jdbcType=VARCHAR}
       </if>
       <if test="disease != null" >
@@ -124,9 +124,9 @@
         id = #{id,jdbcType=INTEGER}
       </if>
       <if test="recipeTemplateNo != null" >
-        and  recipeTemplate_no  LIKE CONCAT(#{recipeTemplateNo,jdbcType=VARCHAR},'%')
+        and  recipe_template_no  LIKE CONCAT(#{recipeTemplateNo,jdbcType=VARCHAR},'%')
       </if>
-      <if test="recipeType != null" >
+      <if test="recipeType != null and recipeType != ''" >
         and recipe_type = #{recipeType,jdbcType=VARCHAR}
       </if>
       <if test="disease != null" >
@@ -149,7 +149,7 @@
   <update id="deleteByNos">
     update  recipe_template set status = 'INVALID',
     update_time = current_timestamp() where
-    `recipeTemplate_no` in
+    `recipe_template_no` in
     <foreach item="item" index="index" collection="nos" open="(" separator="," close=")">
       #{item}
     </foreach>
@@ -164,10 +164,10 @@
       <if test="status!=null">status=#{status},</if>
       update_time = current_timestamp(),
     </trim>
-    WHERE recipeTemplate_no=#{recipeTemplateNo}
+    WHERE recipe_template_no=#{recipeTemplateNo}
   </update>
 
   <select id="selelctByNo" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select * from recipe_template where recipeTemplate_no = #{no}
+    select * from recipe_template where recipe_template_no = #{no}
   </select>
 </mapper>

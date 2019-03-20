@@ -16,6 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,7 +37,7 @@ public class RecipeTemplateController {
 
     @RequestMapping("/add")
     @ResponseBody
-    public RecipeTemplateAddResponse add(RecipeTemplateAddRequest request){
+    public RecipeTemplateAddResponse add(@RequestBody RecipeTemplateAddRequest request){
         // 参数检查
         if(StringUtils.isEmpty(request.getRecipeType()) || RecipeTypeEnum.getByCode(request.getRecipeType())==null){
             throw new CommonException(CommonResultEnum.PARAM_ERROR);
@@ -56,7 +57,7 @@ public class RecipeTemplateController {
 
     @RequestMapping("/del")
     @ResponseBody
-    public RecipeTemplateDelResponse del(RecipeTemplateDelRequest request){
+    public RecipeTemplateDelResponse del(@RequestBody RecipeTemplateDelRequest request){
         if(CollectionUtils.isEmpty(request.getRecipeTemplateNos())){
             throw new CommonException(CommonResultEnum.PARAM_ERROR);
         }
@@ -66,7 +67,7 @@ public class RecipeTemplateController {
 
     @RequestMapping("/update")
     @ResponseBody
-    public RecipeTemplateUpdateResponse update(RecipeTemplateUpdateRequest request){
+    public RecipeTemplateUpdateResponse update(@RequestBody RecipeTemplateUpdateRequest request){
         if(CollectionUtils.isEmpty(request.getRecipeTemplateDetailVOS())){
             throw new CommonException(CommonResultEnum.PARAM_ERROR);
         }
