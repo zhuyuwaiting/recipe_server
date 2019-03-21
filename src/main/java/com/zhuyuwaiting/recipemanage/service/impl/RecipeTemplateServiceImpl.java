@@ -9,6 +9,7 @@ import com.zhuyuwaiting.recipemanage.controller.res.RecipeTemplateDelResponse;
 import com.zhuyuwaiting.recipemanage.controller.res.RecipeTemplateListResponse;
 import com.zhuyuwaiting.recipemanage.controller.res.RecipeTemplateUpdateResponse;
 import com.zhuyuwaiting.recipemanage.enums.SceneNoEnum;
+import com.zhuyuwaiting.recipemanage.enums.StatusEnum;
 import com.zhuyuwaiting.recipemanage.mapper.RecipeTemplateDetailMapper;
 import com.zhuyuwaiting.recipemanage.mapper.RecipeTemplateMapper;
 import com.zhuyuwaiting.recipemanage.model.RecipeTemplate;
@@ -78,10 +79,11 @@ public class RecipeTemplateServiceImpl implements RecipeTemplateService {
         RecipeTemplate recipeTemplate = new RecipeTemplate();
         recipeTemplate.setRecipeTemplateNo(recipeTemplateNo);
         recipeTemplate.setRecipeType(request.getRecipeType());
-        recipeTemplate.setDisease(recipeTemplate.getDisease());
-        recipeTemplate.setClassfication(recipeTemplate.getClassfication());
+        recipeTemplate.setDisease(request.getDisease());
+        recipeTemplate.setClassfication(request.getClassfication());
         recipeTemplate.setCreateTime(new Date());
         recipeTemplate.setUpdateTime(new Date());
+        recipeTemplate.setStatus(StatusEnum.VALID.getCode());
         recipeTemplateMapper.insertSelective(recipeTemplate);
         //插入药品信息
         if(CollectionUtils.isEmpty(request.getRecipeTemplateDetailVOS())){
@@ -90,7 +92,9 @@ public class RecipeTemplateServiceImpl implements RecipeTemplateService {
         List<RecipeTemplateDetail> recipeTemplates = request.getRecipeTemplateDetailVOS()
                 .stream().map(recipeTemplateDetailVO -> {
                     RecipeTemplateDetail recipeTemplateDetail = new RecipeTemplateDetail();
-                   BeanUtils.copyProperties(recipeTemplateDetailVO,recipeTemplateDetail);
+                    recipeTemplateDetail.setMedicineNum(recipeTemplateDetailVO.getMedicineNum());
+                   recipeTemplateDetail.setMedicineNo(recipeTemplateDetailVO.getMedicineVO().getMedicineNo());
+                   recipeTemplateDetail.setRecipeTemplateNo(recipeTemplate.getRecipeTemplateNo());
                    return recipeTemplateDetail;
                 }).collect(Collectors.toList());
         recipeTemplateDetailMapper.batchInsert(recipeTemplates);
