@@ -124,13 +124,13 @@
         id = #{id,jdbcType=INTEGER}
       </if>
       <if test="recipeNo != null" >
-        and recipe_no = #{recipeNo,jdbcType=VARCHAR}
+        and recipe_no  LIKE CONCAT(#{recipeNo,jdbcType=VARCHAR},'%')
       </if>
-      <if test="recipeType != null" >
+      <if test="recipeType != null and recipeType != ''" >
        and  recipe_type = #{recipeType,jdbcType=VARCHAR}
       </if>
       <if test="patientName != null" >
-        and patient_name = #{patientName,jdbcType=VARCHAR}
+        and patient_name  LIKE CONCAT(#{patientName,jdbcType=VARCHAR},'%')
       </if>
       <if test="patientSex != null" >
         and patient_sex = #{patientSex,jdbcType=TINYINT}
@@ -179,13 +179,13 @@
         id = #{id,jdbcType=INTEGER}
       </if>
       <if test="recipeNo != null" >
-        and recipe_no = #{recipeNo,jdbcType=VARCHAR}
+        and recipe_no  LIKE CONCAT(#{recipeNo,jdbcType=VARCHAR},'%')
       </if>
-      <if test="recipeType != null" >
+      <if test="recipeType != null and recipeType != ''" >
         and  recipe_type = #{recipeType,jdbcType=VARCHAR}
       </if>
       <if test="patientName != null" >
-        and patient_name = #{patientName,jdbcType=VARCHAR}
+        and patient_name  LIKE CONCAT(#{patientName,jdbcType=VARCHAR},'%')
       </if>
       <if test="patientSex != null" >
         and patient_sex = #{patientSex,jdbcType=TINYINT}

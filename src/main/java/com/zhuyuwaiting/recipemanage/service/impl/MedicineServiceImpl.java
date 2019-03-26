@@ -110,6 +110,12 @@ public class MedicineServiceImpl implements MedicineService {
        return medicineVOS.get(0);
     }
 
+    public List<MedicineVO> selectByMedicineNos(List<String> medicineNos){
+        List<Medicine> result = medicineMapper.selelctByMedicineNos(medicineNos);
+        List<MedicineVO> medicineVOS = assebleMedicineInfo(result);
+        return medicineVOS;
+    }
+
     /**
      * 查询医药列表
      *
@@ -189,25 +195,29 @@ public class MedicineServiceImpl implements MedicineService {
         }
 
         medicineVOS.stream().forEach(medicineVO -> {
-            if (!StringUtils.isEmpty(medicineVO.getUnit())
-                    && enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_UNIT_CN.getCode()) != null) {
-                medicineVO.setUnitInfo(enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_UNIT_CN.getCode()).get(medicineVO.getUnit()));
-            }
-            if (!StringUtils.isEmpty(medicineVO.getUnit())
-                    && enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_UNIT_EN.getCode()) != null) {
-                medicineVO.setUnitInfo(enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_UNIT_EN.getCode()).get(medicineVO.getUnit()));
-            }
-            if (!StringUtils.isEmpty(medicineVO.getCellUnit())
-                    && enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_CELL_UNIT.getCode()) != null) {
-                medicineVO.setCellUnitInfo(enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_CELL_UNIT.getCode()).get(medicineVO.getCellUnit()));
-            }
-            if (!StringUtils.isEmpty(medicineVO.getTakingWay())
-                    && enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_CN.getCode()) != null) {
-                medicineVO.setTakingWayInfo(enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_CN.getCode()).get(medicineVO.getTakingWay()));
-            }
-            if (!StringUtils.isEmpty(medicineVO.getTakingWay())
-                    && enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_EN.getCode()) != null) {
-                medicineVO.setTakingWayInfo(enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_EN.getCode()).get(medicineVO.getTakingWay()));
+            if(org.apache.commons.lang3.StringUtils.equals(MedicineTypeEnum.CHINESE_MEDICINE.getCode(),medicineVO.getType())){
+                if (!StringUtils.isEmpty(medicineVO.getUnit())
+                        && enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_UNIT_CN.getCode()) != null) {
+                    medicineVO.setUnitInfo(enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_UNIT_CN.getCode()).get(medicineVO.getUnit()));
+                }
+                if (!StringUtils.isEmpty(medicineVO.getTakingWay())
+                        && enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_CN.getCode()) != null) {
+                    medicineVO.setTakingWayInfo(enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_CN.getCode()).get(medicineVO.getTakingWay()));
+                }
+
+            }else{
+                if (!StringUtils.isEmpty(medicineVO.getUnit())
+                        && enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_UNIT_EN.getCode()) != null) {
+                    medicineVO.setUnitInfo(enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_UNIT_EN.getCode()).get(medicineVO.getUnit()));
+                }
+                if (!StringUtils.isEmpty(medicineVO.getCellUnit())
+                        && enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_CELL_UNIT.getCode()) != null) {
+                    medicineVO.setCellUnitInfo(enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_CELL_UNIT.getCode()).get(medicineVO.getCellUnit()));
+                }
+                if (!StringUtils.isEmpty(medicineVO.getTakingWay())
+                        && enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_EN.getCode()) != null) {
+                    medicineVO.setTakingWayInfo(enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_EN.getCode()).get(medicineVO.getTakingWay()));
+                }
             }
         });
     }

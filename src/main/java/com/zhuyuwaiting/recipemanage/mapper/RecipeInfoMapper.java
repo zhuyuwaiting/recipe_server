@@ -13,7 +13,7 @@ public interface RecipeInfoMapper {
 
     int deleteByNos(@Param("nos") List<String> nos);
 
-    RecipeInfo selelctByNo(String no);
+    RecipeInfo selelctByNo(@Param("no") String no);
 
     int updateBySelective(RecipeInfo recipeInfo);
 

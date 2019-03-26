@@ -1,6 +1,7 @@
 package com.zhuyuwaiting.recipemanage.mapper;
 
 import com.zhuyuwaiting.recipemanage.model.RecipeTemplateDetail;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
@@ -18,5 +19,5 @@ public interface RecipeTemplateDetailMapper {
 
     int countByParams(Map params);
 
-    int deleteByRecipeTemplateNos(List<String> nos);
+    int deleteByRecipeTemplateNos(@Param("nos") List<String> nos);
 }

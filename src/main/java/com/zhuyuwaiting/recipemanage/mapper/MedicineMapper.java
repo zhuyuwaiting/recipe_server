@@ -18,6 +18,7 @@ public interface MedicineMapper {
     int deleteByMedicineNo(@Param("medicineNos")List<String> medicineNos);
 
     Medicine selelctByMedicineNo(String medicineNo);
+    List<Medicine> selelctByMedicineNos(@Param("medicineNos")List<String> medicineNos);
 
     int updateBySelective(Medicine medicine);
 }

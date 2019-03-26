@@ -103,4 +103,23 @@
     and medicine_no=#{medicineNo}
   </update>
 
+
+  <insert id="batchInsert" parameterType="java.util.List">
+    insert into recipe_detail (recipe_no, medicine_no, medicine_num) values
+    <foreach collection="list" item="item" index="index" separator=",">
+      (#{item.recipeNo},
+      #{item.medicineNo},
+      #{item.medicineNum})
+    </foreach>
+  </insert>
+
+  <delete id="deleteByRecipeNos">
+    delete from recipe_detail
+    where
+    `recipe_no` in
+    <foreach item="item" index="index" collection="nos" open="(" separator="," close=")">
+      #{item}
+    </foreach>
+  </delete>
+
 </mapper>

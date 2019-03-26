@@ -54,13 +54,19 @@
                 id = #{id,jdbcType=INTEGER}
             </if>
             <if test="recipeTemplateNo != null">
-                and recipeTemplate_no = #{recipeTemplateNo,jdbcType=VARCHAR}
+                and recipe_template_no = #{recipeTemplateNo,jdbcType=VARCHAR}
             </if>
             <if test="medicineNo != null">
                 and medicine_no = #{medicineNo,jdbcType=VARCHAR}
             </if>
             <if test="medicineNum != null">
                 and medicine_num = #{medicineNum,jdbcType=VARCHAR}
+            </if>
+            <if test="recipeTemplateNos != null">
+                and recipe_template_no  in
+                <foreach item="item" index="index" collection="recipeTemplateNos" open="(" separator="," close=")">
+                    #{item}
+                </foreach>
             </if>
         </where>
 
@@ -82,13 +88,19 @@
                 id = #{id,jdbcType=INTEGER}
             </if>
             <if test="recipeTemplateNo != null">
-                and recipeTemplate_no = #{recipeTemplateNo,jdbcType=VARCHAR}
+                and recipe_template_no = #{recipeTemplateNo,jdbcType=VARCHAR}
             </if>
             <if test="medicineNo != null">
                 and medicine_no = #{medicineNo,jdbcType=VARCHAR}
             </if>
             <if test="medicineNum != null">
                 and medicine_num = #{medicineNum,jdbcType=VARCHAR}
+            </if>
+            <if test="recipeTemplateNos != null">
+                and recipe_template_no  in
+                <foreach item="item" index="index" collection="recipeTemplateNos" open="(" separator="," close=")">
+                    #{item}
+                </foreach>
             </if>
         </where>
     </select>
@@ -112,9 +124,9 @@
     </insert>
 
     <delete id="deleteByRecipeTemplateNos">
-        delete from recipe_template
+        delete from recipe_template_detail
         where
-        `recipeTemplate_no` in
+        `recipe_template_no` in
         <foreach item="item" index="index" collection="nos" open="(" separator="," close=")">
             #{item}
         </foreach>

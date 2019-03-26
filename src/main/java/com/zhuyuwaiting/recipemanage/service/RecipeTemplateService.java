@@ -4,10 +4,8 @@ import com.zhuyuwaiting.recipemanage.controller.req.RecipeTemplateAddRequest;
 import com.zhuyuwaiting.recipemanage.controller.req.RecipeTemplateDelRequest;
 import com.zhuyuwaiting.recipemanage.controller.req.RecipeTemplateListRequest;
 import com.zhuyuwaiting.recipemanage.controller.req.RecipeTemplateUpdateRequest;
-import com.zhuyuwaiting.recipemanage.controller.res.RecipeTemplateAddResponse;
-import com.zhuyuwaiting.recipemanage.controller.res.RecipeTemplateDelResponse;
-import com.zhuyuwaiting.recipemanage.controller.res.RecipeTemplateListResponse;
-import com.zhuyuwaiting.recipemanage.controller.res.RecipeTemplateUpdateResponse;
+import com.zhuyuwaiting.recipemanage.controller.res.*;
+import com.zhuyuwaiting.recipemanage.vo.RecipeTemplateVO;
 
 public interface RecipeTemplateService {
 
@@ -18,4 +16,7 @@ public interface RecipeTemplateService {
     RecipeTemplateDelResponse del(RecipeTemplateDelRequest request);
 
     RecipeTemplateUpdateResponse update(RecipeTemplateUpdateRequest request);
+    RecipeTemplateVO query(String recipeTemplateNo);
+
+
 }

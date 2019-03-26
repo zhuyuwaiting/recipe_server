@@ -16,4 +16,6 @@ public class RecipeTemplateListRequest extends BasePaginationRequest {
     private String classfication;
 
     private String status = "VALID";
+
+    private boolean needDetails = false;
 }

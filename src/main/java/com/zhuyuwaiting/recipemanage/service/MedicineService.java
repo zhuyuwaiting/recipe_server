@@ -12,6 +12,7 @@ import com.zhuyuwaiting.recipemanage.model.Medicine;
 import com.zhuyuwaiting.recipemanage.vo.BasePaginationResult;
 import com.zhuyuwaiting.recipemanage.vo.MedicineVO;
 
+import java.util.List;
 import java.util.Map;
 
 public interface MedicineService {
@@ -36,6 +37,7 @@ public interface MedicineService {
     MedicineUpdateResponse update(MedicineUpdateRequest request);
 
     MedicineVO selectByMedicineNo(String medicineNo);
+    List<MedicineVO> selectByMedicineNos(List<String> medicineNo);
 
     MedicineAddResponse add(MedicineAddRequest request);
 }

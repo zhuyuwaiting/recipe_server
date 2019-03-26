@@ -246,6 +246,13 @@
   <select id="selelctByMedicineNo" parameterType="java.lang.String" resultMap="BaseResultMap">
     select * from medicine where medicine_no = #{medicineNo}
   </select>
+
+  <select id="selelctByMedicineNos" parameterType="java.util.List" resultMap="BaseResultMap">
+    select * from medicine where medicine_no   in
+    <foreach item="item" index="index" collection="medicineNos" open="(" separator="," close=")">
+      #{item}
+    </foreach>
+  </select>
   <update id="deleteByMedicineNo">
         update  medicine set status = 'INVALID',
     update_time = current_timestamp() where

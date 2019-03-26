@@ -1,13 +1,7 @@
 package com.zhuyuwaiting.recipemanage.controller;
 
-import com.zhuyuwaiting.recipemanage.controller.req.RecipeTemplateAddRequest;
-import com.zhuyuwaiting.recipemanage.controller.req.RecipeTemplateDelRequest;
-import com.zhuyuwaiting.recipemanage.controller.req.RecipeTemplateListRequest;
-import com.zhuyuwaiting.recipemanage.controller.req.RecipeTemplateUpdateRequest;
-import com.zhuyuwaiting.recipemanage.controller.res.RecipeTemplateAddResponse;
-import com.zhuyuwaiting.recipemanage.controller.res.RecipeTemplateDelResponse;
-import com.zhuyuwaiting.recipemanage.controller.res.RecipeTemplateListResponse;
-import com.zhuyuwaiting.recipemanage.controller.res.RecipeTemplateUpdateResponse;
+import com.zhuyuwaiting.recipemanage.controller.req.*;
+import com.zhuyuwaiting.recipemanage.controller.res.*;
 import com.zhuyuwaiting.recipemanage.enums.CommonResultEnum;
 import com.zhuyuwaiting.recipemanage.enums.RecipeTypeEnum;
 import com.zhuyuwaiting.recipemanage.exception.CommonException;
@@ -45,9 +39,7 @@ public class RecipeTemplateController {
         if(StringUtils.isEmpty(request.getDisease())){
             throw new CommonException(CommonResultEnum.PARAM_ERROR);
         }
-        if(StringUtils.isEmpty(request.getClassfication())){
-            throw new CommonException(CommonResultEnum.PARAM_ERROR);
-        }
+
         if(CollectionUtils.isEmpty(request.getRecipeTemplateDetailVOS())){
             throw new CommonException(CommonResultEnum.PARAM_ERROR);
         }
@@ -72,6 +64,17 @@ public class RecipeTemplateController {
             throw new CommonException(CommonResultEnum.PARAM_ERROR);
         }
         return recipeTemplateService.update(request);
+    }
+
+    @RequestMapping("/query")
+    @ResponseBody
+    public RecipeTemplateQueryResponse query(RecipeTemplateQueryRequest request){
+        RecipeTemplateQueryResponse response = new RecipeTemplateQueryResponse();
+        if(org.apache.commons.lang3.StringUtils.isEmpty(request.getRecipeTemplateNo())){
+            throw new CommonException(CommonResultEnum.PARAM_ERROR);
+        }
+        response.setRecipeTemplateVO(recipeTemplateService.query(request.getRecipeTemplateNo()));
+        return response;
     }
 
 }
