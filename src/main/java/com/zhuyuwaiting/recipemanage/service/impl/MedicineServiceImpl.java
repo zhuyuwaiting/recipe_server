@@ -140,10 +140,6 @@ public class MedicineServiceImpl implements MedicineService {
         pagination.setCurrent(request.getCurrent());
         pagination.setPageSize(request.getPageSize());
         response.setPagination(pagination);
-        if (CollectionUtils.isEmpty(list)) {
-            return response;
-        }
-        response.setMedicineVOS(assebleMedicineInfo(list));
         // 組裝enumInfo 信息返回
         Map<String,List<EnumInfoVO>> enumInfos = enumInfoService.queryEnumInfoListWithKeys(new HashSet<String>(){{
             if(org.apache.commons.lang3.StringUtils.equals(request.getType(),MedicineTypeEnum.CHINESE_MEDICINE.getCode())){
@@ -156,6 +152,11 @@ public class MedicineServiceImpl implements MedicineService {
             }
         }});
         response.setEnumInfos(enumInfos);
+        if (CollectionUtils.isEmpty(list)) {
+            return response;
+        }
+        response.setMedicineVOS(assebleMedicineInfo(list));
+
         return response;
     }
 
