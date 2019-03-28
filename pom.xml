@@ -21,6 +21,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <mybatis.generator.version>1.3.5</mybatis.generator.version>
         <apache.lang3.version>3.8.1</apache.lang3.version>
+        <docker.image.prefix>zhuyuwaiting</docker.image.prefix>
     </properties>
 
     <dependencies>
@@ -92,6 +93,18 @@
                     <verbose>true</verbose>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.3.6</version>
+                <configuration>
+                    <repository>${docker.image.prefix}/${project.artifactId}</repository>
+                    <buildArgs>
+                        <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
