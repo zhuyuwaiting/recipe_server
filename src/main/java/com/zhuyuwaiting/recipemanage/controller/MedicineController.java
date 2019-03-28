@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/medicine")
+@RequestMapping("/api/medicine")
 @Slf4j
 public class MedicineController {
 
