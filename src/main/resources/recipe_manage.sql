@@ -70,7 +70,7 @@ CREATE TABLE `medicine` (
   `daily_times` int(32) DEFAULT NULL COMMENT '每日次数',
   `status` varchar(32) DEFAULT NULL,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+  `update_time` timestamp NOT NULL DEFAULT '1970-01-01 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `medicine_no_uq` (`medicine_no`),
   KEY `medicine_no_name_e_index` (`medicine_no`,`name`,`english_name`)
@@ -124,7 +124,7 @@ CREATE TABLE `recipe_info` (
   `num` int(11) DEFAULT NULL,
   `status` varchar(32) DEFAULT NULL,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+  `update_time` timestamp NOT NULL DEFAULT '1970-01-01 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `recipe_info_no_uq` (`recipe_no`),
   KEY `recipe_info_no_name_index` (`recipe_no`,`patient_name`)
@@ -148,7 +148,7 @@ CREATE TABLE `recipe_template` (
   `classfication` varchar(32) DEFAULT NULL COMMENT '科别',
   `status` varchar(32) DEFAULT NULL,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+  `update_time` timestamp NOT NULL DEFAULT '1970-01-01 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `recipe_template_no_uq` (`recipe_template_no`),
   KEY `recipe_template_no_c_index` (`recipe_template_no`,`disease`,`classfication`)
@@ -191,7 +191,7 @@ CREATE TABLE `user_info` (
   `role_id` varchar(32) DEFAULT NULL COMMENT '1买家2卖家',
   `status` varchar(32) DEFAULT NULL,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+  `update_time` timestamp NOT NULL DEFAULT '1970-01-01 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
   `nick` varchar(255) DEFAULT NULL,
   `avatar` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
