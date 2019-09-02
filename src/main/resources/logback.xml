@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+    <property name="log.path" value="." />
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder charset="UTF-8">
@@ -9,7 +10,7 @@
     </appender>
 
     <appender name="serviceAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <File>${catalina.base}/logs/service.log</File>
+        <File>${log.path}/logs/service.log</File>
         <append>true</append>
         <!--过滤器,只打INFO级别的日志-->
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
@@ -18,7 +19,7 @@
             <onMismatch>DENY</onMismatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${catalina.base}/logs/service.log.%d</fileNamePattern>
+            <fileNamePattern>${log.path}/logs/service.log.%d</fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
 
@@ -29,7 +30,7 @@
     </appender>
 
     <appender name="SYS_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <File>${catalina.base}/logs/error.log</File>
+        <File>${log.path}/logs/error.log</File>
         <append>true</append>
         <!--过滤器,只打ERROR级别的日志-->
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
@@ -38,7 +39,7 @@
             <onMismatch>DENY</onMismatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${catalina.base}/logs/error.log.%d</fileNamePattern>
+            <fileNamePattern>${log.path}/logs/error.log.%d</fileNamePattern>
             <maxHistory>12</maxHistory>
         </rollingPolicy>
 
@@ -50,7 +51,7 @@
 
     <!--不同业务逻辑的日志打印到不同文件-->
     <appender name="mapperAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <File>${catalina.base}/logs/mapper.log</File>
+        <File>${log.path}/logs/mapper.log</File>
         <append>true</append>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
             <level>DEBUG</level>
@@ -58,7 +59,7 @@
             <onMismatch>DENY</onMismatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${catalina.base}/logs/mapper.log.%d</fileNamePattern>
+            <fileNamePattern>${log.path}/logs/mapper.log.%d</fileNamePattern>
             <maxHistory>12</maxHistory>
         </rollingPolicy>
         <encoder charset="UTF-8">
@@ -68,7 +69,7 @@
     </appender>
     <!--不同业务逻辑的日志打印到不同文件-->
     <appender name="controllerAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <File>${catalina.base}/logs/controller.log</File>
+        <File>${log.path}/logs/controller.log</File>
         <append>true</append>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
             <level>INFO</level>
@@ -76,7 +77,7 @@
             <onMismatch>DENY</onMismatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${catalina.base}/logs/controller.log.%d</fileNamePattern>
+            <fileNamePattern>${log.path}/logs/controller.log.%d</fileNamePattern>
             <maxHistory>12</maxHistory>
         </rollingPolicy>
         <encoder charset="UTF-8">
