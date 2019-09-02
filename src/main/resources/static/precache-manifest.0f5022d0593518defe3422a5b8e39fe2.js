@@ -1,14 +1,14 @@
 self.__precacheManifest = [
   {
-    "revision": "8587d5c6e578540cd3c2",
+    "revision": "ff8ee2bfb7afa6bfbcc2",
     "url": "/p__recipe__EnumInfo.chunk.css"
   },
   {
-    "revision": "037203557d7a16fa3ce4",
+    "revision": "4f3d30912a80ff4ba94d",
     "url": "/vendors.chunk.css"
   },
   {
-    "revision": "8587d5c6e578540cd3c2",
+    "revision": "ff8ee2bfb7afa6bfbcc2",
     "url": "/p__recipe__EnumInfo.async.js"
   },
   {
@@ -16,107 +16,107 @@ self.__precacheManifest = [
     "url": "/pwacompat.min.js"
   },
   {
-    "revision": "ff46f2e0baa951d74f73",
+    "revision": "353f4419739bae4c9107",
     "url": "/umi.js"
   },
   {
-    "revision": "ff46f2e0baa951d74f73",
+    "revision": "353f4419739bae4c9107",
     "url": "/umi.css"
   },
   {
-    "revision": "037203557d7a16fa3ce4",
+    "revision": "4f3d30912a80ff4ba94d",
     "url": "/vendors.async.js"
   },
   {
-    "revision": "c9c24b3e134fda9358b1",
+    "revision": "dba0e35a543baa259629",
     "url": "/p__recipe__RecipeManage.chunk.css"
   },
   {
-    "revision": "70a79194d6590205edee",
+    "revision": "580d5c94274e3a582ef0",
     "url": "/p__Exception__404.async.js"
   },
   {
-    "revision": "9afcbdefa63bd4cd75b9",
+    "revision": "40115e141ccec8c470b2",
     "url": "/p__Exception__TriggerException.chunk.css"
   },
   {
-    "revision": "9afcbdefa63bd4cd75b9",
+    "revision": "40115e141ccec8c470b2",
     "url": "/p__Exception__TriggerException.async.js"
   },
   {
-    "revision": "5330075c87dd4b664aac",
+    "revision": "b5a19506937c5094262c",
     "url": "/p__Exception__models__error.js.async.js"
   },
   {
-    "revision": "afdc4033540a9bc3ae68",
+    "revision": "18a57ce91d6cfff340e5",
     "url": "/p__User__Login.chunk.css"
   },
   {
-    "revision": "afdc4033540a9bc3ae68",
+    "revision": "18a57ce91d6cfff340e5",
     "url": "/p__User__Login.async.js"
   },
   {
-    "revision": "998453ee5f03b48a9dda",
+    "revision": "cfd4c8b0a6187bf314a6",
     "url": "/p__User__Register.chunk.css"
   },
   {
-    "revision": "998453ee5f03b48a9dda",
+    "revision": "cfd4c8b0a6187bf314a6",
     "url": "/p__User__Register.async.js"
   },
   {
-    "revision": "ffe9bb681d5ac318da84",
+    "revision": "e0bad70e9814ab446673",
     "url": "/p__User__RegisterResult.chunk.css"
   },
   {
-    "revision": "ffe9bb681d5ac318da84",
+    "revision": "e0bad70e9814ab446673",
     "url": "/p__User__RegisterResult.async.js"
   },
   {
-    "revision": "955ac5de5d811abf52ea",
+    "revision": "a342a71135a3e038ff43",
     "url": "/p__User__models__register.js.async.js"
   },
   {
-    "revision": "9af643c7025208865cd6",
+    "revision": "1ca3e9726a5a30a93e62",
     "url": "/p__recipe__ChineseMedicine.chunk.css"
   },
   {
-    "revision": "9af643c7025208865cd6",
+    "revision": "1ca3e9726a5a30a93e62",
     "url": "/p__recipe__ChineseMedicine.async.js"
   },
   {
-    "revision": "ce5e7df75a95d791437b",
+    "revision": "ddac914e9fbb0d3f5610",
     "url": "/p__recipe__WesternMedicine.async.js"
   },
   {
-    "revision": "ce5e7df75a95d791437b",
+    "revision": "ddac914e9fbb0d3f5610",
     "url": "/p__recipe__WesternMedicine.chunk.css"
   },
   {
-    "revision": "d8c66b74cc1e2209ecc5",
+    "revision": "f0320b868159de465c58",
     "url": "/p__recipe__RecipeEdit.chunk.css"
   },
   {
-    "revision": "d8c66b74cc1e2209ecc5",
+    "revision": "f0320b868159de465c58",
     "url": "/p__recipe__RecipeEdit.async.js"
   },
   {
-    "revision": "cad8bca6c0de1a0b7702",
+    "revision": "32bff45f6e450442e134",
     "url": "/p__Exception__500.async.js"
   },
   {
-    "revision": "c9c24b3e134fda9358b1",
+    "revision": "dba0e35a543baa259629",
     "url": "/p__recipe__RecipeManage.async.js"
   },
   {
-    "revision": "e89d8ba37baf22e6c395",
+    "revision": "da20225db477722a8695",
     "url": "/p__recipe__Template.async.js"
   },
   {
-    "revision": "9dbd3a374933594c4d89",
+    "revision": "f6d40890afcfdaf6b862",
     "url": "/p__recipe__TemplateAdd.async.js"
   },
   {
-    "revision": "746e5e8bace8f6496216",
+    "revision": "96445af6a8798df81a81",
     "url": "/p__recipe__TemplateUpdate.async.js"
   },
   {
@@ -124,15 +124,15 @@ self.__precacheManifest = [
     "url": "/index.html"
   },
   {
-    "revision": "01c2b89523a8db00152f",
+    "revision": "c373561e413f97400076",
     "url": "/layouts__BasicLayout.chunk.css"
   },
   {
-    "revision": "e2e2303999cd82228a78",
+    "revision": "1dfae319f37b4acef310",
     "url": "/layouts__UserLayout.async.js"
   },
   {
-    "revision": "e2e2303999cd82228a78",
+    "revision": "1dfae319f37b4acef310",
     "url": "/layouts__UserLayout.chunk.css"
   },
   {
@@ -140,11 +140,11 @@ self.__precacheManifest = [
     "url": "/manifest.json"
   },
   {
-    "revision": "b1df02ad604cb144a100",
+    "revision": "a891c0a6ff56440598af",
     "url": "/p__404.async.js"
   },
   {
-    "revision": "01c2b89523a8db00152f",
+    "revision": "c373561e413f97400076",
     "url": "/layouts__BasicLayout.async.js"
   },
   {
@@ -164,11 +164,11 @@ self.__precacheManifest = [
     "url": "/favicon.png"
   },
   {
-    "revision": "1d3bffe44184f95e926b",
+    "revision": "4c43d4387599007f6da1",
     "url": "/21.chunk.css"
   },
   {
-    "revision": "1d3bffe44184f95e926b",
+    "revision": "4c43d4387599007f6da1",
     "url": "/21.async.js"
   }
 ];
