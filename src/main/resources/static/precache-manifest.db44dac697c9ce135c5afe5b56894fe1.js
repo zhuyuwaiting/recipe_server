@@ -16,11 +16,11 @@ self.__precacheManifest = [
     "url": "/pwacompat.min.js"
   },
   {
-    "revision": "af9bec0dcea0e93539e4",
+    "revision": "44358fb07c2b33fcd080",
     "url": "/umi.js"
   },
   {
-    "revision": "af9bec0dcea0e93539e4",
+    "revision": "44358fb07c2b33fcd080",
     "url": "/umi.css"
   },
   {
