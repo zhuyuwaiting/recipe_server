@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/p__recipe__EnumInfo.chunk.css"
   },
   {
-    "revision": "4f3d30912a80ff4ba94d",
+    "revision": "f99ffdceb95a979b2d39",
     "url": "/vendors.chunk.css"
   },
   {
@@ -16,19 +16,19 @@ self.__precacheManifest = [
     "url": "/pwacompat.min.js"
   },
   {
-    "revision": "44358fb07c2b33fcd080",
+    "revision": "793c289c4e93a2d3f049",
     "url": "/umi.js"
   },
   {
-    "revision": "44358fb07c2b33fcd080",
+    "revision": "793c289c4e93a2d3f049",
     "url": "/umi.css"
   },
   {
-    "revision": "4f3d30912a80ff4ba94d",
+    "revision": "f99ffdceb95a979b2d39",
     "url": "/vendors.async.js"
   },
   {
-    "revision": "dba0e35a543baa259629",
+    "revision": "f90e39620750235269a0",
     "url": "/p__recipe__RecipeManage.chunk.css"
   },
   {
@@ -76,27 +76,27 @@ self.__precacheManifest = [
     "url": "/p__User__models__register.js.async.js"
   },
   {
-    "revision": "1ca3e9726a5a30a93e62",
+    "revision": "80b37b0071cba854dc06",
     "url": "/p__recipe__ChineseMedicine.chunk.css"
   },
   {
-    "revision": "1ca3e9726a5a30a93e62",
+    "revision": "80b37b0071cba854dc06",
     "url": "/p__recipe__ChineseMedicine.async.js"
   },
   {
-    "revision": "ddac914e9fbb0d3f5610",
+    "revision": "a2f38dd9ba43fa068369",
     "url": "/p__recipe__WesternMedicine.async.js"
   },
   {
-    "revision": "ddac914e9fbb0d3f5610",
+    "revision": "a2f38dd9ba43fa068369",
     "url": "/p__recipe__WesternMedicine.chunk.css"
   },
   {
-    "revision": "f0320b868159de465c58",
+    "revision": "7b8659f28c445193eeb0",
     "url": "/p__recipe__RecipeEdit.chunk.css"
   },
   {
-    "revision": "f0320b868159de465c58",
+    "revision": "7b8659f28c445193eeb0",
     "url": "/p__recipe__RecipeEdit.async.js"
   },
   {
@@ -104,19 +104,19 @@ self.__precacheManifest = [
     "url": "/p__Exception__500.async.js"
   },
   {
-    "revision": "dba0e35a543baa259629",
+    "revision": "f90e39620750235269a0",
     "url": "/p__recipe__RecipeManage.async.js"
   },
   {
-    "revision": "da20225db477722a8695",
+    "revision": "c6b030639f056de04c7b",
     "url": "/p__recipe__Template.async.js"
   },
   {
-    "revision": "f6d40890afcfdaf6b862",
+    "revision": "7cc6441069ac8047103b",
     "url": "/p__recipe__TemplateAdd.async.js"
   },
   {
-    "revision": "96445af6a8798df81a81",
+    "revision": "3279bbf62ffa5d4abe57",
     "url": "/p__recipe__TemplateUpdate.async.js"
   },
   {
