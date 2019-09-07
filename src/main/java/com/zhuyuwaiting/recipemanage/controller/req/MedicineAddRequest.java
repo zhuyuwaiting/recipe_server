@@ -45,6 +45,12 @@ public class MedicineAddRequest extends BaseRequest {
 
     private Integer dailyTimes;
 
+    private String memo;
+    private String spec;
+    /**
+     * 手动定义的unit
+     */
+    private String unitStr;
 
 
 }

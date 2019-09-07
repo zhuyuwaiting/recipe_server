@@ -13,22 +13,25 @@
     <result column="cell_weight" property="cellWeight" jdbcType="INTEGER" />
     <result column="each_dose" property="eachDose" jdbcType="INTEGER" />
     <result column="taking_way" property="takingWay" jdbcType="VARCHAR" />
+    <result column="unit_str" property="unitStr" jdbcType="VARCHAR" />
+    <result column="memo" property="memo" jdbcType="VARCHAR" />
+    <result column="spec" property="spec" jdbcType="VARCHAR" />
     <result column="daily_times" property="dailyTimes" jdbcType="INTEGER" />
     <result column="status" property="status" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <insert id="insert" parameterType="com.zhuyuwaiting.recipemanage.model.Medicine" >
-    insert into medicine (id, medicine_no, name, 
+    insert into medicine (id, medicine_no, name, memo,spec,
       english_name, type, unit, 
       cell_unit, cell_num, cell_weight, 
-      each_dose, taking_way, daily_times, 
+      each_dose, taking_way,unit_str, daily_times,
       status, create_time, update_time
       )
-    values (#{id,jdbcType=INTEGER}, #{medicineNo,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{medicineNo,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR},#{spec,jdbcType=VARCHAR},
       #{englishName,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{unit,jdbcType=VARCHAR}, 
       #{cellUnit,jdbcType=VARCHAR}, #{cellNum,jdbcType=INTEGER}, #{cellWeight,jdbcType=INTEGER}, 
-      #{eachDose,jdbcType=INTEGER}, #{takingWay,jdbcType=VARCHAR}, #{dailyTimes,jdbcType=INTEGER}, 
+      #{eachDose,jdbcType=INTEGER}, #{takingWay,jdbcType=VARCHAR},#{unitStr,jdbcType=VARCHAR}, #{dailyTimes,jdbcType=INTEGER},
       #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
       )
   </insert>
@@ -43,6 +46,12 @@
       </if>
       <if test="name != null" >
         name,
+      </if>
+      <if test="memo != null" >
+      memo,
+      </if>
+      <if test="spec != null" >
+      spec,
       </if>
       <if test="englishName != null" >
         english_name,
@@ -68,6 +77,9 @@
       <if test="takingWay != null" >
         taking_way,
       </if>
+      <if test="unitStr != null" >
+        unit_str,
+      </if>
       <if test="dailyTimes != null" >
         daily_times,
       </if>
@@ -90,6 +102,12 @@
       </if>
       <if test="name != null" >
         #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null" >
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="spec != null" >
+        #{spec,jdbcType=VARCHAR},
       </if>
       <if test="englishName != null" >
         #{englishName,jdbcType=VARCHAR},
@@ -114,6 +132,9 @@
       </if>
       <if test="takingWay != null" >
         #{takingWay,jdbcType=VARCHAR},
+      </if>
+      <if test="unitStr != null" >
+        #{unitStr,jdbcType=VARCHAR},
       </if>
       <if test="dailyTimes != null" >
         #{dailyTimes,jdbcType=INTEGER},
@@ -144,6 +165,13 @@
       <if test="name != null" >
         and `name` LIKE CONCAT('%',#{name,jdbcType=VARCHAR},'%')
       </if>
+
+      <if test="memo != null" >
+        and `memo` LIKE CONCAT('%',#{memo,jdbcType=VARCHAR},'%')
+      </if>
+      <if test="spec != null" >
+        and `spec` LIKE CONCAT('%',#{spec,jdbcType=VARCHAR},'%')
+      </if>
       <if test="englishName != null" >
         and english_name LIKE CONCAT('%',#{englishName,jdbcType=VARCHAR})
       </if>
@@ -167,6 +195,9 @@
       </if>
       <if test="takingWay != null" >
         and taking_way = #{takingWay,jdbcType=VARCHAR}
+      </if>
+      <if test="unitStr != null" >
+        and unit_str = #{unitStr,jdbcType=VARCHAR}
       </if>
       <if test="dailyTimes != null" >
         and daily_times = #{dailyTimes,jdbcType=INTEGER}
@@ -205,6 +236,12 @@
       <if test="name != null" >
         and `name` LIKE CONCAT('%',#{name,jdbcType=VARCHAR},'%')
       </if>
+      <if test="memo != null" >
+        and `memo` LIKE CONCAT('%',#{memo,jdbcType=VARCHAR},'%')
+      </if>
+      <if test="spec != null" >
+        and `spec` LIKE CONCAT('%',#{spec,jdbcType=VARCHAR},'%')
+      </if>
       <if test="englishName != null" >
         and english_name LIKE CONCAT('%',#{englishName,jdbcType=VARCHAR})
       </if>
@@ -228,6 +265,9 @@
       </if>
       <if test="takingWay != null" >
         and taking_way = #{takingWay,jdbcType=VARCHAR}
+      </if>
+      <if test="unitStr != null" >
+        and unit_str = #{unitStr,jdbcType=VARCHAR}
       </if>
       <if test="dailyTimes != null" >
         and daily_times = #{dailyTimes,jdbcType=INTEGER}
@@ -266,6 +306,8 @@
     UPDATE medicine
     <trim prefix="set" suffixOverrides=",">
       <if test="name!=null">`name`=#{name},</if>
+      <if test="memo!=null">`memo`=#{memo},</if>
+      <if test="spec!=null">`spec`=#{spec},</if>
       <if test="englishName!=null">english_name=#{englishName},</if>
       <if test="type!=null">`type`=#{type},</if>
       <if test="unit!=null">unit=#{unit},</if>
@@ -274,6 +316,7 @@
       <if test="cellWeight!=null">cell_weight=#{cellWeight},</if>
       <if test="eachDose!=null">each_dose=#{eachDose},</if>
       <if test="takingWay!=null">taking_way=#{takingWay},</if>
+      <if test="unitStr!=null">unit_str=#{unitStr},</if>
       <if test="dailyTimes!=null">daily_times=#{dailyTimes},</if>
       <if test="status!=null">status=#{status},</if>
       update_time = current_timestamp(),

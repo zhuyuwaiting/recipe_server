@@ -96,4 +96,12 @@ public class MedicineVO extends ToString {
 
     private Date updateTime;
 
+    private String memo;
+    private String spec;
+
+    /**
+     * 手动定义的unit
+     */
+    private String unitStr;
+
 }

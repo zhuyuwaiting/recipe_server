@@ -80,6 +80,9 @@ CREATE TABLE `medicine` (
   `status` varchar(32) DEFAULT NULL,
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` datetime NOT NULL DEFAULT '1970-01-01 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+  `memo`  varchar(1024) COMMENT '备注',
+  `spec` varchar(1024) COMMENT '规格',
+  `unit_str` varchar(1024) COMMENT '手动定义的单位',
   PRIMARY KEY (`id`),
   UNIQUE KEY `medicine_no_uq` (`medicine_no`),
   KEY `medicine_no_name_e_index` (`medicine_no`,`name`,`english_name`)
@@ -88,15 +91,6 @@ CREATE TABLE `medicine` (
 -- ----------------------------
 -- Records of medicine
 -- ----------------------------
-INSERT INTO `medicine` VALUES ('1', '01243361553698264248000', '当归', null, 'CHINESE_MEDICINE', 'g', null, null, null, null, 'fried', null, 'INVALID', '2019-03-27 22:51:04', '2019-03-27 22:52:42');
-INSERT INTO `medicine` VALUES ('2', '01977291553698356589000', '枸杞', null, 'CHINESE_MEDICINE', 'g', null, null, null, null, 'fried', null, 'INVALID', '2019-03-27 22:52:37', '2019-03-27 22:52:40');
-INSERT INTO `medicine` VALUES ('3', '01253891553698387642000', '花', null, 'CHINESE_MEDICINE', 'g', null, null, null, null, 'orally', null, 'INVALID', '2019-03-27 22:53:08', '2019-03-27 22:54:31');
-INSERT INTO `medicine` VALUES ('4', '01497641553698477350000', '12', null, 'CHINESE_MEDICINE', 'g', null, null, null, null, 'orally', null, 'INVALID', '2019-03-27 22:54:37', '2019-03-27 22:54:40');
-INSERT INTO `medicine` VALUES ('5', '01195741553698501006000', '当归', 'dd', 'CHINESE_MEDICINE', 'g', null, null, null, null, 'orally', null, 'INVALID', '2019-03-27 22:55:01', '2019-03-27 22:59:14');
-INSERT INTO `medicine` VALUES ('6', '01894931553698533725000', 'ddd', null, 'WESTERN_MEDICINE', 'pocket', 'g', '2', '100', '200', 'orally', '2', 'INVALID', '2019-03-27 22:55:34', '2019-03-27 22:56:30');
-INSERT INTO `medicine` VALUES ('7', '01848151553698603853000', '22', '2', 'WESTERN_MEDICINE', 'pocket', 'g', '2', '200', '200', 'mixWater', '2', 'INVALID', '2019-03-27 22:56:44', '2019-03-27 22:59:18');
-INSERT INTO `medicine` VALUES ('8', '01911971553787140429000', '2', '12', 'CHINESE_MEDICINE', 'g', null, null, null, null, 'orally', null, 'INVALID', '2019-03-28 23:32:20', '2019-03-28 23:32:34');
-
 -- ----------------------------
 -- Table structure for recipe_detail
 -- ----------------------------

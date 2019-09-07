@@ -33,6 +33,14 @@ public class Medicine {
 
     private Date updateTime;
 
+    private String memo;
+    private String spec;
+
+    /**
+     * 手动定义的unit
+     */
+    private String unitStr;
+
     public Integer getId() {
         return id;
     }
@@ -151,5 +159,59 @@ public class Medicine {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    /**
+     * Getter method for property <tt>memo</tt>.
+     *
+     * @return property value of memo
+     */
+    public String getMemo() {
+        return memo;
+    }
+
+    /**
+     * Setter method for property <tt>memo</tt>.
+     *
+     * @param memo value to be assigned to property memo
+     */
+    public void setMemo(String memo) {
+        this.memo = memo;
+    }
+
+    /**
+     * Getter method for property <tt>spec</tt>.
+     *
+     * @return property value of spec
+     */
+    public String getSpec() {
+        return spec;
+    }
+
+    /**
+     * Setter method for property <tt>spec</tt>.
+     *
+     * @param spec value to be assigned to property spec
+     */
+    public void setSpec(String spec) {
+        this.spec = spec;
+    }
+
+    /**
+     * Getter method for property <tt>unitStr</tt>.
+     *
+     * @return property value of unitStr
+     */
+    public String getUnitStr() {
+        return unitStr;
+    }
+
+    /**
+     * Setter method for property <tt>unitStr</tt>.
+     *
+     * @param unitStr value to be assigned to property unitStr
+     */
+    public void setUnitStr(String unitStr) {
+        this.unitStr = unitStr;
     }
 }

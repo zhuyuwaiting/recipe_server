@@ -32,5 +32,12 @@ public class MedicineUpdateRequest extends BaseRequest {
 
     private String englishName;
 
+    private String memo;
+
+    private String spec;
+    /**
+     * 手动定义的unit
+     */
+    private String unitStr;
 
 }
