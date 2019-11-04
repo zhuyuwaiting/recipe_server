@@ -51,9 +51,6 @@ public class MedicineController {
         if(StringUtils.isEmpty(request.getName())){
             throw new CommonException(CommonResultEnum.PARAM_ERROR);
         }
-        if(StringUtils.isEmpty(request.getUnitStr())){
-            throw new CommonException(CommonResultEnum.PARAM_ERROR);
-        }
         return medicineService.add(request);
     }
 
