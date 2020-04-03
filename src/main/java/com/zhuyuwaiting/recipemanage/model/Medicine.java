@@ -34,7 +34,9 @@ public class Medicine {
     private Date updateTime;
 
     private String memo;
+
     private String spec;
+    private String frequency;
 
     /**
      * 手动定义的unit
@@ -213,5 +215,23 @@ public class Medicine {
      */
     public void setUnitStr(String unitStr) {
         this.unitStr = unitStr;
+    }
+
+    /**
+     * Getter method for property <tt>frequency</tt>.
+     *
+     * @return property value of frequency
+     */
+    public String getFrequency() {
+        return frequency;
+    }
+
+    /**
+     * Setter method for property <tt>frequency</tt>.
+     *
+     * @param frequency value to be assigned to property frequency
+     */
+    public void setFrequency(String frequency) {
+        this.frequency = frequency;
     }
 }

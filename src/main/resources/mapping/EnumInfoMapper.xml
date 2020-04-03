@@ -85,6 +85,17 @@
         </trim>
     </insert>
 
+    <update id="updateBySelective" parameterType="com.zhuyuwaiting.recipemanage.model.EnumInfo">
+        UPDATE enum_info
+        <trim prefix="set" suffixOverrides=",">
+            <if test="keyDesc!=null">`key_desc`=#{keyDesc},</if>
+            <if test="name!=null">`name`=#{name},</if>
+            <if test="desc!=null">`desc`=#{desc},</if>
+            <if test="status!=null">`status`=#{status},</if>
+            update_time = current_timestamp(),
+        </trim>
+        WHERE `key`=#{key} and `value`=#{value}
+    </update>
 
     <select id="selectByParams" parameterType="java.util.HashMap" resultMap="BaseResultMap">
         select

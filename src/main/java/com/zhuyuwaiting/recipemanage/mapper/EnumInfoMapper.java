@@ -11,6 +11,8 @@ public interface EnumInfoMapper {
 
     int insertSelective(EnumInfo record);
 
+    int updateBySelective(EnumInfo record);
+
     List<EnumInfo> selectByParams(Map params);
 
     int countByParams(Map params);

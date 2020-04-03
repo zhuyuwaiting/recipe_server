@@ -1,14 +1,14 @@
 version: '3'
 services:
-  nginx:
-    container_name: v-nginx
-    image: nginx:1.13
-    restart: always
-    ports:
-    - 80:80
-    - 443:443
-    volumes:
-    - ./nginx/conf.d:/etc/nginx/conf.d
+#  nginx:
+#    container_name: v-nginx
+#    image: nginx:1.13
+#    restart: always
+#    ports:
+#    - 80:80
+#    - 443:443
+#    volumes:
+#    - ./nginx/conf.d:/etc/nginx/conf.d
 
   mysql:
     container_name: v-mysql
@@ -27,18 +27,18 @@ services:
 #    command: --default-authentication-plugin=mysql_native_password
 
 
-  app:
-    restart: always
-    build: ./
-    working_dir: /recipe_server
-    volumes:
-    - ./:/recipe_server
-    - ~/.m2/conf:/root/.m2
-    expose:
-    - "8080"
-    environment:
-    - TZ=Asia/Shanghai
-    depends_on:
-    - nginx
-    - mysql
-    command: mvn clean spring-boot:run -Dspring-boot.run.profiles=docker
+#  app:
+#    restart: always
+#    build: ./
+#    working_dir: /recipe_server
+#    volumes:
+#    - ./:/recipe_server
+#    - ~/.m2/conf:/root/.m2
+#    expose:
+#    - "8080"
+#    environment:
+#    - TZ=Asia/Shanghai
+#    depends_on:
+#    - nginx
+#    - mysql
+#    command: mvn clean spring-boot:run -Dspring-boot.run.profiles=docker

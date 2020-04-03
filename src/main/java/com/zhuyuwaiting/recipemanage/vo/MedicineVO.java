@@ -104,4 +104,7 @@ public class MedicineVO extends ToString {
      */
     private String unitStr;
 
+    private String frequency;
+    private EnumInfo frequencyInfo;
+
 }

@@ -68,6 +68,7 @@ CREATE TABLE `medicine` (
   `each_dose` int(32) DEFAULT NULL COMMENT '每次剂量',
   `taking_way` varchar(32) DEFAULT NULL COMMENT '服用方式',
   `daily_times` int(32) DEFAULT NULL COMMENT '每日次数',
+  `frequency`  varchar(32) DEFAULT NULL COMMENT '用药频次',
   `status` varchar(32) DEFAULT NULL,
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` datetime NOT NULL DEFAULT '1970-01-01 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',

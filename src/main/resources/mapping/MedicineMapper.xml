@@ -16,19 +16,20 @@
     <result column="unit_str" property="unitStr" jdbcType="VARCHAR" />
     <result column="memo" property="memo" jdbcType="VARCHAR" />
     <result column="spec" property="spec" jdbcType="VARCHAR" />
+    <result column="frequency" property="frequency" jdbcType="VARCHAR" />
     <result column="daily_times" property="dailyTimes" jdbcType="INTEGER" />
     <result column="status" property="status" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <insert id="insert" parameterType="com.zhuyuwaiting.recipemanage.model.Medicine" >
-    insert into medicine (id, medicine_no, name, memo,spec,
+    insert into medicine (id, medicine_no, name, memo,spec,frequency,
       english_name, type, unit, 
       cell_unit, cell_num, cell_weight, 
       each_dose, taking_way,unit_str, daily_times,
       status, create_time, update_time
       )
-    values (#{id,jdbcType=INTEGER}, #{medicineNo,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR},#{spec,jdbcType=VARCHAR},
+    values (#{id,jdbcType=INTEGER}, #{medicineNo,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR},#{spec,jdbcType=VARCHAR},#{frequency,jdbcType=VARCHAR},
       #{englishName,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{unit,jdbcType=VARCHAR}, 
       #{cellUnit,jdbcType=VARCHAR}, #{cellNum,jdbcType=INTEGER}, #{cellWeight,jdbcType=INTEGER}, 
       #{eachDose,jdbcType=INTEGER}, #{takingWay,jdbcType=VARCHAR},#{unitStr,jdbcType=VARCHAR}, #{dailyTimes,jdbcType=INTEGER},
@@ -52,6 +53,9 @@
       </if>
       <if test="spec != null" >
       spec,
+      </if>
+      <if test="frequency != null" >
+        frequency,
       </if>
       <if test="englishName != null" >
         english_name,
@@ -108,6 +112,9 @@
       </if>
       <if test="spec != null" >
         #{spec,jdbcType=VARCHAR},
+      </if>
+      <if test="frequency != null" >
+        #{frequency,jdbcType=VARCHAR},
       </if>
       <if test="englishName != null" >
         #{englishName,jdbcType=VARCHAR},
@@ -171,6 +178,9 @@
       </if>
       <if test="spec != null" >
         and `spec` LIKE CONCAT('%',#{spec,jdbcType=VARCHAR},'%')
+      </if>
+      <if test="frequency != null" >
+        and `frequency` LIKE CONCAT('%',#{frequency,jdbcType=VARCHAR},'%')
       </if>
       <if test="englishName != null" >
         and english_name LIKE CONCAT('%',#{englishName,jdbcType=VARCHAR})
@@ -242,6 +252,9 @@
       <if test="spec != null" >
         and `spec` LIKE CONCAT('%',#{spec,jdbcType=VARCHAR},'%')
       </if>
+      <if test="frequency != null" >
+        and `frequency` LIKE CONCAT('%',#{frequency,jdbcType=VARCHAR},'%')
+      </if>
       <if test="englishName != null" >
         and english_name LIKE CONCAT('%',#{englishName,jdbcType=VARCHAR})
       </if>
@@ -308,6 +321,7 @@
       <if test="name!=null">`name`=#{name},</if>
       <if test="memo!=null">`memo`=#{memo},</if>
       <if test="spec!=null">`spec`=#{spec},</if>
+      <if test="frequency!=null">`frequency`=#{frequency},</if>
       <if test="englishName!=null">english_name=#{englishName},</if>
       <if test="type!=null">`type`=#{type},</if>
       <if test="unit!=null">unit=#{unit},</if>

@@ -52,5 +52,7 @@ public class MedicineAddRequest extends BaseRequest {
      */
     private String unitStr;
 
+    private String frequency;
+
 
 }

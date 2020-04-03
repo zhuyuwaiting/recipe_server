@@ -40,4 +40,6 @@ public class MedicineUpdateRequest extends BaseRequest {
      */
     private String unitStr;
 
+    private String frequency;
+
 }

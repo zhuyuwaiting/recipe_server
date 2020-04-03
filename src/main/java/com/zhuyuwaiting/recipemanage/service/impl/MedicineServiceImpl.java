@@ -149,6 +149,7 @@ public class MedicineServiceImpl implements MedicineService {
                 add(EnumInfoKeyEnum.MEDICINE_UNIT_EN.getCode());
                 add(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_EN.getCode());
                 add(EnumInfoKeyEnum.MEDICINE_CELL_UNIT.getCode());
+                add(EnumInfoKeyEnum.MEDICINE_FREQUENCY.getCode());
             }
         }});
         response.setEnumInfos(enumInfos);
@@ -190,6 +191,7 @@ public class MedicineServiceImpl implements MedicineService {
         keys.add(EnumInfoKeyEnum.MEDICINE_UNIT_EN.getCode());
         keys.add(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_CN.getCode());
         keys.add(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_EN.getCode());
+        keys.add(EnumInfoKeyEnum.MEDICINE_FREQUENCY.getCode());
         Map<String, Map<String, EnumInfo>> enumInfoMap = enumInfoService.queryEnumInfosWithKeys(keys);
         if (CollectionUtils.isEmpty(enumInfoMap)) {
             throw new CommonException(MedicineResultEnum.MEDICINE_ENUM_QUERY_ERROR);
@@ -218,6 +220,10 @@ public class MedicineServiceImpl implements MedicineService {
                 if (!StringUtils.isEmpty(medicineVO.getTakingWay())
                         && enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_EN.getCode()) != null) {
                     medicineVO.setTakingWayInfo(enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_EN.getCode()).get(medicineVO.getTakingWay()));
+                }
+                if (!StringUtils.isEmpty(medicineVO.getFrequency())
+                        && enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_FREQUENCY.getCode()) != null) {
+                    medicineVO.setFrequencyInfo(enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_FREQUENCY.getCode()).get(medicineVO.getFrequency()));
                 }
             }
         });

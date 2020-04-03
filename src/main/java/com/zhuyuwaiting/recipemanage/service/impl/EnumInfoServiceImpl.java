@@ -14,8 +14,10 @@ import com.zhuyuwaiting.recipemanage.model.EnumInfo;
 import com.zhuyuwaiting.recipemanage.service.EnumInfoService;
 import com.zhuyuwaiting.recipemanage.vo.EnumInfoVO;
 import com.zhuyuwaiting.recipemanage.vo.Pagination;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
@@ -23,7 +25,7 @@ import org.springframework.util.StringUtils;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
+@Slf4j
 @Service
 public class EnumInfoServiceImpl implements EnumInfoService {
 
@@ -165,14 +167,6 @@ public class EnumInfoServiceImpl implements EnumInfoService {
     @Override
     public EnumInfoAddResponse add(EnumInfoAddRequest request) {
         EnumInfoAddResponse response = new EnumInfoAddResponse();
-        EnumInfo temp = enumInfoMapper.selectByKeyAndValue(request.getKey(),request.getValue());
-        if(temp!=null){
-            if(StatusEnum.VALID.getCode().equals(temp.getStatus())){
-                throw new CommonException(EnumInfoResultEnum.ENUM_INFO_KEY_VALUE_EXIST);
-            }else{
-                throw new CommonException(EnumInfoResultEnum.ENUM_INFO_KEY_VALUE_EXIST_BAK);
-            }
-        }
         EnumInfo enumInfo = new EnumInfo();
         enumInfo.setKey(request.getKey());
         enumInfo.setKeyDesc(request.getKeyDesc());
@@ -182,7 +176,21 @@ public class EnumInfoServiceImpl implements EnumInfoService {
         enumInfo.setStatus(StatusEnum.VALID.getCode());
         enumInfo.setCreateTime(new Date());
         enumInfo.setUpdateTime(new Date());
-        enumInfoMapper.insertSelective(enumInfo);
+
+        EnumInfo temp = enumInfoMapper.selectByKeyAndValue(request.getKey(),request.getValue());
+        if(temp!=null){
+            if(StatusEnum.VALID.getCode().equals(temp.getStatus())){
+                throw new CommonException(EnumInfoResultEnum.ENUM_INFO_KEY_VALUE_EXIST);
+            }else{
+                enumInfoMapper.updateBySelective(enumInfo);
+            }
+        }
+        try {
+            enumInfoMapper.insertSelective(enumInfo);
+        }catch (DuplicateKeyException e){
+            log.info("索引冲突变更为更新");
+            enumInfoMapper.updateBySelective(enumInfo);
+        }
         response.setEnumInfo(enumInfo);
         return response;
     }
