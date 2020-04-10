@@ -17,25 +17,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping("/api/enumInfo")
 @Slf4j
 public class EnumInfoController {
 
-
     @Autowired
     private EnumInfoService enumInfoService;
 
-
-
     @RequestMapping("/del")
     @ResponseBody
-    public EnumInfoDelResponse del(@RequestBody EnumInfoDelRequest request){
-        if(StringUtils.isEmpty(request.getKey()) || StringUtils.isEmpty(request.getValue())){
+    public EnumInfoDelResponse del(@RequestBody EnumInfoDelRequest request) {
+        if (StringUtils.isEmpty(request.getKey()) || StringUtils.isEmpty(request.getName())) {
             throw new CommonException(CommonResultEnum.PARAM_ERROR);
         }
-        int result = enumInfoService.deleteByKey(request.getKey(),request.getValue());
-        if(result==0){
+        int result = enumInfoService.deleteByKey(request.getKey(), request.getName());
+        if (result == 0) {
             throw new CommonException(CommonResultEnum.DELETE_NO_PASS);
         }
         return new EnumInfoDelResponse();
@@ -43,17 +42,18 @@ public class EnumInfoController {
 
     @RequestMapping("/add")
     @ResponseBody
-    public EnumInfoAddResponse add(@RequestBody EnumInfoAddRequest request){
-        if(StringUtils.isEmpty(request.getKey()) || StringUtils.isEmpty(request.getValue())
-        || StringUtils.isEmpty(request.getName())){
+    public EnumInfoAddResponse add(@RequestBody EnumInfoAddRequest request) {
+        if (StringUtils.isEmpty(request.getKey())
+                || StringUtils.isEmpty(request.getName())) {
             throw new CommonException(CommonResultEnum.PARAM_ERROR);
         }
+        request.setValue(UUID.randomUUID().toString().replace("-",""));
         return enumInfoService.add(request);
     }
 
     @RequestMapping("/list")
     @ResponseBody
-    public EnumInfoListResponse list(EnumInfoListRequest request){
+    public EnumInfoListResponse list(EnumInfoListRequest request) {
         EnumInfoListResponse response = enumInfoService.queryEnumKeys(request);
         return response;
     }

@@ -16,7 +16,9 @@ mybatis:
 server:
   servlet:
     session:
-      timeout: 30m
+      timeout: 365d
+
+
 logging:
   level:
     com.zhuyuwaiting.recipemanage.mapper : DEBUG

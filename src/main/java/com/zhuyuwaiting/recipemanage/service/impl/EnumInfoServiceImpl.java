@@ -157,11 +157,11 @@ public class EnumInfoServiceImpl implements EnumInfoService {
     }
 
     @Override
-    public int deleteByKey(String key, String value) {
-        if (StringUtils.isEmpty(key) || StringUtils.isEmpty(value)) {
+    public int deleteByKey(String key, String name) {
+        if (StringUtils.isEmpty(key) || StringUtils.isEmpty(name)) {
             throw new CommonException(CommonResultEnum.PARAM_ERROR);
         }
-        return enumInfoMapper.deleteByKeyAndValue(key, value);
+        return enumInfoMapper.deleteByKeyAndName(key, name);
     }
 
     @Override
@@ -177,7 +177,7 @@ public class EnumInfoServiceImpl implements EnumInfoService {
         enumInfo.setCreateTime(new Date());
         enumInfo.setUpdateTime(new Date());
 
-        EnumInfo temp = enumInfoMapper.selectByKeyAndValue(request.getKey(),request.getValue());
+        EnumInfo temp = enumInfoMapper.selectByKeyAndName(request.getKey(),request.getName());
         if(temp!=null){
             if(StatusEnum.VALID.getCode().equals(temp.getStatus())){
                 throw new CommonException(EnumInfoResultEnum.ENUM_INFO_KEY_VALUE_EXIST);

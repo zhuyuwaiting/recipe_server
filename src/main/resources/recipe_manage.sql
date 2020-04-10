@@ -23,14 +23,14 @@ CREATE TABLE `enum_info` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `key` varchar(32) NOT NULL,
   `key_desc` varchar(256) DEFAULT NULL COMMENT '描述',
-  `value` varchar(32) DEFAULT NULL,
+  `value` varchar(64) DEFAULT NULL,
   `name` varchar(32) DEFAULT NULL,
   `desc` varchar(256) DEFAULT NULL,
   `status` varchar(32) DEFAULT NULL,
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` datetime NOT NULL DEFAULT '1970-01-01 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `enum_info_key_value_index` (`key`,`value`)
+  UNIQUE KEY `enum_info_key_name_index` (`key`,`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -72,6 +72,7 @@ CREATE TABLE `medicine` (
   `status` varchar(32) DEFAULT NULL,
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` datetime NOT NULL DEFAULT '1970-01-01 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+  `medical_advice` varchar(32) DEFAULT NULL
   PRIMARY KEY (`id`),
   UNIQUE KEY `medicine_no_uq` (`medicine_no`),
   KEY `medicine_no_name_e_index` (`medicine_no`,`name`,`english_name`)

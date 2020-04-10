@@ -54,5 +54,7 @@ public class MedicineAddRequest extends BaseRequest {
 
     private String frequency;
 
+    private String medicalAdvice;
+
 
 }

@@ -107,4 +107,7 @@ public class MedicineVO extends ToString {
     private String frequency;
     private EnumInfo frequencyInfo;
 
+    private String medicalAdvice;
+    private EnumInfo medicalAdviceInfo;
+
 }

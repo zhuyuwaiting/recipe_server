@@ -38,6 +38,7 @@ public class UserController {
             throw new CommonException(UserResultEnum.LOGIN_ERROR);
         }
         session.setAttribute("user", userInfo);
+        response.setCurrentAuthority("admin");
         return response;
     }
 
@@ -50,6 +51,7 @@ public class UserController {
         if(userInfoVO==null){
             throw new CommonException(UserResultEnum.LOGIN_ERROR);
         }
+        log.info(session.getMaxInactiveInterval()+"s");
         response.setUserInfo(userInfoVO);
         return response;
     }

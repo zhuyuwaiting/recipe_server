@@ -142,6 +142,7 @@ public class MedicineServiceImpl implements MedicineService {
         response.setPagination(pagination);
         // 組裝enumInfo 信息返回
         Map<String,List<EnumInfoVO>> enumInfos = enumInfoService.queryEnumInfoListWithKeys(new HashSet<String>(){{
+            add(EnumInfoKeyEnum.MEDICAL_ADVICE.getCode());
             if(org.apache.commons.lang3.StringUtils.equals(request.getType(),MedicineTypeEnum.CHINESE_MEDICINE.getCode())){
                 add(EnumInfoKeyEnum.MEDICINE_UNIT_CN.getCode());
                 add(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_CN.getCode());
@@ -192,12 +193,18 @@ public class MedicineServiceImpl implements MedicineService {
         keys.add(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_CN.getCode());
         keys.add(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_EN.getCode());
         keys.add(EnumInfoKeyEnum.MEDICINE_FREQUENCY.getCode());
+        keys.add(EnumInfoKeyEnum.MEDICAL_ADVICE.getCode());
         Map<String, Map<String, EnumInfo>> enumInfoMap = enumInfoService.queryEnumInfosWithKeys(keys);
         if (CollectionUtils.isEmpty(enumInfoMap)) {
             throw new CommonException(MedicineResultEnum.MEDICINE_ENUM_QUERY_ERROR);
         }
 
         medicineVOS.stream().forEach(medicineVO -> {
+            if (!StringUtils.isEmpty(medicineVO.getUnit())
+                    && enumInfoMap.get(EnumInfoKeyEnum.MEDICAL_ADVICE.getCode()) != null) {
+                medicineVO.setMedicalAdviceInfo(enumInfoMap.get(EnumInfoKeyEnum.MEDICAL_ADVICE.getCode()).get(medicineVO.getMedicalAdvice()));
+            }
+
             if(org.apache.commons.lang3.StringUtils.equals(MedicineTypeEnum.CHINESE_MEDICINE.getCode(),medicineVO.getType())){
                 if (!StringUtils.isEmpty(medicineVO.getUnit())
                         && enumInfoMap.get(EnumInfoKeyEnum.MEDICINE_UNIT_CN.getCode()) != null) {

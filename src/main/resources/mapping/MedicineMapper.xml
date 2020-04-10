@@ -9,6 +9,7 @@
     <result column="type" property="type" jdbcType="VARCHAR" />
     <result column="unit" property="unit" jdbcType="VARCHAR" />
     <result column="cell_unit" property="cellUnit" jdbcType="VARCHAR" />
+    <result column="medical_advice" property="medicalAdvice" jdbcType="VARCHAR" />
     <result column="cell_num" property="cellNum" jdbcType="INTEGER" />
     <result column="cell_weight" property="cellWeight" jdbcType="INTEGER" />
     <result column="each_dose" property="eachDose" jdbcType="INTEGER" />
@@ -25,13 +26,13 @@
   <insert id="insert" parameterType="com.zhuyuwaiting.recipemanage.model.Medicine" >
     insert into medicine (id, medicine_no, name, memo,spec,frequency,
       english_name, type, unit, 
-      cell_unit, cell_num, cell_weight, 
+      cell_unit,medical_advice, cell_num, cell_weight,
       each_dose, taking_way,unit_str, daily_times,
       status, create_time, update_time
       )
     values (#{id,jdbcType=INTEGER}, #{medicineNo,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR},#{spec,jdbcType=VARCHAR},#{frequency,jdbcType=VARCHAR},
       #{englishName,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{unit,jdbcType=VARCHAR}, 
-      #{cellUnit,jdbcType=VARCHAR}, #{cellNum,jdbcType=INTEGER}, #{cellWeight,jdbcType=INTEGER}, 
+      #{cellUnit,jdbcType=VARCHAR},#{medicalAdvice,jdbcType=VARCHAR}, #{cellNum,jdbcType=INTEGER}, #{cellWeight,jdbcType=INTEGER},
       #{eachDose,jdbcType=INTEGER}, #{takingWay,jdbcType=VARCHAR},#{unitStr,jdbcType=VARCHAR}, #{dailyTimes,jdbcType=INTEGER},
       #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
       )
@@ -68,6 +69,9 @@
       </if>
       <if test="cellUnit != null" >
         cell_unit,
+      </if>
+      <if test="medicalAdvice != null" >
+        medical_advice,
       </if>
       <if test="cellNum != null" >
         cell_num,
@@ -127,6 +131,9 @@
       </if>
       <if test="cellUnit != null" >
         #{cellUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="medicalAdvice != null" >
+        #{medicalAdvice,jdbcType=VARCHAR},
       </if>
       <if test="cellNum != null" >
         #{cellNum,jdbcType=INTEGER},
@@ -193,6 +200,9 @@
       </if>
       <if test="cellUnit != null" >
         and cell_unit = #{cellUnit,jdbcType=VARCHAR}
+      </if>
+      <if test="medicalAdvice != null" >
+        and medical_advice = #{medicalAdvice,jdbcType=VARCHAR}
       </if>
       <if test="cellNum != null" >
         and cell_num = #{cellNum,jdbcType=INTEGER}
@@ -267,6 +277,9 @@
       <if test="cellUnit != null" >
         and cell_unit = #{cellUnit,jdbcType=VARCHAR}
       </if>
+      <if test="medicalAdvice != null" >
+        and medical_advice = #{medicalAdvice,jdbcType=VARCHAR}
+      </if>
       <if test="cellNum != null" >
         and cell_num = #{cellNum,jdbcType=INTEGER}
       </if>
@@ -326,6 +339,7 @@
       <if test="type!=null">`type`=#{type},</if>
       <if test="unit!=null">unit=#{unit},</if>
       <if test="cellUnit!=null">cell_unit=#{cellUnit},</if>
+      <if test="medicalAdvice!=null">medical_advice=#{medicalAdvice},</if>
       <if test="cellNum!=null">cell_num=#{cellNum},</if>
       <if test="cellWeight!=null">cell_weight=#{cellWeight},</if>
       <if test="eachDose!=null">each_dose=#{eachDose},</if>

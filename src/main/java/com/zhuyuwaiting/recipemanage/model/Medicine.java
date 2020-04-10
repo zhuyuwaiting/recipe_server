@@ -43,6 +43,8 @@ public class Medicine {
      */
     private String unitStr;
 
+    private String medicalAdvice;
+
     public Integer getId() {
         return id;
     }
@@ -233,5 +235,23 @@ public class Medicine {
      */
     public void setFrequency(String frequency) {
         this.frequency = frequency;
+    }
+
+    /**
+     * Getter method for property <tt>medicalAdvice</tt>.
+     *
+     * @return property value of medicalAdvice
+     */
+    public String getMedicalAdvice() {
+        return medicalAdvice;
+    }
+
+    /**
+     * Setter method for property <tt>medicalAdvice</tt>.
+     *
+     * @param medicalAdvice value to be assigned to property medicalAdvice
+     */
+    public void setMedicalAdvice(String medicalAdvice) {
+        this.medicalAdvice = medicalAdvice;
     }
 }
