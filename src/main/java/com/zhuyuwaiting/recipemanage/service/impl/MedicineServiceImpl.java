@@ -200,7 +200,7 @@ public class MedicineServiceImpl implements MedicineService {
         }
 
         medicineVOS.stream().forEach(medicineVO -> {
-            if (!StringUtils.isEmpty(medicineVO.getUnit())
+            if (!StringUtils.isEmpty(medicineVO.getMedicalAdvice())
                     && enumInfoMap.get(EnumInfoKeyEnum.MEDICAL_ADVICE.getCode()) != null) {
                 medicineVO.setMedicalAdviceInfo(enumInfoMap.get(EnumInfoKeyEnum.MEDICAL_ADVICE.getCode()).get(medicineVO.getMedicalAdvice()));
             }
