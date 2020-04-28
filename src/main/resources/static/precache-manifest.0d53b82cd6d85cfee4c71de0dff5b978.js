@@ -76,11 +76,11 @@ self.__precacheManifest = [
     "url": "/p__User__models__register.js.async.js"
   },
   {
-    "revision": "a94fe04838b7e0a883af",
+    "revision": "436bbdfa80ebd46de28f",
     "url": "/p__recipe__ChineseMedicine.chunk.css"
   },
   {
-    "revision": "a94fe04838b7e0a883af",
+    "revision": "436bbdfa80ebd46de28f",
     "url": "/p__recipe__ChineseMedicine.async.js"
   },
   {
@@ -92,39 +92,39 @@ self.__precacheManifest = [
     "url": "/p__recipe__EnumInfo.async.js"
   },
   {
-    "revision": "3a67530e48d6da9f545a",
+    "revision": "a05b69fa32b11a55e7fb",
     "url": "/p__recipe__RecipeEdit.chunk.css"
   },
   {
-    "revision": "3a67530e48d6da9f545a",
+    "revision": "a05b69fa32b11a55e7fb",
     "url": "/p__recipe__RecipeEdit.async.js"
   },
   {
-    "revision": "9c13fc439caa0bc6b410",
+    "revision": "d623566338eb62d369f0",
     "url": "/p__recipe__RecipeManage.chunk.css"
   },
   {
-    "revision": "9c13fc439caa0bc6b410",
+    "revision": "d623566338eb62d369f0",
     "url": "/p__recipe__RecipeManage.async.js"
   },
   {
-    "revision": "b7d6e85fe7d0db8b389d",
+    "revision": "3f7f99bc1acc2ba2ebc8",
     "url": "/p__recipe__Template.async.js"
   },
   {
-    "revision": "34437b0396fc6846e8cc",
+    "revision": "907cd83acf50854a8da5",
     "url": "/p__recipe__TemplateAdd.async.js"
   },
   {
-    "revision": "fc64a21327213ded4b6f",
+    "revision": "538faeae697948f237ed",
     "url": "/p__recipe__TemplateUpdate.async.js"
   },
   {
-    "revision": "ad76440c300a9da31a84",
+    "revision": "ce7733f739b3248e1768",
     "url": "/p__recipe__WesternMedicine.chunk.css"
   },
   {
-    "revision": "ad76440c300a9da31a84",
+    "revision": "ce7733f739b3248e1768",
     "url": "/p__recipe__WesternMedicine.async.js"
   },
   {
@@ -152,12 +152,12 @@ self.__precacheManifest = [
     "url": "/favicon.png"
   },
   {
-    "revision": "347329d0982682b42d40c8162817a940",
-    "url": "/icons/icon-128x128.png"
-  },
-  {
     "revision": "c23aa881b8d0e959f6c0aeb5ae7e4baa",
     "url": "/icons/icon-192x192.png"
+  },
+  {
+    "revision": "347329d0982682b42d40c8162817a940",
+    "url": "/icons/icon-128x128.png"
   },
   {
     "revision": "5661ce8e2472d2727e8fd0390b22ba37",
