@@ -76,11 +76,11 @@ self.__precacheManifest = [
     "url": "/p__User__models__register.js.async.js"
   },
   {
-    "revision": "436bbdfa80ebd46de28f",
+    "revision": "8a326db416b28226ff1e",
     "url": "/p__recipe__ChineseMedicine.chunk.css"
   },
   {
-    "revision": "436bbdfa80ebd46de28f",
+    "revision": "8a326db416b28226ff1e",
     "url": "/p__recipe__ChineseMedicine.async.js"
   },
   {
@@ -120,11 +120,11 @@ self.__precacheManifest = [
     "url": "/p__recipe__TemplateUpdate.async.js"
   },
   {
-    "revision": "ce7733f739b3248e1768",
+    "revision": "8b133633c18f5f1ef208",
     "url": "/p__recipe__WesternMedicine.chunk.css"
   },
   {
-    "revision": "ce7733f739b3248e1768",
+    "revision": "8b133633c18f5f1ef208",
     "url": "/p__recipe__WesternMedicine.async.js"
   },
   {
@@ -152,12 +152,12 @@ self.__precacheManifest = [
     "url": "/favicon.png"
   },
   {
-    "revision": "c23aa881b8d0e959f6c0aeb5ae7e4baa",
-    "url": "/icons/icon-192x192.png"
-  },
-  {
     "revision": "347329d0982682b42d40c8162817a940",
     "url": "/icons/icon-128x128.png"
+  },
+  {
+    "revision": "c23aa881b8d0e959f6c0aeb5ae7e4baa",
+    "url": "/icons/icon-192x192.png"
   },
   {
     "revision": "5661ce8e2472d2727e8fd0390b22ba37",
