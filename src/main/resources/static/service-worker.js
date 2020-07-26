@@ -1,4 +1,4 @@
-importScripts("/precache-manifest.aeede74d54f371e163ba9f966d666645.js", "/workbox-v3.6.3/workbox-sw.js");
+importScripts("/precache-manifest.bcdaeac474549ed3f986aca8f5194011.js", "/workbox-v3.6.3/workbox-sw.js");
 workbox.setConfig({modulePathPrefix: "/workbox-v3.6.3"});
 /* globals workbox */
 /* eslint-disable no-restricted-globals */

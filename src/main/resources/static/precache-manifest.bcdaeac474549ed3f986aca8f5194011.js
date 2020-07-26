@@ -120,11 +120,11 @@ self.__precacheManifest = [
     "url": "/p__recipe__TemplateUpdate.async.js"
   },
   {
-    "revision": "078eaf61701a44f31c0f",
+    "revision": "1f60d131e583aff6ec93",
     "url": "/p__recipe__WesternMedicine.chunk.css"
   },
   {
-    "revision": "078eaf61701a44f31c0f",
+    "revision": "1f60d131e583aff6ec93",
     "url": "/p__recipe__WesternMedicine.async.js"
   },
   {
