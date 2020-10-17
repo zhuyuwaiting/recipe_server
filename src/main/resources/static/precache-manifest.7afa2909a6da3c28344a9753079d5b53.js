@@ -92,19 +92,19 @@ self.__precacheManifest = [
     "url": "/p__recipe__EnumInfo.async.js"
   },
   {
-    "revision": "5f71601129d8a0fdc66b",
+    "revision": "cd7849cd2ca45f631cd2",
     "url": "/p__recipe__RecipeEdit.chunk.css"
   },
   {
-    "revision": "5f71601129d8a0fdc66b",
+    "revision": "cd7849cd2ca45f631cd2",
     "url": "/p__recipe__RecipeEdit.async.js"
   },
   {
-    "revision": "e51b0ccb9952e35c031d",
+    "revision": "bd6ef563773916385f77",
     "url": "/p__recipe__RecipeManage.chunk.css"
   },
   {
-    "revision": "e51b0ccb9952e35c031d",
+    "revision": "bd6ef563773916385f77",
     "url": "/p__recipe__RecipeManage.async.js"
   },
   {

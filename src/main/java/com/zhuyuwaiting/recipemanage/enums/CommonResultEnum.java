@@ -13,6 +13,8 @@ public enum  CommonResultEnum implements ResultEnum{
 
     NO_SESSION("NO_SESSION","未登录"),
     DELETE_NO_PASS("DELETE_NO_PASS","删除失败"),
+
+
     ;
 
     private String code;

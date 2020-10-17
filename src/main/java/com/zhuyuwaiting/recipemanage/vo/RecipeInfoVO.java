@@ -14,6 +14,8 @@ public class RecipeInfoVO {
     private String recipeNo;
 
     private String recipeType;
+    private String ageType;
+    private String ageTypeName;
 
     private String patientName;
 
@@ -36,4 +38,5 @@ public class RecipeInfoVO {
     private Date updateTime;
 
     private List<RecipeDetailVO> recipeDetailVOS;
+
 }

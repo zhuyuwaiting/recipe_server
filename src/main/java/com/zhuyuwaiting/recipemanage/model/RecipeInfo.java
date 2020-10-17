@@ -8,6 +8,7 @@ public class RecipeInfo {
     private String recipeNo;
 
     private String recipeType;
+    private String ageType;
 
     private String patientName;
 
@@ -131,5 +132,13 @@ public class RecipeInfo {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public String getAgeType() {
+        return ageType;
+    }
+
+    public void setAgeType(String ageType) {
+        this.ageType = ageType;
     }
 }

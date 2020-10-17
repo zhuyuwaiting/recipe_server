@@ -9,6 +9,7 @@ import com.zhuyuwaiting.recipemanage.controller.res.RecipeAddResponse;
 import com.zhuyuwaiting.recipemanage.controller.res.RecipeDelResponse;
 import com.zhuyuwaiting.recipemanage.controller.res.RecipeListResponse;
 import com.zhuyuwaiting.recipemanage.controller.res.RecipeUpdateResponse;
+import com.zhuyuwaiting.recipemanage.enums.AgeTypeEnum;
 import com.zhuyuwaiting.recipemanage.enums.SceneNoEnum;
 import com.zhuyuwaiting.recipemanage.enums.StatusEnum;
 import com.zhuyuwaiting.recipemanage.mapper.RecipeDetailMapper;
@@ -71,6 +72,10 @@ public class RecipeServiceImpl implements RecipeService {
         List<RecipeInfoVO> recipeInfoVOS = recipeInfos.stream().map(recipeInfo -> {
            RecipeInfoVO recipeInfoVO = new RecipeInfoVO();
             BeanUtils.copyProperties(recipeInfo,recipeInfoVO);
+            AgeTypeEnum ageType = AgeTypeEnum.getByCode(recipeInfo.getAgeType());
+            if (ageType != null) {
+                recipeInfoVO.setAgeTypeName(ageType.getDesc());
+            }
            return recipeInfoVO;
         }).collect(Collectors.toList());
         response.setRecipeInfoVOS(recipeInfoVOS);
@@ -141,6 +146,10 @@ public class RecipeServiceImpl implements RecipeService {
             }
         }
         RecipeInfoVO recipeInfoVO = new RecipeInfoVO();
+        AgeTypeEnum ageType = AgeTypeEnum.getByCode(recipeInfo.getAgeType());
+        if (ageType != null) {
+            recipeInfoVO.setAgeTypeName(ageType.getDesc());
+        }
         BeanUtils.copyProperties(recipeInfo, recipeInfoVO);
         if (!CollectionUtils.isEmpty(recipeDetailMap.get(recipeInfo.getRecipeNo()))) {
             List<RecipeDetailVO> recipeDetailVOS = recipeDetailMap.get(recipeInfo.getRecipeNo())

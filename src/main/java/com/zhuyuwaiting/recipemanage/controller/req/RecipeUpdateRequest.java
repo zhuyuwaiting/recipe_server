@@ -17,6 +17,7 @@ public class RecipeUpdateRequest extends BaseRequest {
     private String patientName;
 
     private Byte patientSex;
+    private String ageType;
 
     private Integer patientAge;
 

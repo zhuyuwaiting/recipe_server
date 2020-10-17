@@ -20,6 +20,7 @@ public class RecipeAddRequest extends BaseRequest {
     private Integer patientAge;
 
     private String payType;
+    private String ageType;
 
     private String disease;
 
@@ -33,5 +34,7 @@ public class RecipeAddRequest extends BaseRequest {
     private Date updateTime;
 
     private List<RecipeDetailVO> recipeDetailVOS;
+
+
 
 }
