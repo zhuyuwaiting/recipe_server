@@ -92,11 +92,11 @@ self.__precacheManifest = [
     "url": "/p__recipe__EnumInfo.async.js"
   },
   {
-    "revision": "cd7849cd2ca45f631cd2",
+    "revision": "b02c7ebffcd1a369d8d4",
     "url": "/p__recipe__RecipeEdit.chunk.css"
   },
   {
-    "revision": "cd7849cd2ca45f631cd2",
+    "revision": "b02c7ebffcd1a369d8d4",
     "url": "/p__recipe__RecipeEdit.async.js"
   },
   {
@@ -112,11 +112,11 @@ self.__precacheManifest = [
     "url": "/p__recipe__Template.async.js"
   },
   {
-    "revision": "8ab545b347c662c24ccf",
+    "revision": "10b0f3395fa9b09bfc69",
     "url": "/p__recipe__TemplateAdd.async.js"
   },
   {
-    "revision": "68bc04fcfacae55bac01",
+    "revision": "3b88921c82e1ed41862e",
     "url": "/p__recipe__TemplateUpdate.async.js"
   },
   {
@@ -156,12 +156,12 @@ self.__precacheManifest = [
     "url": "/icons/icon-128x128.png"
   },
   {
-    "revision": "5661ce8e2472d2727e8fd0390b22ba37",
-    "url": "/icons/icon-512x512.png"
-  },
-  {
     "revision": "c23aa881b8d0e959f6c0aeb5ae7e4baa",
     "url": "/icons/icon-192x192.png"
+  },
+  {
+    "revision": "5661ce8e2472d2727e8fd0390b22ba37",
+    "url": "/icons/icon-512x512.png"
   },
   {
     "revision": "0e530af6fe2f20b65c32fcee3b608160",
