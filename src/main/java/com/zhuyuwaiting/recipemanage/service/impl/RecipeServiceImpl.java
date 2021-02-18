@@ -102,6 +102,7 @@ public class RecipeServiceImpl implements RecipeService {
                     RecipeDetail recipeDetail = new RecipeDetail();
                     recipeDetail.setMedicineNo(recipeDetailVO.getMedicineNo());
                     recipeDetail.setMedicineNum(recipeDetailVO.getMedicineNum());
+                    recipeDetail.setMedicineAdvice(recipeDetailVO.getMedicineAdvice());
                     recipeDetail.setRecipeNo(recipeInfoNo);
                     return recipeDetail;
                 }).collect(Collectors.toList());

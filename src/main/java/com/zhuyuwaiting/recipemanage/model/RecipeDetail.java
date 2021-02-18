@@ -8,6 +8,7 @@ public class RecipeDetail {
     private String medicineNo;
 
     private Integer medicineNum;
+    private String  medicineAdvice;
 
     public Integer getId() {
         return id;
@@ -39,5 +40,13 @@ public class RecipeDetail {
 
     public void setMedicineNum(Integer medicineNum) {
         this.medicineNum = medicineNum;
+    }
+
+    public String getMedicineAdvice() {
+        return medicineAdvice;
+    }
+
+    public void setMedicineAdvice(String medicineAdvice) {
+        this.medicineAdvice = medicineAdvice;
     }
 }

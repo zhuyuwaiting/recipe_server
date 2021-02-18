@@ -12,6 +12,7 @@ public class RecipeDetailVO extends ToString {
     private String recipeNo;
 
     private String medicineNo;
+    private String     medicineAdvice;
 
     private Integer medicineNum;
 
