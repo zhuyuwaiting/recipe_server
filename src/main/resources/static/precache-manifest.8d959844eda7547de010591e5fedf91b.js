@@ -92,19 +92,19 @@ self.__precacheManifest = [
     "url": "/p__recipe__EnumInfo.async.js"
   },
   {
-    "revision": "b59c9f64b19053053380",
+    "revision": "f247075f788ffddfc43a",
     "url": "/p__recipe__RecipeEdit.chunk.css"
   },
   {
-    "revision": "b59c9f64b19053053380",
+    "revision": "f247075f788ffddfc43a",
     "url": "/p__recipe__RecipeEdit.async.js"
   },
   {
-    "revision": "bd6ef563773916385f77",
+    "revision": "1674bebfc298c3321e39",
     "url": "/p__recipe__RecipeManage.chunk.css"
   },
   {
-    "revision": "bd6ef563773916385f77",
+    "revision": "1674bebfc298c3321e39",
     "url": "/p__recipe__RecipeManage.async.js"
   },
   {
@@ -128,11 +128,11 @@ self.__precacheManifest = [
     "url": "/p__recipe__WesternMedicine.async.js"
   },
   {
-    "revision": "5739c495e3ec943b1492",
+    "revision": "b0a07212273e3851fe3e",
     "url": "/umi.css"
   },
   {
-    "revision": "5739c495e3ec943b1492",
+    "revision": "b0a07212273e3851fe3e",
     "url": "/umi.js"
   },
   {
@@ -148,20 +148,20 @@ self.__precacheManifest = [
     "url": "/index.html"
   },
   {
-    "revision": "347329d0982682b42d40c8162817a940",
-    "url": "/icons/icon-128x128.png"
-  },
-  {
     "revision": "694c4300be571fdd4d8b6abbe14d2e3f",
     "url": "/favicon.png"
   },
   {
-    "revision": "5661ce8e2472d2727e8fd0390b22ba37",
-    "url": "/icons/icon-512x512.png"
+    "revision": "347329d0982682b42d40c8162817a940",
+    "url": "/icons/icon-128x128.png"
   },
   {
     "revision": "c23aa881b8d0e959f6c0aeb5ae7e4baa",
     "url": "/icons/icon-192x192.png"
+  },
+  {
+    "revision": "5661ce8e2472d2727e8fd0390b22ba37",
+    "url": "/icons/icon-512x512.png"
   },
   {
     "revision": "0e530af6fe2f20b65c32fcee3b608160",
