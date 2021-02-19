@@ -81,6 +81,7 @@ public class MedicineServiceImpl implements MedicineService {
         // 首先根据名字查询当前是否存在同名的药品
         Map<String, Object> params = new HashMap<>();
         params.put("name", request.getName());
+        params.put("nameEqual", request.getName());
         params.put("status", StatusEnum.VALID.getCode());
         int count = medicineMapper.countByParams(params);
         if (count >0) {

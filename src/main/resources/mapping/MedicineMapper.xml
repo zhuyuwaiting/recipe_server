@@ -256,6 +256,9 @@
       <if test="name != null" >
         and `name` LIKE CONCAT('%',#{name,jdbcType=VARCHAR},'%')
       </if>
+      <if test="nameEqual != null" >
+        and `name` = #{nameEqual,jdbcType=VARCHAR}
+      </if>
       <if test="memo != null" >
         and `memo` LIKE CONCAT('%',#{memo,jdbcType=VARCHAR},'%')
       </if>
