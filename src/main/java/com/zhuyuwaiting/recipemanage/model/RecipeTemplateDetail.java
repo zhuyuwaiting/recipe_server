@@ -6,6 +6,7 @@ public class RecipeTemplateDetail {
     private String recipeTemplateNo;
 
     private String medicineNo;
+    private String medicineAdvice;
 
     private Integer medicineNum;
 
@@ -39,5 +40,13 @@ public class RecipeTemplateDetail {
 
     public void setMedicineNum(Integer medicineNum) {
         this.medicineNum = medicineNum;
+    }
+
+    public String getMedicineAdvice() {
+        return medicineAdvice;
+    }
+
+    public void setMedicineAdvice(String medicineAdvice) {
+        this.medicineAdvice = medicineAdvice;
     }
 }

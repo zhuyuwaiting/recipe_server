@@ -136,6 +136,7 @@ public class RecipeTemplateServiceImpl implements RecipeTemplateService {
                 .stream().map(recipeTemplateDetailVO -> {
                     RecipeTemplateDetail recipeTemplateDetail = new RecipeTemplateDetail();
                     recipeTemplateDetail.setMedicineNum(recipeTemplateDetailVO.getMedicineNum());
+                    recipeTemplateDetail.setMedicineAdvice(recipeTemplateDetailVO.getMedicineAdvice());
                     recipeTemplateDetail.setMedicineNo(recipeTemplateDetailVO.getMedicineNo());
                     recipeTemplateDetail.setRecipeTemplateNo(recipeTemplate.getRecipeTemplateNo());
                     return recipeTemplateDetail;
