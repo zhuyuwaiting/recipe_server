@@ -1,6 +1,7 @@
 package com.zhuyuwaiting.recipemanage.service.impl;
 
 import com.zhuyuwaiting.recipemanage.RecipeManageApplicationTests;
+import com.zhuyuwaiting.recipemanage.enums.EnumInfoKeyEnum;
 import com.zhuyuwaiting.recipemanage.model.EnumInfo;
 import com.zhuyuwaiting.recipemanage.service.EnumInfoService;
 import org.junit.Test;
@@ -23,8 +24,13 @@ public class EnumInfoServiceImplTest extends RecipeManageApplicationTests {
     @Test
     public void queryEnumInfosWithKeys() {
         Set<String>  keys = new HashSet<>();
-        keys.add("A");
-        keys.add("B");
+        keys.add(EnumInfoKeyEnum.MEDICINE_CELL_UNIT.getCode());
+        keys.add(EnumInfoKeyEnum.MEDICINE_UNIT_CN.getCode());
+        keys.add(EnumInfoKeyEnum.MEDICINE_UNIT_EN.getCode());
+        keys.add(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_CN.getCode());
+        keys.add(EnumInfoKeyEnum.MEDICINE_TAKING_WAY_EN.getCode());
+        keys.add(EnumInfoKeyEnum.MEDICINE_FREQUENCY.getCode());
+        keys.add(EnumInfoKeyEnum.MEDICAL_ADVICE.getCode());
         Map<String, Map<String,EnumInfo>> result = enumInfoService.queryEnumInfosWithKeys(keys);
         System.out.println(result);
     }
