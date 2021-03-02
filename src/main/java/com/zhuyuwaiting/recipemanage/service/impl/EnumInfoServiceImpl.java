@@ -183,6 +183,8 @@ public class EnumInfoServiceImpl implements EnumInfoService {
                 throw new CommonException(EnumInfoResultEnum.ENUM_INFO_KEY_VALUE_EXIST);
             }else{
                 enumInfoMapper.updateBySelective(enumInfo);
+                response.setEnumInfo(enumInfo);
+                return response;
             }
         }
         try {
