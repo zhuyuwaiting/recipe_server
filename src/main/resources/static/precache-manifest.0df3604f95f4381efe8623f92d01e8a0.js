@@ -92,39 +92,39 @@ self.__precacheManifest = [
     "url": "/p__recipe__EnumInfo.async.js"
   },
   {
-    "revision": "85d3c0064eadb098780f",
+    "revision": "eca1e54cdd14057897f3",
     "url": "/p__recipe__RecipeEdit.chunk.css"
   },
   {
-    "revision": "85d3c0064eadb098780f",
+    "revision": "eca1e54cdd14057897f3",
     "url": "/p__recipe__RecipeEdit.async.js"
   },
   {
-    "revision": "0cd5892eefb8feecec9d",
+    "revision": "71801c9bcdcfc2784e0b",
     "url": "/p__recipe__RecipeManage.chunk.css"
   },
   {
-    "revision": "0cd5892eefb8feecec9d",
+    "revision": "71801c9bcdcfc2784e0b",
     "url": "/p__recipe__RecipeManage.async.js"
   },
   {
-    "revision": "00b77511d2f35e72bf4b",
+    "revision": "ddbebf64be01a582cbff",
     "url": "/p__recipe__Template.async.js"
   },
   {
-    "revision": "0ba6d33072add51b9c0d",
+    "revision": "319cbbfa43660aec4c75",
     "url": "/p__recipe__TemplateAdd.async.js"
   },
   {
-    "revision": "ebede10d721c1e64dbfd",
+    "revision": "19fe0ee96c0ac9ab3a54",
     "url": "/p__recipe__TemplateUpdate.async.js"
   },
   {
-    "revision": "1f60d131e583aff6ec93",
+    "revision": "5db7105d8a81d651ec13",
     "url": "/p__recipe__WesternMedicine.chunk.css"
   },
   {
-    "revision": "1f60d131e583aff6ec93",
+    "revision": "5db7105d8a81d651ec13",
     "url": "/p__recipe__WesternMedicine.async.js"
   },
   {
@@ -152,16 +152,16 @@ self.__precacheManifest = [
     "url": "/favicon.png"
   },
   {
-    "revision": "c23aa881b8d0e959f6c0aeb5ae7e4baa",
-    "url": "/icons/icon-192x192.png"
+    "revision": "5661ce8e2472d2727e8fd0390b22ba37",
+    "url": "/icons/icon-512x512.png"
   },
   {
     "revision": "347329d0982682b42d40c8162817a940",
     "url": "/icons/icon-128x128.png"
   },
   {
-    "revision": "5661ce8e2472d2727e8fd0390b22ba37",
-    "url": "/icons/icon-512x512.png"
+    "revision": "c23aa881b8d0e959f6c0aeb5ae7e4baa",
+    "url": "/icons/icon-192x192.png"
   },
   {
     "revision": "0e530af6fe2f20b65c32fcee3b608160",
