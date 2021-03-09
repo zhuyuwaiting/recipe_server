@@ -100,11 +100,11 @@ self.__precacheManifest = [
     "url": "/p__recipe__RecipeEdit.async.js"
   },
   {
-    "revision": "d5d3cece4275c36a1166",
+    "revision": "8c75f9524fa09a76ded0",
     "url": "/p__recipe__RecipeManage.chunk.css"
   },
   {
-    "revision": "d5d3cece4275c36a1166",
+    "revision": "8c75f9524fa09a76ded0",
     "url": "/p__recipe__RecipeManage.async.js"
   },
   {
@@ -152,16 +152,16 @@ self.__precacheManifest = [
     "url": "/favicon.png"
   },
   {
-    "revision": "c23aa881b8d0e959f6c0aeb5ae7e4baa",
-    "url": "/icons/icon-192x192.png"
-  },
-  {
     "revision": "347329d0982682b42d40c8162817a940",
     "url": "/icons/icon-128x128.png"
   },
   {
     "revision": "5661ce8e2472d2727e8fd0390b22ba37",
     "url": "/icons/icon-512x512.png"
+  },
+  {
+    "revision": "c23aa881b8d0e959f6c0aeb5ae7e4baa",
+    "url": "/icons/icon-192x192.png"
   },
   {
     "revision": "0e530af6fe2f20b65c32fcee3b608160",
