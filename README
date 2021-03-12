@@ -1,0 +1,81 @@
+# 环境准备
+1. 下载jdk，idea，下载node
+2. 下载代码，recipe_server ,recipe_client
+3. 替换 recipe_server 中的 docker-compose.yaml（**注意这里的变更不要提交到git 不要提交到git**）
+替换为：
+
+```
+version: '3'
+services:
+#  nginx:
+#    container_name: v-nginx
+#    image: nginx:1.13
+#    restart: always
+#    ports:
+#    - 80:80
+#    - 443:443
+#    volumes:
+#    - ./nginx/conf.d:/etc/nginx/conf.d
+
+  mysql:
+    container_name: v-mysql
+    image: mysql/mysql-server:5.7
+    volumes:
+      - ./conf/my.cnf:/etc/my.cnf
+      - ./data:/var/lib/mysql
+      - ./sh:/docker-entrypoint-initdb.d/
+    environment:
+      MYSQL_DATABASE: recipe_manage
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: '%'
+    ports:
+    - "3306:3306"
+    restart: always
+#    command: --default-authentication-plugin=mysql_native_password
+
+
+#  app:
+#    restart: always
+#    build: ./
+#    working_dir: /recipe_server
+#    volumes:
+#    - ./:/recipe_server
+#    - ~/.m2/conf:/root/.m2
+#    expose:
+#    - "8080"
+#    environment:
+#    - TZ=Asia/Shanghai
+#    depends_on:
+#    - nginx
+#    - mysql
+#    command: mvn clean spring-boot:run -Dspring-boot.run.profiles=docker
+
+```
+
+就是注释掉一app的代码 和 niginx的代码
+
+然后命令行： 运行  docker-compose up  （会启动和初始化数据库）
+用 recipe_server 里面的 src-main-recources-recipe_manage.sql 初始化表信息。
+
+recipe_server 直接用idea 运行RecipeManageApplication 类。
+
+
+recipe_client  目录下 npm install
+
+切换到 feature_19_11_04 分支
+
+运行： npm run start:no-mock
+
+
+recipe_client 主要管页面 ，目录在recipe_client/src/pages/recipe 里面
+
+修改完成之后：
+
+
+运行 npm run build 将recipe_client 下面的dist 全部拷贝到 recipe_server里面的 src_main_resource_static中， 替换文件，
+将recipe_server 的 static 提交到git， 就可以了。
+
+到机器上/home/admin/workspace/recipe_server目录运行 git pull
+然后运行 docker-compose down
+再运行： nohup docker-compose up &
+
