@@ -83,7 +83,7 @@ public class MedicineServiceImpl implements MedicineService {
         params.put("nameEqual", request.getName());
         params.put("status", StatusEnum.VALID.getCode());
         int count = medicineMapper.countByParams(params);
-        if (count >0) {
+        if ("CHINESE_MEDICINE".equals(request.getType())&& count >0) {
             throw new CommonException(MedicineResultEnum.MEDICINE_NAME_EXIST);
         }
         MedicineAddResponse response = new MedicineAddResponse();
