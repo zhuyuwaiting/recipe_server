@@ -1873,3 +1873,546 @@
 [2021-11-06 17:54:14.976] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
 [2021-11-06 17:54:14.976] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
 [2021-11-06 17:54:14.985] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 17:58:18.772] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==>  Preparing: select id,uid,username,role_id,status,create_time,update_time,nick,avatar from user_info WHERE username = ? and password = ? and status = ? 
+[2021-11-06 17:58:18.800] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==> Parameters: guest(String), 1234(String), VALID(String)
+[2021-11-06 17:58:18.820] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 17:58:18.899] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from enum_info WHERE `name` is null and status = ? 
+[2021-11-06 17:58:18.900] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 17:58:18.907] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 17:58:18.910] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is null and status = ? 
+[2021-11-06 17:58:18.911] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 17:58:18.918] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - <==      Total: 7
+[2021-11-06 17:58:18.932] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and status = ? and `key` in ( ? , ? , ? , ? , ? , ? , ? ) order by create_time desc 
+[2021-11-06 17:58:18.933] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 17:58:18.957] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - <==      Total: 136
+[2021-11-06 17:58:24.156] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine WHERE `type` = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 17:58:24.157] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==> Parameters: CHINESE_MEDICINE(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 17:58:24.168] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 17:58:24.170] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from medicine WHERE type = ? and status = ? 
+[2021-11-06 17:58:24.172] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==> Parameters: CHINESE_MEDICINE(String), VALID(String)
+[2021-11-06 17:58:24.178] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 17:58:24.181] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and status = ? and `key` in ( ? , ? , ? ) 
+[2021-11-06 17:58:24.182] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), MEDICINE_TAKING_WAY_CN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String)
+[2021-11-06 17:58:24.189] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - <==      Total: 26
+[2021-11-06 17:58:24.199] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 17:58:24.200] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 17:58:24.220] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 17:58:27.860] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine WHERE `type` = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 17:58:27.861] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==> Parameters: CHINESE_MEDICINE(String), VALID(String), 10(Integer), 10(Integer)
+[2021-11-06 17:58:27.871] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 17:58:27.872] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from medicine WHERE type = ? and status = ? 
+[2021-11-06 17:58:27.873] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==> Parameters: CHINESE_MEDICINE(String), VALID(String)
+[2021-11-06 17:58:27.878] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 17:58:27.879] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and status = ? and `key` in ( ? , ? , ? ) 
+[2021-11-06 17:58:27.880] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), MEDICINE_TAKING_WAY_CN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String)
+[2021-11-06 17:58:27.886] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - <==      Total: 26
+[2021-11-06 17:58:27.899] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 17:58:27.900] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 17:58:27.915] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 17:58:45.685] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine WHERE `type` = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 17:58:45.686] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==> Parameters: CHINESE_MEDICINE(String), VALID(String), 20(Integer), 10(Integer)
+[2021-11-06 17:58:45.693] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 17:58:45.694] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from medicine WHERE type = ? and status = ? 
+[2021-11-06 17:58:45.695] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==> Parameters: CHINESE_MEDICINE(String), VALID(String)
+[2021-11-06 17:58:45.700] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 17:58:45.701] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and status = ? and `key` in ( ? , ? , ? ) 
+[2021-11-06 17:58:45.702] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), MEDICINE_TAKING_WAY_CN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String)
+[2021-11-06 17:58:45.707] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - <==      Total: 26
+[2021-11-06 17:58:45.710] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 17:58:45.712] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 17:58:45.726] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 17:58:47.573] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine WHERE `type` = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 17:58:47.574] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==> Parameters: WESTERN_MEDICINE(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 17:58:47.582] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 17:58:47.583] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from medicine WHERE type = ? and status = ? 
+[2021-11-06 17:58:47.584] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==> Parameters: WESTERN_MEDICINE(String), VALID(String)
+[2021-11-06 17:58:47.589] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 17:58:47.590] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and status = ? and `key` in ( ? , ? , ? , ? , ? ) 
+[2021-11-06 17:58:47.590] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), MEDICINE_CELL_UNIT(String), MEDICINE_FREQUENCY(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_EN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 17:58:47.596] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - <==      Total: 110
+[2021-11-06 17:58:47.599] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 17:58:47.599] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 17:58:47.605] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 17:58:53.706] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine WHERE `type` = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 17:58:53.707] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: WESTERN_MEDICINE(String), VALID(String), 10(Integer), 10(Integer)
+[2021-11-06 17:58:53.714] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 17:58:53.715] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from medicine WHERE type = ? and status = ? 
+[2021-11-06 17:58:53.715] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: WESTERN_MEDICINE(String), VALID(String)
+[2021-11-06 17:58:53.720] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 17:58:53.721] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and status = ? and `key` in ( ? , ? , ? , ? , ? ) 
+[2021-11-06 17:58:53.722] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), MEDICINE_CELL_UNIT(String), MEDICINE_FREQUENCY(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_EN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 17:58:53.727] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 110
+[2021-11-06 17:58:53.730] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 17:58:53.731] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 17:58:53.738] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 17:58:56.509] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_template WHERE status = ? order by create_time desc limit ? , ? 
+[2021-11-06 17:58:56.510] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 17:58:56.523] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 17:58:56.524] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_template WHERE status = ? 
+[2021-11-06 17:58:56.525] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 17:58:56.537] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 17:58:58.588] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_template WHERE status = ? order by create_time desc limit ? , ? 
+[2021-11-06 17:58:58.589] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), 10(Integer), 10(Integer)
+[2021-11-06 17:58:58.598] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 17:58:58.599] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_template WHERE status = ? 
+[2021-11-06 17:58:58.600] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 17:58:58.612] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 17:59:05.553] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info WHERE user_id = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 17:59:05.555] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 17:59:05.563] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 17:59:05.564] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_info WHERE user_id = ? and status = ? 
+[2021-11-06 17:59:05.565] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String)
+[2021-11-06 17:59:05.568] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 17:59:10.561] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info where recipe_no = ? limit 1; 
+[2021-11-06 17:59:10.562] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: 03550551636191770459000(String)
+[2021-11-06 17:59:10.565] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 17:59:10.566] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_detail WHERE recipe_no = ? 
+[2021-11-06 17:59:10.567] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: 03550551636191770459000(String)
+[2021-11-06 17:59:10.572] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 2
+[2021-11-06 17:59:10.575] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine where medicine_no in ( ? , ? ) 
+[2021-11-06 17:59:10.575] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: 01670591636073018537000(String), 01409601636017378859000(String)
+[2021-11-06 17:59:10.579] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 2
+[2021-11-06 17:59:10.580] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 17:59:10.581] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 17:59:10.587] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 17:59:13.421] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info where recipe_no = ? limit 1; 
+[2021-11-06 17:59:13.423] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==> Parameters: 03550551636191770459000(String)
+[2021-11-06 17:59:13.427] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 17:59:13.428] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_detail WHERE recipe_no = ? 
+[2021-11-06 17:59:13.428] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==> Parameters: 03550551636191770459000(String)
+[2021-11-06 17:59:13.433] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - <==      Total: 2
+[2021-11-06 17:59:13.434] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine where medicine_no in ( ? , ? ) 
+[2021-11-06 17:59:13.435] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==> Parameters: 01670591636073018537000(String), 01409601636017378859000(String)
+[2021-11-06 17:59:13.440] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - <==      Total: 2
+[2021-11-06 17:59:13.442] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 17:59:13.443] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 17:59:13.448] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 17:59:16.185] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info WHERE user_id = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 17:59:16.186] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 17:59:16.189] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 17:59:16.190] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_info WHERE user_id = ? and status = ? 
+[2021-11-06 17:59:16.190] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String)
+[2021-11-06 17:59:16.193] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 17:59:30.626] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_template WHERE status = ? order by create_time desc limit ? , ? 
+[2021-11-06 17:59:30.626] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 17:59:30.633] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 17:59:30.634] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_template WHERE status = ? 
+[2021-11-06 17:59:30.634] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 17:59:30.639] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 17:59:58.083] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info WHERE user_id = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 17:59:58.084] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 17:59:58.088] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 17:59:58.088] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_info WHERE user_id = ? and status = ? 
+[2021-11-06 17:59:58.089] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String)
+[2021-11-06 17:59:58.091] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:00:00.147] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_template WHERE status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:00:00.148] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:00:00.154] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 18:00:00.155] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_template WHERE status = ? 
+[2021-11-06 18:00:00.156] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 18:00:00.160] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:03:34.417] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select id,uid,username,role_id,status,create_time,update_time,nick,avatar from user_info WHERE username = ? and password = ? and status = ? 
+[2021-11-06 18:03:34.446] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: guest(String), 1234(String), VALID(String)
+[2021-11-06 18:03:34.464] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:03:34.544] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from enum_info WHERE `name` is null and status = ? 
+[2021-11-06 18:03:34.544] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 18:03:34.553] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:03:34.556] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is null and status = ? 
+[2021-11-06 18:03:34.557] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 18:03:34.563] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - <==      Total: 7
+[2021-11-06 18:03:34.577] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and status = ? and `key` in ( ? , ? , ? , ? , ? , ? , ? ) order by create_time desc 
+[2021-11-06 18:03:34.578] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:03:34.603] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - <==      Total: 136
+[2021-11-06 18:03:40.065] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine WHERE `type` = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:03:40.065] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==> Parameters: CHINESE_MEDICINE(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:03:40.076] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 18:03:40.077] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from medicine WHERE type = ? and status = ? 
+[2021-11-06 18:03:40.078] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==> Parameters: CHINESE_MEDICINE(String), VALID(String)
+[2021-11-06 18:03:40.084] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:03:40.089] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and status = ? and `key` in ( ? , ? , ? ) 
+[2021-11-06 18:03:40.089] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), MEDICINE_TAKING_WAY_CN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String)
+[2021-11-06 18:03:40.095] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - <==      Total: 26
+[2021-11-06 18:03:40.106] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 18:03:40.107] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:03:40.128] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 18:04:32.857] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==>  Preparing: select id,uid,username,role_id,status,create_time,update_time,nick,avatar from user_info WHERE username = ? and password = ? and status = ? 
+[2021-11-06 18:04:32.859] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==> Parameters: guest(String), 1234(String), VALID(String)
+[2021-11-06 18:04:32.862] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:04:32.998] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info WHERE user_id = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:04:32.998] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:04:33.006] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:04:33.007] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_info WHERE user_id = ? and status = ? 
+[2021-11-06 18:04:33.008] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String)
+[2021-11-06 18:04:33.011] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:04:34.664] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_template WHERE status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:04:34.665] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:04:34.677] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 18:04:34.678] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_template WHERE status = ? 
+[2021-11-06 18:04:34.679] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 18:04:34.686] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:04:38.944] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info WHERE user_id = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:04:38.945] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:04:38.948] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:04:38.949] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_info WHERE user_id = ? and status = ? 
+[2021-11-06 18:04:38.950] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String)
+[2021-11-06 18:04:38.953] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:04:57.278] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==>  Preparing: select id,uid,username,role_id,status,create_time,update_time,nick,avatar from user_info WHERE username = ? and password = ? and status = ? 
+[2021-11-06 18:04:57.281] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==> Parameters: guest(String), 1234(String), VALID(String)
+[2021-11-06 18:04:57.287] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:04:57.344] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from enum_info WHERE `name` is null and status = ? 
+[2021-11-06 18:04:57.345] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 18:04:57.349] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:04:57.351] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is null and status = ? 
+[2021-11-06 18:04:57.352] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 18:04:57.357] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - <==      Total: 7
+[2021-11-06 18:04:57.359] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and status = ? and `key` in ( ? , ? , ? , ? , ? , ? , ? ) order by create_time desc 
+[2021-11-06 18:04:57.360] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:04:57.376] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - <==      Total: 136
+[2021-11-06 18:04:59.213] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_template WHERE status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:04:59.213] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:04:59.222] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 18:04:59.224] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_template WHERE status = ? 
+[2021-11-06 18:04:59.224] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 18:04:59.230] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:05:02.141] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info WHERE user_id = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:05:02.141] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:05:02.153] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:05:02.154] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_info WHERE user_id = ? and status = ? 
+[2021-11-06 18:05:02.155] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String)
+[2021-11-06 18:05:02.159] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:05:04.515] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_template WHERE status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:05:04.516] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:05:04.523] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 18:05:04.524] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_template WHERE status = ? 
+[2021-11-06 18:05:04.524] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 18:05:04.529] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:05:06.366] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from enum_info WHERE `name` is null and status = ? 
+[2021-11-06 18:05:06.367] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 18:05:06.370] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:05:06.371] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is null and status = ? 
+[2021-11-06 18:05:06.372] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 18:05:06.377] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - <==      Total: 7
+[2021-11-06 18:05:06.378] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and status = ? and `key` in ( ? , ? , ? , ? , ? , ? , ? ) order by create_time desc 
+[2021-11-06 18:05:06.379] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:05:06.388] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - <==      Total: 136
+[2021-11-06 18:05:07.538] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine WHERE `type` = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:05:07.539] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==> Parameters: CHINESE_MEDICINE(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:05:07.549] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 18:05:07.550] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from medicine WHERE type = ? and status = ? 
+[2021-11-06 18:05:07.551] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==> Parameters: CHINESE_MEDICINE(String), VALID(String)
+[2021-11-06 18:05:07.556] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:05:07.557] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and status = ? and `key` in ( ? , ? , ? ) 
+[2021-11-06 18:05:07.558] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), MEDICINE_TAKING_WAY_CN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String)
+[2021-11-06 18:05:07.561] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - <==      Total: 26
+[2021-11-06 18:05:07.572] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 18:05:07.573] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:05:07.582] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 18:05:44.840] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from enum_info WHERE `name` is null and status = ? 
+[2021-11-06 18:05:44.841] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 18:05:44.845] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:05:44.846] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is null and status = ? 
+[2021-11-06 18:05:44.846] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 18:05:44.850] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 7
+[2021-11-06 18:05:44.851] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and status = ? and `key` in ( ? , ? , ? , ? , ? , ? , ? ) order by create_time desc 
+[2021-11-06 18:05:44.852] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:05:44.858] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 136
+[2021-11-06 18:07:23.635] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==>  Preparing: select id,uid,username,role_id,status,create_time,update_time,nick,avatar from user_info WHERE username = ? and password = ? and status = ? 
+[2021-11-06 18:07:23.665] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==> Parameters: guest(String), 1234(String), VALID(String)
+[2021-11-06 18:07:23.685] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:07:23.761] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from enum_info WHERE `name` is null and status = ? 
+[2021-11-06 18:07:23.763] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 18:07:23.770] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:07:23.773] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is null and status = ? 
+[2021-11-06 18:07:23.773] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 18:07:23.779] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - <==      Total: 7
+[2021-11-06 18:07:23.793] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and status = ? and `key` in ( ? , ? , ? , ? , ? , ? , ? ) order by create_time desc 
+[2021-11-06 18:07:23.793] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:07:23.820] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - <==      Total: 136
+[2021-11-06 18:07:25.823] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine WHERE `type` = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:07:25.824] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==> Parameters: CHINESE_MEDICINE(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:07:25.836] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 18:07:25.837] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from medicine WHERE type = ? and status = ? 
+[2021-11-06 18:07:25.838] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==> Parameters: CHINESE_MEDICINE(String), VALID(String)
+[2021-11-06 18:07:25.843] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:07:25.846] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and status = ? and `key` in ( ? , ? , ? ) 
+[2021-11-06 18:07:25.846] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), MEDICINE_TAKING_WAY_CN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String)
+[2021-11-06 18:07:25.852] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - <==      Total: 26
+[2021-11-06 18:07:25.862] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 18:07:25.863] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:07:25.879] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 18:07:28.142] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine WHERE `type` = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:07:28.143] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==> Parameters: WESTERN_MEDICINE(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:07:28.156] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 18:07:28.158] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from medicine WHERE type = ? and status = ? 
+[2021-11-06 18:07:28.159] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==> Parameters: WESTERN_MEDICINE(String), VALID(String)
+[2021-11-06 18:07:28.164] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:07:28.165] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and status = ? and `key` in ( ? , ? , ? , ? , ? ) 
+[2021-11-06 18:07:28.166] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), MEDICINE_CELL_UNIT(String), MEDICINE_FREQUENCY(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_EN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:07:28.178] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - <==      Total: 110
+[2021-11-06 18:07:28.190] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 18:07:28.191] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:07:28.206] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 18:07:32.175] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine WHERE `type` = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:07:32.176] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==> Parameters: WESTERN_MEDICINE(String), VALID(String), 10(Integer), 10(Integer)
+[2021-11-06 18:07:32.184] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 18:07:32.185] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from medicine WHERE type = ? and status = ? 
+[2021-11-06 18:07:32.185] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==> Parameters: WESTERN_MEDICINE(String), VALID(String)
+[2021-11-06 18:07:32.190] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:07:32.191] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and status = ? and `key` in ( ? , ? , ? , ? , ? ) 
+[2021-11-06 18:07:32.192] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), MEDICINE_CELL_UNIT(String), MEDICINE_FREQUENCY(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_EN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:07:32.199] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - <==      Total: 110
+[2021-11-06 18:07:32.203] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 18:07:32.205] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:07:32.214] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 18:07:34.234] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine WHERE `type` = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:07:34.235] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: CHINESE_MEDICINE(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:07:34.241] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 18:07:34.242] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from medicine WHERE type = ? and status = ? 
+[2021-11-06 18:07:34.242] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: CHINESE_MEDICINE(String), VALID(String)
+[2021-11-06 18:07:34.247] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:07:34.248] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and status = ? and `key` in ( ? , ? , ? ) 
+[2021-11-06 18:07:34.249] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), MEDICINE_TAKING_WAY_CN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String)
+[2021-11-06 18:07:34.254] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 26
+[2021-11-06 18:07:34.255] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 18:07:34.256] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:07:34.268] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 18:07:35.873] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine WHERE `type` = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:07:35.874] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: CHINESE_MEDICINE(String), VALID(String), 20(Integer), 10(Integer)
+[2021-11-06 18:07:35.879] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 18:07:35.880] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from medicine WHERE type = ? and status = ? 
+[2021-11-06 18:07:35.881] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: CHINESE_MEDICINE(String), VALID(String)
+[2021-11-06 18:07:35.884] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:07:35.885] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and status = ? and `key` in ( ? , ? , ? ) 
+[2021-11-06 18:07:35.886] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), MEDICINE_TAKING_WAY_CN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String)
+[2021-11-06 18:07:35.890] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 26
+[2021-11-06 18:07:35.892] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 18:07:35.892] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:07:35.899] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 18:07:40.687] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine WHERE `name` LIKE CONCAT('%',?,'%') and `type` = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:07:40.687] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==> Parameters: 刀豆子(String), CHINESE_MEDICINE(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:07:40.693] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:07:40.693] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from medicine WHERE `name` LIKE CONCAT('%',?,'%') and type = ? and status = ? 
+[2021-11-06 18:07:40.694] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==> Parameters: 刀豆子(String), CHINESE_MEDICINE(String), VALID(String)
+[2021-11-06 18:07:40.698] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:07:40.699] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and status = ? and `key` in ( ? , ? , ? ) 
+[2021-11-06 18:07:40.700] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), MEDICINE_TAKING_WAY_CN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String)
+[2021-11-06 18:07:40.704] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - <==      Total: 26
+[2021-11-06 18:07:40.706] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 18:07:40.707] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:07:40.714] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 18:07:43.529] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_template WHERE status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:07:43.530] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:07:43.540] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 18:07:43.542] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_template WHERE status = ? 
+[2021-11-06 18:07:43.543] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 18:07:43.551] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:07:47.310] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_template where recipe_template_no = ? 
+[2021-11-06 18:07:47.310] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==> Parameters: 02576711636181611796000(String)
+[2021-11-06 18:07:47.314] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:07:47.315] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_template_detail WHERE recipe_template_no = ? 
+[2021-11-06 18:07:47.316] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==> Parameters: 02576711636181611796000(String)
+[2021-11-06 18:07:47.320] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:07:47.324] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine where medicine_no in ( ? ) 
+[2021-11-06 18:07:47.324] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==> Parameters: 01301481609892996656000(String)
+[2021-11-06 18:07:47.332] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:07:47.333] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 18:07:47.334] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:07:47.342] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 18:07:49.038] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_template WHERE status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:07:49.040] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), 20(Integer), 10(Integer)
+[2021-11-06 18:07:49.056] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 18:07:49.058] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_template WHERE status = ? 
+[2021-11-06 18:07:49.059] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 18:07:49.066] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:07:50.665] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info WHERE user_id = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:07:50.666] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:07:50.673] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:07:50.674] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_info WHERE user_id = ? and status = ? 
+[2021-11-06 18:07:50.674] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String)
+[2021-11-06 18:07:50.678] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:07:53.393] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info where recipe_no = ? limit 1; 
+[2021-11-06 18:07:53.393] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==> Parameters: 03550551636191770459000(String)
+[2021-11-06 18:07:53.397] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:07:53.398] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_detail WHERE recipe_no = ? 
+[2021-11-06 18:07:53.399] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==> Parameters: 03550551636191770459000(String)
+[2021-11-06 18:07:53.404] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - <==      Total: 2
+[2021-11-06 18:07:53.407] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine where medicine_no in ( ? , ? ) 
+[2021-11-06 18:07:53.407] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==> Parameters: 01670591636073018537000(String), 01409601636017378859000(String)
+[2021-11-06 18:07:53.411] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - <==      Total: 2
+[2021-11-06 18:07:53.412] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 18:07:53.413] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:07:53.420] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 18:07:55.089] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info where recipe_no = ? limit 1; 
+[2021-11-06 18:07:55.090] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==> Parameters: 03550551636191770459000(String)
+[2021-11-06 18:07:55.094] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:07:55.095] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_detail WHERE recipe_no = ? 
+[2021-11-06 18:07:55.096] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==> Parameters: 03550551636191770459000(String)
+[2021-11-06 18:07:55.100] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - <==      Total: 2
+[2021-11-06 18:07:55.101] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine where medicine_no in ( ? , ? ) 
+[2021-11-06 18:07:55.101] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==> Parameters: 01670591636073018537000(String), 01409601636017378859000(String)
+[2021-11-06 18:07:55.105] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - <==      Total: 2
+[2021-11-06 18:07:55.106] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 18:07:55.106] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:07:55.114] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 18:07:58.653] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==>  Preparing: delete from recipe_detail where `recipe_no` in ( ? ) 
+[2021-11-06 18:07:58.653] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==> Parameters: 03550551636191770459000(String)
+[2021-11-06 18:07:58.660] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - <==    Updates: 2
+[2021-11-06 18:07:58.668] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==>  Preparing: UPDATE recipe_info set `age_type`=?, patient_name=?, `patient_sex`=?, `patient_age`=?, `disease`=?, `classfication`=?, num=?, update_time = current_timestamp() WHERE recipe_no=? and user_id = ? 
+[2021-11-06 18:07:58.669] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==> Parameters: YEAR(String), 测试(String), 0(Byte), 28(Integer), 测试疾病(String), 眼科(String), 12(Integer), 03550551636191770459000(String), 20887298732(String)
+[2021-11-06 18:07:58.676] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - <==    Updates: 1
+[2021-11-06 18:07:58.680] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==>  Preparing: insert into recipe_detail (recipe_no, medicine_no, medicine_advice, medicine_num) values (?, ?, ?, ?) , (?, ?, ?, ?) 
+[2021-11-06 18:07:58.682] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==> Parameters: 03550551636191770459000(String), 01670591636073018537000(String), 测试医嘱(String), 23(Integer), 03550551636191770459000(String), 01409601636017378859000(String), 测试医嘱(String), 22(Integer)
+[2021-11-06 18:07:58.688] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - <==    Updates: 2
+[2021-11-06 18:07:58.748] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info WHERE user_id = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:07:58.749] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:07:58.753] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:07:58.754] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_info WHERE user_id = ? and status = ? 
+[2021-11-06 18:07:58.754] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String)
+[2021-11-06 18:07:58.757] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:08:00.076] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info where recipe_no = ? limit 1; 
+[2021-11-06 18:08:00.076] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: 03550551636191770459000(String)
+[2021-11-06 18:08:00.080] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:08:00.080] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_detail WHERE recipe_no = ? 
+[2021-11-06 18:08:00.081] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: 03550551636191770459000(String)
+[2021-11-06 18:08:00.084] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 2
+[2021-11-06 18:08:00.085] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine where medicine_no in ( ? , ? ) 
+[2021-11-06 18:08:00.086] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: 01670591636073018537000(String), 01409601636017378859000(String)
+[2021-11-06 18:08:00.090] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 2
+[2021-11-06 18:08:00.092] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 18:08:00.093] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:08:00.101] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 18:08:02.201] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info where recipe_no = ? limit 1; 
+[2021-11-06 18:08:02.202] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==> Parameters: 03550551636191770459000(String)
+[2021-11-06 18:08:02.205] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:08:02.206] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_detail WHERE recipe_no = ? 
+[2021-11-06 18:08:02.206] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==> Parameters: 03550551636191770459000(String)
+[2021-11-06 18:08:02.209] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - <==      Total: 2
+[2021-11-06 18:08:02.210] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine where medicine_no in ( ? , ? ) 
+[2021-11-06 18:08:02.210] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==> Parameters: 01670591636073018537000(String), 01409601636017378859000(String)
+[2021-11-06 18:08:02.213] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - <==      Total: 2
+[2021-11-06 18:08:02.215] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 18:08:02.215] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:08:02.222] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 18:08:03.696] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine WHERE `type` = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:08:03.697] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==> Parameters: CHINESE_MEDICINE(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:08:03.703] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 18:08:03.703] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from medicine WHERE type = ? and status = ? 
+[2021-11-06 18:08:03.704] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==> Parameters: CHINESE_MEDICINE(String), VALID(String)
+[2021-11-06 18:08:03.709] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:08:03.709] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and status = ? and `key` in ( ? , ? , ? ) 
+[2021-11-06 18:08:03.710] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), MEDICINE_TAKING_WAY_CN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String)
+[2021-11-06 18:08:03.713] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - <==      Total: 26
+[2021-11-06 18:08:03.715] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 18:08:03.715] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:08:03.720] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 18:08:12.339] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==>  Preparing: delete from recipe_detail where `recipe_no` in ( ? ) 
+[2021-11-06 18:08:12.340] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==> Parameters: 03550551636191770459000(String)
+[2021-11-06 18:08:12.348] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - <==    Updates: 2
+[2021-11-06 18:08:12.349] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==>  Preparing: UPDATE recipe_info set `age_type`=?, patient_name=?, `patient_sex`=?, `patient_age`=?, `disease`=?, `classfication`=?, num=?, update_time = current_timestamp() WHERE recipe_no=? and user_id = ? 
+[2021-11-06 18:08:12.349] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==> Parameters: YEAR(String), 测试(String), 0(Byte), 28(Integer), 测试疾病(String), 眼科(String), 12(Integer), 03550551636191770459000(String), 20887298732(String)
+[2021-11-06 18:08:12.356] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - <==    Updates: 1
+[2021-11-06 18:08:12.357] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==>  Preparing: insert into recipe_detail (recipe_no, medicine_no, medicine_advice, medicine_num) values (?, ?, ?, ?) , (?, ?, ?, ?) , (?, ?, ?, ?) 
+[2021-11-06 18:08:12.358] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==> Parameters: 03550551636191770459000(String), 01670591636073018537000(String), 测试医嘱(String), 23(Integer), 03550551636191770459000(String), 01409601636017378859000(String), 测试医嘱(String), 22(Integer), 03550551636191770459000(String), 01224201634605149398000(String), 存储(String), 10(Integer)
+[2021-11-06 18:08:12.365] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - <==    Updates: 3
+[2021-11-06 18:08:12.427] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info WHERE user_id = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:08:12.427] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:08:12.431] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:08:12.431] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_info WHERE user_id = ? and status = ? 
+[2021-11-06 18:08:12.432] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String)
+[2021-11-06 18:08:12.435] DEBUG [http-nio-8080-exec-8] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:08:13.781] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info where recipe_no = ? limit 1; 
+[2021-11-06 18:08:13.781] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==> Parameters: 03550551636191770459000(String)
+[2021-11-06 18:08:13.785] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:08:13.786] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_detail WHERE recipe_no = ? 
+[2021-11-06 18:08:13.787] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==> Parameters: 03550551636191770459000(String)
+[2021-11-06 18:08:13.790] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - <==      Total: 3
+[2021-11-06 18:08:13.791] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine where medicine_no in ( ? , ? , ? ) 
+[2021-11-06 18:08:13.791] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==> Parameters: 01670591636073018537000(String), 01409601636017378859000(String), 01224201634605149398000(String)
+[2021-11-06 18:08:13.795] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - <==      Total: 3
+[2021-11-06 18:08:13.796] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 18:08:13.797] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:08:13.803] DEBUG [http-nio-8080-exec-9] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 18:08:34.052] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine WHERE `type` = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:08:34.053] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: WESTERN_MEDICINE(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:08:34.058] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 18:08:34.059] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from medicine WHERE type = ? and status = ? 
+[2021-11-06 18:08:34.059] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: WESTERN_MEDICINE(String), VALID(String)
+[2021-11-06 18:08:34.064] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:08:34.065] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and status = ? and `key` in ( ? , ? , ? , ? , ? ) 
+[2021-11-06 18:08:34.065] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), MEDICINE_CELL_UNIT(String), MEDICINE_FREQUENCY(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_EN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:08:34.069] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 110
+[2021-11-06 18:08:34.071] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 18:08:34.072] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:08:34.077] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 18:08:42.013] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: insert into recipe_info ( recipe_no, recipe_type, age_type, user_id, patient_name, patient_sex, patient_age, disease, classfication, status, create_time, update_time ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+[2021-11-06 18:08:42.016] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: 03838791636193322002000(String), WESTERN(String), YEAR(String), 20887298732(String), 吃(String), 1(Byte), 12(Integer), 存储(String), 12(String), VALID(String), 2021-11-06 18:08:42.007(Timestamp), 2021-11-06 18:08:42.007(Timestamp)
+[2021-11-06 18:08:42.021] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==    Updates: 1
+[2021-11-06 18:08:42.023] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: insert into recipe_detail (recipe_no, medicine_no, medicine_advice, medicine_num) values (?, ?, ?, ?) , (?, ?, ?, ?) , (?, ?, ?, ?) 
+[2021-11-06 18:08:42.024] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: 03838791636193322002000(String), 01153111635327059715000(String), null, 1(Integer), 03838791636193322002000(String), 01346201635326742458000(String), null, 1(Integer), 03838791636193322002000(String), 01394751635305056744000(String), 早期浸润性乳腺癌，他莫昔芬治疗后晚期乳腺癌。(String), 1(Integer)
+[2021-11-06 18:08:42.028] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==    Updates: 3
+[2021-11-06 18:08:42.029] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info where recipe_no = ? limit 1; 
+[2021-11-06 18:08:42.029] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: 03838791636193322002000(String)
+[2021-11-06 18:08:42.032] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:08:42.032] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_detail WHERE recipe_no = ? 
+[2021-11-06 18:08:42.033] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: 03838791636193322002000(String)
+[2021-11-06 18:08:42.035] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 3
+[2021-11-06 18:08:42.036] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine where medicine_no in ( ? , ? , ? ) 
+[2021-11-06 18:08:42.036] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: 01153111635327059715000(String), 01346201635326742458000(String), 01394751635305056744000(String)
+[2021-11-06 18:08:42.040] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 3
+[2021-11-06 18:08:42.041] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 18:08:42.041] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:08:42.046] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 18:08:42.119] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info WHERE user_id = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:08:42.120] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:08:42.123] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - <==      Total: 2
+[2021-11-06 18:08:42.124] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_info WHERE user_id = ? and status = ? 
+[2021-11-06 18:08:42.124] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String)
+[2021-11-06 18:08:42.126] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:08:44.263] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info where recipe_no = ? limit 1; 
+[2021-11-06 18:08:44.263] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==> Parameters: 03838791636193322002000(String)
+[2021-11-06 18:08:44.266] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:08:44.267] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_detail WHERE recipe_no = ? 
+[2021-11-06 18:08:44.267] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==> Parameters: 03838791636193322002000(String)
+[2021-11-06 18:08:44.271] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - <==      Total: 3
+[2021-11-06 18:08:44.272] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==>  Preparing: select * from medicine where medicine_no in ( ? , ? , ? ) 
+[2021-11-06 18:08:44.272] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==> Parameters: 01153111635327059715000(String), 01346201635326742458000(String), 01394751635305056744000(String)
+[2021-11-06 18:08:44.276] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - <==      Total: 3
+[2021-11-06 18:08:44.277] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==>  Preparing: select * from enum_info WHERE `name` is not null and `key` in ( ? , ? , ? , ? , ? , ? , ? ) 
+[2021-11-06 18:08:44.277] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - ==> Parameters: MEDICINE_CELL_UNIT(String), MEDICINE_TAKING_WAY_CN(String), MEDICINE_FREQUENCY(String), MEDICINE_UNIT_EN(String), MEDICAL_ADVICE(String), MEDICINE_UNIT_CN(String), MEDICINE_TAKING_WAY_EN(String)
+[2021-11-06 18:08:44.283] DEBUG [http-nio-8080-exec-10] BaseJdbcLogger.java:159 - <==      Total: 178
+[2021-11-06 18:08:50.203] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==>  Preparing: update recipe_info set status = 'INVALID', update_time = current_timestamp() where user_id = ? and `recipe_no` in ( ? ) 
+[2021-11-06 18:08:50.204] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), 03838791636193322002000(String)
+[2021-11-06 18:08:50.209] DEBUG [http-nio-8080-exec-6] BaseJdbcLogger.java:159 - <==    Updates: 1
+[2021-11-06 18:08:52.996] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info WHERE user_id = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:08:52.997] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:08:53.001] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:08:53.002] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_info WHERE user_id = ? and status = ? 
+[2021-11-06 18:08:53.002] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - ==> Parameters: 20887298732(String), VALID(String)
+[2021-11-06 18:08:53.006] DEBUG [http-nio-8080-exec-2] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:08:59.135] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==>  Preparing: select id,uid,username,role_id,status,create_time,update_time,nick,avatar from user_info WHERE username = ? and password = ? and status = ? 
+[2021-11-06 18:08:59.136] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - ==> Parameters: admin(String), 1234(String), VALID(String)
+[2021-11-06 18:08:59.139] DEBUG [http-nio-8080-exec-7] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:08:59.204] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info WHERE user_id = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:08:59.204] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==> Parameters: 20887298731(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:08:59.210] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 18:08:59.211] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_info WHERE user_id = ? and status = ? 
+[2021-11-06 18:08:59.211] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - ==> Parameters: 20887298731(String), VALID(String)
+[2021-11-06 18:08:59.214] DEBUG [http-nio-8080-exec-1] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:09:04.195] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info WHERE user_id = ? and patient_name LIKE CONCAT(?,'%') and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:09:04.195] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: 20887298731(String), 测试(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:09:04.198] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 0
+[2021-11-06 18:09:04.199] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_info WHERE user_id = ? and patient_name LIKE CONCAT(?,'%') and status = ? 
+[2021-11-06 18:09:04.199] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - ==> Parameters: 20887298731(String), 测试(String), VALID(String)
+[2021-11-06 18:09:04.202] DEBUG [http-nio-8080-exec-4] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:09:07.815] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_template WHERE status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:09:07.816] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:09:07.824] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 18:09:07.825] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_template WHERE status = ? 
+[2021-11-06 18:09:07.825] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - ==> Parameters: VALID(String)
+[2021-11-06 18:09:07.831] DEBUG [http-nio-8080-exec-5] BaseJdbcLogger.java:159 - <==      Total: 1
+[2021-11-06 18:09:08.417] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==>  Preparing: select * from recipe_info WHERE user_id = ? and status = ? order by create_time desc limit ? , ? 
+[2021-11-06 18:09:08.418] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==> Parameters: 20887298731(String), VALID(String), 0(Integer), 10(Integer)
+[2021-11-06 18:09:08.422] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - <==      Total: 10
+[2021-11-06 18:09:08.422] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==>  Preparing: select count(*) from recipe_info WHERE user_id = ? and status = ? 
+[2021-11-06 18:09:08.423] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - ==> Parameters: 20887298731(String), VALID(String)
+[2021-11-06 18:09:08.426] DEBUG [http-nio-8080-exec-3] BaseJdbcLogger.java:159 - <==      Total: 1
