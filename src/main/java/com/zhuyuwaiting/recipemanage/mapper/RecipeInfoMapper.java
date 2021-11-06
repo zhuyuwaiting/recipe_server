@@ -11,7 +11,7 @@ public interface RecipeInfoMapper {
 
     int insertSelective(RecipeInfo record);
 
-    int deleteByNos(@Param("nos") List<String> nos);
+    int deleteByNos(@Param("nos") List<String> nos,String userId);
 
     RecipeInfo selelctByNo(@Param("no") String no);
 

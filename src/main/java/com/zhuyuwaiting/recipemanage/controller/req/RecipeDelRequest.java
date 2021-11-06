@@ -9,4 +9,6 @@ import java.util.List;
 @Setter
 public class RecipeDelRequest extends BaseRequest {
     private List<String> recipeNos;
+
+    private String userId;
 }

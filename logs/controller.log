@@ -1,59 +1,205 @@
-[2021-03-10 00:00:43.107] INFO [http-nio-8080-exec-7] UserController.java:54 - 31536000s
-[2021-03-10 00:00:44.899] INFO [http-nio-8080-exec-10] UserController.java:54 - 31536000s
-[2021-03-10 00:00:54.881] INFO [http-nio-8080-exec-4] UserController.java:54 - 31536000s
-[2021-03-10 00:00:57.475] INFO [http-nio-8080-exec-6] UserController.java:54 - 31536000s
-[2021-03-10 00:01:04.660] INFO [http-nio-8080-exec-9] UserController.java:54 - 31536000s
-[2021-03-10 00:01:06.079] INFO [http-nio-8080-exec-2] UserController.java:54 - 31536000s
-[2021-03-10 00:01:13.256] INFO [http-nio-8080-exec-5] UserController.java:54 - 31536000s
-[2021-03-10 00:01:14.733] INFO [http-nio-8080-exec-8] UserController.java:54 - 31536000s
-[2021-03-10 00:01:20.997] INFO [http-nio-8080-exec-1] UserController.java:54 - 31536000s
-[2021-03-10 00:01:22.683] INFO [http-nio-8080-exec-3] UserController.java:54 - 31536000s
-[2021-03-10 00:01:49.428] INFO [http-nio-8080-exec-8] UserController.java:54 - 31536000s
-[2021-03-10 00:01:50.555] INFO [http-nio-8080-exec-1] UserController.java:54 - 31536000s
-[2021-03-10 00:01:56.848] INFO [http-nio-8080-exec-3] UserController.java:54 - 31536000s
-[2021-03-10 00:01:57.904] INFO [http-nio-8080-exec-7] UserController.java:54 - 31536000s
-[2021-03-10 00:02:04.962] INFO [http-nio-8080-exec-10] UserController.java:54 - 31536000s
-[2021-03-10 00:02:05.799] INFO [http-nio-8080-exec-4] UserController.java:54 - 31536000s
-[2021-03-10 00:02:30.137] INFO [http-nio-8080-exec-6] UserController.java:54 - 31536000s
-[2021-03-10 00:03:27.085] INFO [http-nio-8080-exec-9] UserController.java:54 - 31536000s
-[2021-03-10 00:03:34.698] INFO [http-nio-8080-exec-2] UserController.java:54 - 31536000s
-[2021-03-10 00:03:39.137] INFO [http-nio-8080-exec-5] UserController.java:54 - 31536000s
-[2021-03-10 00:03:48.217] INFO [http-nio-8080-exec-8] UserController.java:54 - 31536000s
-[2021-03-10 00:03:51.240] INFO [http-nio-8080-exec-1] UserController.java:54 - 31536000s
-[2021-03-10 00:06:12.565] INFO [http-nio-8080-exec-5] UserController.java:54 - 31536000s
-[2021-03-10 00:06:35.021] INFO [http-nio-8080-exec-7] UserController.java:54 - 31536000s
-[2021-03-10 00:06:38.191] INFO [http-nio-8080-exec-10] UserController.java:54 - 31536000s
-[2021-03-10 00:06:53.122] INFO [http-nio-8080-exec-4] UserController.java:54 - 31536000s
-[2021-03-10 00:06:55.070] INFO [http-nio-8080-exec-6] UserController.java:54 - 31536000s
-[2021-03-10 00:08:14.757] INFO [http-nio-8080-exec-1] UserController.java:54 - 31536000s
-[2021-03-10 00:09:02.300] INFO [http-nio-8080-exec-4] UserController.java:54 - 31536000s
-[2021-03-10 00:09:03.251] INFO [http-nio-8080-exec-6] UserController.java:54 - 31536000s
-[2021-03-10 00:09:15.672] INFO [http-nio-8080-exec-2] UserController.java:54 - 31536000s
-[2021-03-10 00:09:17.549] INFO [http-nio-8080-exec-5] UserController.java:54 - 31536000s
-[2021-03-10 00:09:28.433] INFO [http-nio-8080-exec-8] UserController.java:54 - 31536000s
-[2021-03-10 00:09:29.734] INFO [http-nio-8080-exec-1] UserController.java:54 - 31536000s
-[2021-03-10 00:09:58.215] INFO [http-nio-8080-exec-3] UserController.java:54 - 31536000s
-[2021-03-10 00:10:08.311] INFO [http-nio-8080-exec-6] UserController.java:54 - 31536000s
-[2021-03-10 00:10:10.543] INFO [http-nio-8080-exec-9] UserController.java:54 - 31536000s
-[2021-03-10 00:10:35.210] INFO [http-nio-8080-exec-4] UserController.java:54 - 31536000s
-[2021-03-10 00:12:11.287] INFO [http-nio-8080-exec-6] UserController.java:54 - 31536000s
-[2021-03-10 00:12:44.436] INFO [http-nio-8080-exec-10] UserController.java:54 - 31536000s
-[2021-03-10 00:12:45.692] INFO [http-nio-8080-exec-4] UserController.java:54 - 31536000s
-[2021-03-10 00:24:15.901] INFO [http-nio-8080-exec-9] UserController.java:54 - 31536000s
-[2021-03-10 00:27:36.499] INFO [http-nio-8080-exec-2] UserController.java:54 - 31536000s
-[2021-03-10 00:27:44.321] INFO [http-nio-8080-exec-5] UserController.java:54 - 31536000s
-[2021-03-10 00:27:58.878] INFO [http-nio-8080-exec-10] UserController.java:54 - 31536000s
-[2021-03-10 00:27:59.559] INFO [http-nio-8080-exec-4] UserController.java:54 - 31536000s
-[2021-03-10 00:28:12.647] INFO [http-nio-8080-exec-6] UserController.java:54 - 31536000s
-[2021-03-10 00:28:24.431] INFO [http-nio-8080-exec-2] UserController.java:54 - 31536000s
-[2021-03-10 00:28:34.517] INFO [http-nio-8080-exec-7] UserController.java:54 - 31536000s
-[2021-03-10 00:28:54.354] INFO [http-nio-8080-exec-10] UserController.java:54 - 31536000s
-[2021-03-10 00:31:29.764] INFO [http-nio-8080-exec-4] UserController.java:54 - 31536000s
-[2021-03-10 00:34:20.491] INFO [http-nio-8080-exec-6] UserController.java:54 - 31536000s
-[2021-03-10 00:34:56.569] INFO [http-nio-8080-exec-4] UserController.java:54 - 31536000s
-[2021-03-10 00:35:07.855] INFO [http-nio-8080-exec-5] UserController.java:54 - 31536000s
-[2021-03-10 00:35:08.949] INFO [http-nio-8080-exec-8] UserController.java:54 - 31536000s
-[2021-03-10 00:35:22.378] INFO [http-nio-8080-exec-3] UserController.java:54 - 31536000s
-[2021-03-10 10:24:27.807] INFO [Thread-3] ExecutorConfigurationSupport.java:208 - Shutting down ExecutorService 'applicationTaskExecutor'
-[2021-03-10 10:24:27.824] INFO [Thread-3] AbstractEntityManagerFactoryBean.java:597 - Closing JPA EntityManagerFactory for persistence unit 'default'
-[2021-03-10 10:24:27.861] INFO [Thread-3] Log4j2Impl.java:106 - {dataSource-1} closed
+[2021-11-06 16:03:54.424] INFO [main] StartupInfoLogger.java:50 - Starting RecipeManageApplication on C02Z58PMLVCF with PID 62793 (/Users/luke/workspace/recipe_server/target/classes started by luke in /Users/luke/workspace/recipe_server)
+[2021-11-06 16:03:54.437] INFO [main] SpringApplication.java:675 - No active profile set, falling back to default profiles: default
+[2021-11-06 16:03:55.297] INFO [main] RepositoryConfigurationDelegate.java:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2021-11-06 16:03:55.329] INFO [main] RepositoryConfigurationDelegate.java:182 - Finished Spring Data repository scanning in 23ms. Found 0 repository interfaces.
+[2021-11-06 16:03:55.745] INFO [main] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5d3c86be] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2021-11-06 16:03:56.127] INFO [main] TomcatWebServer.java:90 - Tomcat initialized with port(s): 8080 (http)
+[2021-11-06 16:03:56.139] INFO [main] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-8080"]
+[2021-11-06 16:03:56.149] INFO [main] DirectJDKLog.java:173 - Starting service [Tomcat]
+[2021-11-06 16:03:56.149] INFO [main] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.14]
+[2021-11-06 16:03:56.159] INFO [main] DirectJDKLog.java:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/luke/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+[2021-11-06 16:03:56.298] INFO [main] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+[2021-11-06 16:03:56.298] INFO [main] ServletWebServerApplicationContext.java:296 - Root WebApplicationContext: initialization completed in 1766 ms
+[2021-11-06 16:03:56.557] INFO [main] Log4j2Impl.java:106 - {dataSource-1} inited
+[2021-11-06 16:03:56.744] INFO [main] LogHelper.java:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[2021-11-06 16:03:56.824] INFO [main] Version.java:46 - HHH000412: Hibernate Core {5.3.7.Final}
+[2021-11-06 16:03:56.826] INFO [main] Environment.java:213 - HHH000206: hibernate.properties not found
+[2021-11-06 16:03:57.014] INFO [main] JavaReflectionManager.java:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+[2021-11-06 16:03:57.175] INFO [main] Dialect.java:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[2021-11-06 16:03:57.384] INFO [main] AbstractEntityManagerFactoryBean.java:415 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2021-11-06 16:03:57.888] INFO [main] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2021-11-06 16:03:58.022] INFO [main] WelcomePageHandlerMapping.java:56 - Adding welcome page: class path resource [static/index.html]
+[2021-11-06 16:03:58.132] INFO [main] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-8080"]
+[2021-11-06 16:03:58.168] INFO [main] TomcatWebServer.java:204 - Tomcat started on port(s): 8080 (http) with context path ''
+[2021-11-06 16:03:58.171] INFO [main] StartupInfoLogger.java:59 - Started RecipeManageApplication in 4.202 seconds (JVM running for 4.796)
+[2021-11-06 16:04:05.944] INFO [http-nio-8080-exec-1] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-11-06 16:04:05.945] INFO [http-nio-8080-exec-1] FrameworkServlet.java:524 - Initializing Servlet 'dispatcherServlet'
+[2021-11-06 16:04:05.956] INFO [http-nio-8080-exec-1] FrameworkServlet.java:546 - Completed initialization in 10 ms
+[2021-11-06 16:04:09.789] INFO [http-nio-8080-exec-3] UserController.java:54 - 31536000s
+[2021-11-06 16:06:14.428] INFO [http-nio-8080-exec-10] UserController.java:54 - 31536000s
+[2021-11-06 16:09:08.956] INFO [http-nio-8080-exec-3] UserController.java:54 - 31536000s
+[2021-11-06 16:12:06.944] INFO [http-nio-8080-exec-7] UserController.java:54 - 31536000s
+[2021-11-06 16:13:35.789] INFO [http-nio-8080-exec-10] UserController.java:54 - 31536000s
+[2021-11-06 16:17:50.647] INFO [http-nio-8080-exec-6] UserController.java:54 - 31536000s
+[2021-11-06 16:18:38.135] INFO [http-nio-8080-exec-10] UserController.java:54 - 31536000s
+[2021-11-06 16:18:42.728] INFO [http-nio-8080-exec-5] UserController.java:54 - 31536000s
+[2021-11-06 16:19:58.682] INFO [http-nio-8080-exec-8] UserController.java:54 - 31536000s
+[2021-11-06 16:21:56.340] INFO [http-nio-8080-exec-1] UserController.java:54 - 31536000s
+[2021-11-06 16:22:14.330] INFO [Thread-3] ExecutorConfigurationSupport.java:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2021-11-06 16:22:14.332] INFO [Thread-3] AbstractEntityManagerFactoryBean.java:597 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2021-11-06 16:22:14.350] INFO [Thread-3] Log4j2Impl.java:106 - {dataSource-1} closed
+[2021-11-06 16:22:22.829] INFO [main] StartupInfoLogger.java:50 - Starting RecipeManageApplication on C02Z58PMLVCF with PID 66508 (/Users/luke/workspace/recipe_server/target/classes started by luke in /Users/luke/workspace/recipe_server)
+[2021-11-06 16:22:22.833] INFO [main] SpringApplication.java:675 - No active profile set, falling back to default profiles: default
+[2021-11-06 16:22:23.760] INFO [main] RepositoryConfigurationDelegate.java:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2021-11-06 16:22:23.800] INFO [main] RepositoryConfigurationDelegate.java:182 - Finished Spring Data repository scanning in 32ms. Found 0 repository interfaces.
+[2021-11-06 16:22:24.582] INFO [main] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4f0ce119] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2021-11-06 16:22:25.174] INFO [main] TomcatWebServer.java:90 - Tomcat initialized with port(s): 8080 (http)
+[2021-11-06 16:22:25.191] INFO [main] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-8080"]
+[2021-11-06 16:22:25.208] INFO [main] DirectJDKLog.java:173 - Starting service [Tomcat]
+[2021-11-06 16:22:25.208] INFO [main] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.14]
+[2021-11-06 16:22:25.285] INFO [main] DirectJDKLog.java:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/luke/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+[2021-11-06 16:22:25.410] INFO [main] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+[2021-11-06 16:22:25.411] INFO [main] ServletWebServerApplicationContext.java:296 - Root WebApplicationContext: initialization completed in 2520 ms
+[2021-11-06 16:22:25.708] INFO [main] Log4j2Impl.java:106 - {dataSource-1} inited
+[2021-11-06 16:22:25.935] INFO [main] LogHelper.java:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[2021-11-06 16:22:26.009] INFO [main] Version.java:46 - HHH000412: Hibernate Core {5.3.7.Final}
+[2021-11-06 16:22:26.011] INFO [main] Environment.java:213 - HHH000206: hibernate.properties not found
+[2021-11-06 16:22:26.172] INFO [main] JavaReflectionManager.java:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+[2021-11-06 16:22:26.393] INFO [main] Dialect.java:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[2021-11-06 16:22:26.699] INFO [main] AbstractEntityManagerFactoryBean.java:415 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2021-11-06 16:22:27.424] INFO [main] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2021-11-06 16:22:27.571] INFO [main] WelcomePageHandlerMapping.java:56 - Adding welcome page: class path resource [static/index.html]
+[2021-11-06 16:22:27.710] INFO [main] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-8080"]
+[2021-11-06 16:22:27.759] INFO [main] TomcatWebServer.java:204 - Tomcat started on port(s): 8080 (http) with context path ''
+[2021-11-06 16:22:27.764] INFO [main] StartupInfoLogger.java:59 - Started RecipeManageApplication in 5.459 seconds (JVM running for 6.68)
+[2021-11-06 16:22:42.226] INFO [http-nio-8080-exec-1] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-11-06 16:22:42.227] INFO [http-nio-8080-exec-1] FrameworkServlet.java:524 - Initializing Servlet 'dispatcherServlet'
+[2021-11-06 16:22:42.236] INFO [http-nio-8080-exec-1] FrameworkServlet.java:546 - Completed initialization in 9 ms
+[2021-11-06 16:24:57.516] INFO [Thread-3] ExecutorConfigurationSupport.java:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2021-11-06 16:24:57.517] INFO [Thread-3] AbstractEntityManagerFactoryBean.java:597 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2021-11-06 16:24:57.522] INFO [Thread-3] Log4j2Impl.java:106 - {dataSource-1} closed
+[2021-11-06 16:25:04.140] INFO [main] StartupInfoLogger.java:50 - Starting RecipeManageApplication on C02Z58PMLVCF with PID 66708 (/Users/luke/workspace/recipe_server/target/classes started by luke in /Users/luke/workspace/recipe_server)
+[2021-11-06 16:25:04.143] INFO [main] SpringApplication.java:675 - No active profile set, falling back to default profiles: default
+[2021-11-06 16:25:04.741] INFO [main] RepositoryConfigurationDelegate.java:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2021-11-06 16:25:04.767] INFO [main] RepositoryConfigurationDelegate.java:182 - Finished Spring Data repository scanning in 20ms. Found 0 repository interfaces.
+[2021-11-06 16:25:05.076] INFO [main] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cae82fe1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2021-11-06 16:25:05.420] INFO [main] TomcatWebServer.java:90 - Tomcat initialized with port(s): 8080 (http)
+[2021-11-06 16:25:05.435] INFO [main] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-8080"]
+[2021-11-06 16:25:05.446] INFO [main] DirectJDKLog.java:173 - Starting service [Tomcat]
+[2021-11-06 16:25:05.446] INFO [main] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.14]
+[2021-11-06 16:25:05.503] INFO [main] DirectJDKLog.java:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/luke/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+[2021-11-06 16:25:05.590] INFO [main] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+[2021-11-06 16:25:05.590] INFO [main] ServletWebServerApplicationContext.java:296 - Root WebApplicationContext: initialization completed in 1397 ms
+[2021-11-06 16:25:05.808] INFO [main] Log4j2Impl.java:106 - {dataSource-1} inited
+[2021-11-06 16:25:05.996] INFO [main] LogHelper.java:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[2021-11-06 16:25:06.047] INFO [main] Version.java:46 - HHH000412: Hibernate Core {5.3.7.Final}
+[2021-11-06 16:25:06.049] INFO [main] Environment.java:213 - HHH000206: hibernate.properties not found
+[2021-11-06 16:25:06.173] INFO [main] JavaReflectionManager.java:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+[2021-11-06 16:25:06.333] INFO [main] Dialect.java:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[2021-11-06 16:25:06.529] INFO [main] AbstractEntityManagerFactoryBean.java:415 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2021-11-06 16:25:07.009] INFO [main] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2021-11-06 16:25:07.129] INFO [main] WelcomePageHandlerMapping.java:56 - Adding welcome page: class path resource [static/index.html]
+[2021-11-06 16:25:07.223] INFO [main] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-8080"]
+[2021-11-06 16:25:07.257] INFO [main] TomcatWebServer.java:204 - Tomcat started on port(s): 8080 (http) with context path ''
+[2021-11-06 16:25:07.261] INFO [main] StartupInfoLogger.java:59 - Started RecipeManageApplication in 3.537 seconds (JVM running for 4.219)
+[2021-11-06 16:25:17.814] INFO [http-nio-8080-exec-1] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-11-06 16:25:17.815] INFO [http-nio-8080-exec-1] FrameworkServlet.java:524 - Initializing Servlet 'dispatcherServlet'
+[2021-11-06 16:25:17.827] INFO [http-nio-8080-exec-1] FrameworkServlet.java:546 - Completed initialization in 12 ms
+[2021-11-06 16:25:24.831] INFO [http-nio-8080-exec-3] UserController.java:54 - 31536000s
+[2021-11-06 16:26:24.025] INFO [http-nio-8080-exec-7] UserController.java:54 - 31536000s
+[2021-11-06 16:43:22.496] INFO [http-nio-8080-exec-6] UserController.java:54 - 31536000s
+[2021-11-06 16:43:43.816] INFO [http-nio-8080-exec-10] UserController.java:54 - 31536000s
+[2021-11-06 16:45:39.471] INFO [http-nio-8080-exec-2] UserController.java:54 - 31536000s
+[2021-11-06 16:45:49.930] INFO [http-nio-8080-exec-6] UserController.java:54 - 31536000s
+[2021-11-06 16:45:57.677] INFO [http-nio-8080-exec-10] UserController.java:54 - 31536000s
+[2021-11-06 16:46:42.922] INFO [http-nio-8080-exec-2] UserController.java:54 - 31536000s
+[2021-11-06 16:49:46.782] INFO [http-nio-8080-exec-5] UserController.java:54 - 31536000s
+[2021-11-06 16:50:03.106] INFO [http-nio-8080-exec-6] UserController.java:54 - 31536000s
+[2021-11-06 16:50:03.977] INFO [http-nio-8080-exec-9] UserController.java:54 - 31536000s
+[2021-11-06 16:50:16.091] INFO [http-nio-8080-exec-3] UserController.java:54 - 31536000s
+[2021-11-06 16:50:24.651] INFO [http-nio-8080-exec-7] UserController.java:54 - 31536000s
+[2021-11-06 16:52:53.342] INFO [http-nio-8080-exec-9] UserController.java:54 - 31536000s
+[2021-11-06 16:53:06.446] INFO [http-nio-8080-exec-10] UserController.java:54 - 31536000s
+[2021-11-06 16:53:07.519] INFO [http-nio-8080-exec-3] UserController.java:54 - 31536000s
+[2021-11-06 16:53:15.512] INFO [http-nio-8080-exec-7] UserController.java:54 - 31536000s
+[2021-11-06 16:53:54.139] INFO [http-nio-8080-exec-6] UserController.java:54 - 31536000s
+[2021-11-06 16:54:34.707] INFO [http-nio-8080-exec-2] UserController.java:54 - 31536000s
+[2021-11-06 16:54:41.158] INFO [http-nio-8080-exec-5] UserController.java:54 - 31536000s
+[2021-11-06 16:55:03.302] INFO [http-nio-8080-exec-9] UserController.java:54 - 31536000s
+[2021-11-06 16:55:09.780] INFO [http-nio-8080-exec-3] UserController.java:54 - 31536000s
+[2021-11-06 16:57:17.458] INFO [http-nio-8080-exec-8] UserController.java:54 - 31536000s
+[2021-11-06 16:57:40.008] INFO [http-nio-8080-exec-9] UserController.java:54 - 31536000s
+[2021-11-06 16:57:40.735] INFO [http-nio-8080-exec-1] UserController.java:54 - 31536000s
+[2021-11-06 16:58:27.118] INFO [http-nio-8080-exec-2] UserController.java:54 - 31536000s
+[2021-11-06 16:58:27.881] INFO [http-nio-8080-exec-5] UserController.java:54 - 31536000s
+[2021-11-06 16:58:31.741] INFO [http-nio-8080-exec-8] UserController.java:54 - 31536000s
+[2021-11-06 16:58:41.820] INFO [http-nio-8080-exec-5] UserController.java:54 - 31536000s
+[2021-11-06 16:59:31.207] INFO [http-nio-8080-exec-1] UserController.java:54 - 31536000s
+[2021-11-06 16:59:42.877] INFO [http-nio-8080-exec-2] UserController.java:54 - 31536000s
+[2021-11-06 16:59:43.716] INFO [http-nio-8080-exec-4] UserController.java:54 - 31536000s
+[2021-11-06 17:00:20.117] INFO [http-nio-8080-exec-5] UserController.java:54 - 31536000s
+[2021-11-06 17:00:22.758] INFO [http-nio-8080-exec-7] UserController.java:54 - 31536000s
+[2021-11-06 17:00:38.030] INFO [http-nio-8080-exec-8] UserController.java:54 - 31536000s
+[2021-11-06 17:00:38.870] INFO [http-nio-8080-exec-1] UserController.java:54 - 31536000s
+[2021-11-06 17:00:53.466] INFO [http-nio-8080-exec-8] UserController.java:54 - 31536000s
+[2021-11-06 17:01:41.874] INFO [http-nio-8080-exec-4] UserController.java:54 - 31536000s
+[2021-11-06 17:02:12.001] INFO [http-nio-8080-exec-7] UserController.java:54 - 31536000s
+[2021-11-06 17:02:24.597] INFO [http-nio-8080-exec-8] UserController.java:54 - 31536000s
+[2021-11-06 17:02:25.667] INFO [http-nio-8080-exec-1] UserController.java:54 - 31536000s
+[2021-11-06 17:04:02.239] INFO [http-nio-8080-exec-5] UserController.java:54 - 31536000s
+[2021-11-06 17:05:05.427] INFO [http-nio-8080-exec-7] UserController.java:54 - 31536000s
+[2021-11-06 17:05:05.774] INFO [http-nio-8080-exec-9] UserController.java:54 - 31536000s
+[2021-11-06 17:05:13.334] INFO [http-nio-8080-exec-3] UserController.java:54 - 31536000s
+[2021-11-06 17:06:06.516] INFO [http-nio-8080-exec-10] UserController.java:54 - 31536000s
+[2021-11-06 17:07:04.727] INFO [http-nio-8080-exec-3] UserController.java:54 - 31536000s
+[2021-11-06 17:11:49.471] INFO [http-nio-8080-exec-6] UserController.java:54 - 31536000s
+[2021-11-06 17:11:49.585] INFO [http-nio-8080-exec-7] UserController.java:54 - 31536000s
+[2021-11-06 17:11:58.728] INFO [http-nio-8080-exec-10] UserController.java:54 - 31536000s
+[2021-11-06 17:40:54.158] INFO [Thread-3] ExecutorConfigurationSupport.java:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2021-11-06 17:40:54.171] INFO [Thread-3] AbstractEntityManagerFactoryBean.java:597 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2021-11-06 17:40:54.212] INFO [Thread-3] Log4j2Impl.java:106 - {dataSource-1} closed
+[2021-11-06 17:41:01.449] INFO [main] StartupInfoLogger.java:50 - Starting RecipeManageApplication on C02Z58PMLVCF with PID 72316 (/Users/luke/workspace/recipe_server/target/classes started by luke in /Users/luke/workspace/recipe_server)
+[2021-11-06 17:41:01.452] INFO [main] SpringApplication.java:675 - No active profile set, falling back to default profiles: default
+[2021-11-06 17:41:02.309] INFO [main] RepositoryConfigurationDelegate.java:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2021-11-06 17:41:02.351] INFO [main] RepositoryConfigurationDelegate.java:182 - Finished Spring Data repository scanning in 32ms. Found 0 repository interfaces.
+[2021-11-06 17:41:02.905] INFO [main] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1030bb7e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2021-11-06 17:41:03.436] INFO [main] TomcatWebServer.java:90 - Tomcat initialized with port(s): 8080 (http)
+[2021-11-06 17:41:03.462] INFO [main] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-8080"]
+[2021-11-06 17:41:03.534] INFO [main] DirectJDKLog.java:173 - Starting service [Tomcat]
+[2021-11-06 17:41:03.535] INFO [main] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.14]
+[2021-11-06 17:41:03.547] INFO [main] DirectJDKLog.java:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/luke/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+[2021-11-06 17:41:03.658] INFO [main] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+[2021-11-06 17:41:03.658] INFO [main] ServletWebServerApplicationContext.java:296 - Root WebApplicationContext: initialization completed in 2148 ms
+[2021-11-06 17:41:03.945] INFO [main] Log4j2Impl.java:106 - {dataSource-1} inited
+[2021-11-06 17:41:04.188] INFO [main] LogHelper.java:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[2021-11-06 17:41:04.259] INFO [main] Version.java:46 - HHH000412: Hibernate Core {5.3.7.Final}
+[2021-11-06 17:41:04.262] INFO [main] Environment.java:213 - HHH000206: hibernate.properties not found
+[2021-11-06 17:41:04.509] INFO [main] JavaReflectionManager.java:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+[2021-11-06 17:41:04.714] INFO [main] Dialect.java:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[2021-11-06 17:41:04.946] INFO [main] AbstractEntityManagerFactoryBean.java:415 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2021-11-06 17:41:05.621] INFO [main] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2021-11-06 17:41:05.769] INFO [main] WelcomePageHandlerMapping.java:56 - Adding welcome page: class path resource [static/index.html]
+[2021-11-06 17:41:05.949] INFO [main] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-8080"]
+[2021-11-06 17:41:05.987] INFO [main] TomcatWebServer.java:204 - Tomcat started on port(s): 8080 (http) with context path ''
+[2021-11-06 17:41:05.991] INFO [main] StartupInfoLogger.java:59 - Started RecipeManageApplication in 5.037 seconds (JVM running for 5.757)
+[2021-11-06 17:41:14.858] INFO [http-nio-8080-exec-1] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-11-06 17:41:14.859] INFO [http-nio-8080-exec-1] FrameworkServlet.java:524 - Initializing Servlet 'dispatcherServlet'
+[2021-11-06 17:41:14.870] INFO [http-nio-8080-exec-1] FrameworkServlet.java:546 - Completed initialization in 11 ms
+[2021-11-06 17:41:19.826] INFO [http-nio-8080-exec-7] UserController.java:54 - 31536000s
+[2021-11-06 17:41:33.331] INFO [http-nio-8080-exec-4] UserController.java:54 - 31536000s
+[2021-11-06 17:42:01.600] INFO [http-nio-8080-exec-7] UserController.java:54 - 31536000s
+[2021-11-06 17:42:07.544] INFO [http-nio-8080-exec-10] UserController.java:54 - 31536000s
+[2021-11-06 17:42:57.340] INFO [http-nio-8080-exec-6] UserController.java:54 - 31536000s
+[2021-11-06 17:43:22.272] INFO [http-nio-8080-exec-8] UserController.java:54 - 31536000s
+[2021-11-06 17:44:04.253] INFO [http-nio-8080-exec-6] UserController.java:54 - 31536000s
+[2021-11-06 17:44:20.604] INFO [http-nio-8080-exec-1] UserController.java:54 - 31536000s
+[2021-11-06 17:44:54.091] INFO [http-nio-8080-exec-10] UserController.java:54 - 31536000s
+[2021-11-06 17:45:48.468] INFO [http-nio-8080-exec-7] UserController.java:54 - 31536000s
+[2021-11-06 17:49:08.999] INFO [http-nio-8080-exec-2] UserController.java:54 - 31536000s
+[2021-11-06 17:51:50.766] INFO [http-nio-8080-exec-6] UserController.java:54 - 31536000s
+[2021-11-06 17:51:50.779] INFO [http-nio-8080-exec-7] UserController.java:54 - 31536000s
+[2021-11-06 17:51:54.528] INFO [http-nio-8080-exec-1] UserController.java:54 - 31536000s
+[2021-11-06 17:52:25.777] INFO [http-nio-8080-exec-6] UserController.java:54 - 31536000s
+[2021-11-06 17:52:38.899] INFO [http-nio-8080-exec-9] UserController.java:54 - 31536000s
+[2021-11-06 17:52:43.868] INFO [http-nio-8080-exec-1] UserController.java:54 - 31536000s
+[2021-11-06 17:52:49.744] INFO [http-nio-8080-exec-3] UserController.java:54 - 31536000s
+[2021-11-06 17:53:58.131] INFO [http-nio-8080-exec-8] UserController.java:54 - 31536000s
+[2021-11-06 17:54:01.193] INFO [http-nio-8080-exec-1] UserController.java:54 - 31536000s

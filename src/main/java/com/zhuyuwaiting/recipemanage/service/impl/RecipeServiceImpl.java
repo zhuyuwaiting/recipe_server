@@ -59,6 +59,7 @@ public class RecipeServiceImpl implements RecipeService {
         params.put("current", (request.getCurrent() - 1) * request.getPageSize());
         params.put("pageSize", request.getPageSize());
         params.put("orderBy", "create_time desc");
+        params.put("userId",request.getUserId());
         List<RecipeInfo> recipeInfos = recipeInfoMapper.selectByParams(params);
         int count = recipeInfoMapper.countByParams(params);
         Pagination pagination = new Pagination();
@@ -92,6 +93,7 @@ public class RecipeServiceImpl implements RecipeService {
         recipeInfo.setCreateTime(new Date());
         recipeInfo.setUpdateTime(new Date());
         recipeInfo.setRecipeNo(recipeInfoNo);
+        recipeInfo.setUserId(request.getUserId());
         recipeInfo.setStatus(StatusEnum.VALID.getCode());
         recipeInfoMapper.insertSelective(recipeInfo);
         if(CollectionUtils.isEmpty(request.getRecipeDetailVOS())){
@@ -115,7 +117,7 @@ public class RecipeServiceImpl implements RecipeService {
     @Transactional
     public RecipeDelResponse del(RecipeDelRequest request) {
         RecipeDelResponse response = new RecipeDelResponse();
-        recipeInfoMapper.deleteByNos(request.getRecipeNos());
+        recipeInfoMapper.deleteByNos(request.getRecipeNos(), request.getUserId());
         return response;
     }
 

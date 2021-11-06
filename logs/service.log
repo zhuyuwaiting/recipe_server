@@ -1,3 +1,125 @@
-[2021-03-10 10:24:27.807] INFO [Thread-3] ExecutorConfigurationSupport.java:208 - Shutting down ExecutorService 'applicationTaskExecutor'
-[2021-03-10 10:24:27.824] INFO [Thread-3] AbstractEntityManagerFactoryBean.java:597 - Closing JPA EntityManagerFactory for persistence unit 'default'
-[2021-03-10 10:24:27.861] INFO [Thread-3] Log4j2Impl.java:106 - {dataSource-1} closed
+[2021-11-06 16:03:54.424] INFO [main] StartupInfoLogger.java:50 - Starting RecipeManageApplication on C02Z58PMLVCF with PID 62793 (/Users/luke/workspace/recipe_server/target/classes started by luke in /Users/luke/workspace/recipe_server)
+[2021-11-06 16:03:54.437] INFO [main] SpringApplication.java:675 - No active profile set, falling back to default profiles: default
+[2021-11-06 16:03:55.297] INFO [main] RepositoryConfigurationDelegate.java:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2021-11-06 16:03:55.329] INFO [main] RepositoryConfigurationDelegate.java:182 - Finished Spring Data repository scanning in 23ms. Found 0 repository interfaces.
+[2021-11-06 16:03:55.745] INFO [main] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5d3c86be] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2021-11-06 16:03:56.127] INFO [main] TomcatWebServer.java:90 - Tomcat initialized with port(s): 8080 (http)
+[2021-11-06 16:03:56.139] INFO [main] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-8080"]
+[2021-11-06 16:03:56.149] INFO [main] DirectJDKLog.java:173 - Starting service [Tomcat]
+[2021-11-06 16:03:56.149] INFO [main] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.14]
+[2021-11-06 16:03:56.159] INFO [main] DirectJDKLog.java:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/luke/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+[2021-11-06 16:03:56.298] INFO [main] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+[2021-11-06 16:03:56.298] INFO [main] ServletWebServerApplicationContext.java:296 - Root WebApplicationContext: initialization completed in 1766 ms
+[2021-11-06 16:03:56.557] INFO [main] Log4j2Impl.java:106 - {dataSource-1} inited
+[2021-11-06 16:03:56.744] INFO [main] LogHelper.java:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[2021-11-06 16:03:56.824] INFO [main] Version.java:46 - HHH000412: Hibernate Core {5.3.7.Final}
+[2021-11-06 16:03:56.826] INFO [main] Environment.java:213 - HHH000206: hibernate.properties not found
+[2021-11-06 16:03:57.014] INFO [main] JavaReflectionManager.java:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+[2021-11-06 16:03:57.175] INFO [main] Dialect.java:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[2021-11-06 16:03:57.384] INFO [main] AbstractEntityManagerFactoryBean.java:415 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2021-11-06 16:03:57.888] INFO [main] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2021-11-06 16:03:58.022] INFO [main] WelcomePageHandlerMapping.java:56 - Adding welcome page: class path resource [static/index.html]
+[2021-11-06 16:03:58.132] INFO [main] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-8080"]
+[2021-11-06 16:03:58.168] INFO [main] TomcatWebServer.java:204 - Tomcat started on port(s): 8080 (http) with context path ''
+[2021-11-06 16:03:58.171] INFO [main] StartupInfoLogger.java:59 - Started RecipeManageApplication in 4.202 seconds (JVM running for 4.796)
+[2021-11-06 16:04:05.944] INFO [http-nio-8080-exec-1] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-11-06 16:04:05.945] INFO [http-nio-8080-exec-1] FrameworkServlet.java:524 - Initializing Servlet 'dispatcherServlet'
+[2021-11-06 16:04:05.956] INFO [http-nio-8080-exec-1] FrameworkServlet.java:546 - Completed initialization in 10 ms
+[2021-11-06 16:22:14.330] INFO [Thread-3] ExecutorConfigurationSupport.java:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2021-11-06 16:22:14.332] INFO [Thread-3] AbstractEntityManagerFactoryBean.java:597 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2021-11-06 16:22:14.350] INFO [Thread-3] Log4j2Impl.java:106 - {dataSource-1} closed
+[2021-11-06 16:22:22.829] INFO [main] StartupInfoLogger.java:50 - Starting RecipeManageApplication on C02Z58PMLVCF with PID 66508 (/Users/luke/workspace/recipe_server/target/classes started by luke in /Users/luke/workspace/recipe_server)
+[2021-11-06 16:22:22.833] INFO [main] SpringApplication.java:675 - No active profile set, falling back to default profiles: default
+[2021-11-06 16:22:23.760] INFO [main] RepositoryConfigurationDelegate.java:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2021-11-06 16:22:23.800] INFO [main] RepositoryConfigurationDelegate.java:182 - Finished Spring Data repository scanning in 32ms. Found 0 repository interfaces.
+[2021-11-06 16:22:24.582] INFO [main] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4f0ce119] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2021-11-06 16:22:25.174] INFO [main] TomcatWebServer.java:90 - Tomcat initialized with port(s): 8080 (http)
+[2021-11-06 16:22:25.191] INFO [main] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-8080"]
+[2021-11-06 16:22:25.208] INFO [main] DirectJDKLog.java:173 - Starting service [Tomcat]
+[2021-11-06 16:22:25.208] INFO [main] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.14]
+[2021-11-06 16:22:25.285] INFO [main] DirectJDKLog.java:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/luke/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+[2021-11-06 16:22:25.410] INFO [main] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+[2021-11-06 16:22:25.411] INFO [main] ServletWebServerApplicationContext.java:296 - Root WebApplicationContext: initialization completed in 2520 ms
+[2021-11-06 16:22:25.708] INFO [main] Log4j2Impl.java:106 - {dataSource-1} inited
+[2021-11-06 16:22:25.935] INFO [main] LogHelper.java:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[2021-11-06 16:22:26.009] INFO [main] Version.java:46 - HHH000412: Hibernate Core {5.3.7.Final}
+[2021-11-06 16:22:26.011] INFO [main] Environment.java:213 - HHH000206: hibernate.properties not found
+[2021-11-06 16:22:26.172] INFO [main] JavaReflectionManager.java:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+[2021-11-06 16:22:26.393] INFO [main] Dialect.java:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[2021-11-06 16:22:26.699] INFO [main] AbstractEntityManagerFactoryBean.java:415 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2021-11-06 16:22:27.424] INFO [main] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2021-11-06 16:22:27.571] INFO [main] WelcomePageHandlerMapping.java:56 - Adding welcome page: class path resource [static/index.html]
+[2021-11-06 16:22:27.710] INFO [main] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-8080"]
+[2021-11-06 16:22:27.759] INFO [main] TomcatWebServer.java:204 - Tomcat started on port(s): 8080 (http) with context path ''
+[2021-11-06 16:22:27.764] INFO [main] StartupInfoLogger.java:59 - Started RecipeManageApplication in 5.459 seconds (JVM running for 6.68)
+[2021-11-06 16:22:42.226] INFO [http-nio-8080-exec-1] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-11-06 16:22:42.227] INFO [http-nio-8080-exec-1] FrameworkServlet.java:524 - Initializing Servlet 'dispatcherServlet'
+[2021-11-06 16:22:42.236] INFO [http-nio-8080-exec-1] FrameworkServlet.java:546 - Completed initialization in 9 ms
+[2021-11-06 16:24:57.516] INFO [Thread-3] ExecutorConfigurationSupport.java:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2021-11-06 16:24:57.517] INFO [Thread-3] AbstractEntityManagerFactoryBean.java:597 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2021-11-06 16:24:57.522] INFO [Thread-3] Log4j2Impl.java:106 - {dataSource-1} closed
+[2021-11-06 16:25:04.140] INFO [main] StartupInfoLogger.java:50 - Starting RecipeManageApplication on C02Z58PMLVCF with PID 66708 (/Users/luke/workspace/recipe_server/target/classes started by luke in /Users/luke/workspace/recipe_server)
+[2021-11-06 16:25:04.143] INFO [main] SpringApplication.java:675 - No active profile set, falling back to default profiles: default
+[2021-11-06 16:25:04.741] INFO [main] RepositoryConfigurationDelegate.java:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2021-11-06 16:25:04.767] INFO [main] RepositoryConfigurationDelegate.java:182 - Finished Spring Data repository scanning in 20ms. Found 0 repository interfaces.
+[2021-11-06 16:25:05.076] INFO [main] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cae82fe1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2021-11-06 16:25:05.420] INFO [main] TomcatWebServer.java:90 - Tomcat initialized with port(s): 8080 (http)
+[2021-11-06 16:25:05.435] INFO [main] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-8080"]
+[2021-11-06 16:25:05.446] INFO [main] DirectJDKLog.java:173 - Starting service [Tomcat]
+[2021-11-06 16:25:05.446] INFO [main] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.14]
+[2021-11-06 16:25:05.503] INFO [main] DirectJDKLog.java:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/luke/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+[2021-11-06 16:25:05.590] INFO [main] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+[2021-11-06 16:25:05.590] INFO [main] ServletWebServerApplicationContext.java:296 - Root WebApplicationContext: initialization completed in 1397 ms
+[2021-11-06 16:25:05.808] INFO [main] Log4j2Impl.java:106 - {dataSource-1} inited
+[2021-11-06 16:25:05.996] INFO [main] LogHelper.java:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[2021-11-06 16:25:06.047] INFO [main] Version.java:46 - HHH000412: Hibernate Core {5.3.7.Final}
+[2021-11-06 16:25:06.049] INFO [main] Environment.java:213 - HHH000206: hibernate.properties not found
+[2021-11-06 16:25:06.173] INFO [main] JavaReflectionManager.java:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+[2021-11-06 16:25:06.333] INFO [main] Dialect.java:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[2021-11-06 16:25:06.529] INFO [main] AbstractEntityManagerFactoryBean.java:415 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2021-11-06 16:25:07.009] INFO [main] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2021-11-06 16:25:07.129] INFO [main] WelcomePageHandlerMapping.java:56 - Adding welcome page: class path resource [static/index.html]
+[2021-11-06 16:25:07.223] INFO [main] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-8080"]
+[2021-11-06 16:25:07.257] INFO [main] TomcatWebServer.java:204 - Tomcat started on port(s): 8080 (http) with context path ''
+[2021-11-06 16:25:07.261] INFO [main] StartupInfoLogger.java:59 - Started RecipeManageApplication in 3.537 seconds (JVM running for 4.219)
+[2021-11-06 16:25:17.814] INFO [http-nio-8080-exec-1] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-11-06 16:25:17.815] INFO [http-nio-8080-exec-1] FrameworkServlet.java:524 - Initializing Servlet 'dispatcherServlet'
+[2021-11-06 16:25:17.827] INFO [http-nio-8080-exec-1] FrameworkServlet.java:546 - Completed initialization in 12 ms
+[2021-11-06 17:40:54.158] INFO [Thread-3] ExecutorConfigurationSupport.java:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2021-11-06 17:40:54.171] INFO [Thread-3] AbstractEntityManagerFactoryBean.java:597 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2021-11-06 17:40:54.212] INFO [Thread-3] Log4j2Impl.java:106 - {dataSource-1} closed
+[2021-11-06 17:41:01.449] INFO [main] StartupInfoLogger.java:50 - Starting RecipeManageApplication on C02Z58PMLVCF with PID 72316 (/Users/luke/workspace/recipe_server/target/classes started by luke in /Users/luke/workspace/recipe_server)
+[2021-11-06 17:41:01.452] INFO [main] SpringApplication.java:675 - No active profile set, falling back to default profiles: default
+[2021-11-06 17:41:02.309] INFO [main] RepositoryConfigurationDelegate.java:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2021-11-06 17:41:02.351] INFO [main] RepositoryConfigurationDelegate.java:182 - Finished Spring Data repository scanning in 32ms. Found 0 repository interfaces.
+[2021-11-06 17:41:02.905] INFO [main] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1030bb7e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2021-11-06 17:41:03.436] INFO [main] TomcatWebServer.java:90 - Tomcat initialized with port(s): 8080 (http)
+[2021-11-06 17:41:03.462] INFO [main] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-8080"]
+[2021-11-06 17:41:03.534] INFO [main] DirectJDKLog.java:173 - Starting service [Tomcat]
+[2021-11-06 17:41:03.535] INFO [main] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.14]
+[2021-11-06 17:41:03.547] INFO [main] DirectJDKLog.java:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/luke/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+[2021-11-06 17:41:03.658] INFO [main] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+[2021-11-06 17:41:03.658] INFO [main] ServletWebServerApplicationContext.java:296 - Root WebApplicationContext: initialization completed in 2148 ms
+[2021-11-06 17:41:03.945] INFO [main] Log4j2Impl.java:106 - {dataSource-1} inited
+[2021-11-06 17:41:04.188] INFO [main] LogHelper.java:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[2021-11-06 17:41:04.259] INFO [main] Version.java:46 - HHH000412: Hibernate Core {5.3.7.Final}
+[2021-11-06 17:41:04.262] INFO [main] Environment.java:213 - HHH000206: hibernate.properties not found
+[2021-11-06 17:41:04.509] INFO [main] JavaReflectionManager.java:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+[2021-11-06 17:41:04.714] INFO [main] Dialect.java:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[2021-11-06 17:41:04.946] INFO [main] AbstractEntityManagerFactoryBean.java:415 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2021-11-06 17:41:05.621] INFO [main] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2021-11-06 17:41:05.769] INFO [main] WelcomePageHandlerMapping.java:56 - Adding welcome page: class path resource [static/index.html]
+[2021-11-06 17:41:05.949] INFO [main] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-8080"]
+[2021-11-06 17:41:05.987] INFO [main] TomcatWebServer.java:204 - Tomcat started on port(s): 8080 (http) with context path ''
+[2021-11-06 17:41:05.991] INFO [main] StartupInfoLogger.java:59 - Started RecipeManageApplication in 5.037 seconds (JVM running for 5.757)
+[2021-11-06 17:41:14.858] INFO [http-nio-8080-exec-1] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-11-06 17:41:14.859] INFO [http-nio-8080-exec-1] FrameworkServlet.java:524 - Initializing Servlet 'dispatcherServlet'
+[2021-11-06 17:41:14.870] INFO [http-nio-8080-exec-1] FrameworkServlet.java:546 - Completed initialization in 11 ms

@@ -6,6 +6,7 @@
     <result column="recipe_no" property="recipeNo" jdbcType="VARCHAR" />
     <result column="recipe_type" property="recipeType" jdbcType="VARCHAR" />
     <result column="age_type" property="ageType" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
     <result column="patient_name" property="patientName" jdbcType="VARCHAR" />
     <result column="patient_sex" property="patientSex" jdbcType="TINYINT" />
     <result column="patient_age" property="patientAge" jdbcType="INTEGER" />
@@ -18,12 +19,12 @@
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <insert id="insert" parameterType="com.zhuyuwaiting.recipemanage.model.RecipeInfo" >
-    insert into recipe_info (id, recipe_no, recipe_type, age_type,
+    insert into recipe_info (id, recipe_no, recipe_type, age_type,user_id,
       patient_name, patient_sex, patient_age, 
       pay_type, disease, classfication, 
       num, status, create_time, 
       update_time)
-    values (#{id,jdbcType=INTEGER}, #{recipeNo,jdbcType=VARCHAR}, #{recipeType,jdbcType=VARCHAR},#{ageType,jdbcType=VARCHAR},
+    values (#{id,jdbcType=INTEGER}, #{recipeNo,jdbcType=VARCHAR}, #{recipeType,jdbcType=VARCHAR},#{ageType,jdbcType=VARCHAR},#{userId,jdbcType=VARCHAR},
       #{patientName,jdbcType=VARCHAR}, #{patientSex,jdbcType=TINYINT}, #{patientAge,jdbcType=INTEGER}, 
       #{payType,jdbcType=VARCHAR}, #{disease,jdbcType=VARCHAR}, #{classfication,jdbcType=VARCHAR}, 
       #{num,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
@@ -43,6 +44,9 @@
       </if>
       <if test="ageType != null" >
         age_type,
+      </if>
+      <if test="userId != null" >
+        user_id,
       </if>
       <if test="patientName != null" >
         patient_name,
@@ -87,6 +91,9 @@
       </if>
       <if test="ageType != null" >
         #{ageType,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
       </if>
       <if test="patientName != null" >
         #{patientName,jdbcType=VARCHAR},
@@ -138,6 +145,9 @@
       </if>
       <if test="ageType != null and ageType != ''" >
        and  age_type = #{ageType,jdbcType=VARCHAR}
+      </if>
+      <if test="userId != null and userId != ''" >
+       and  user_id = #{userId,jdbcType=VARCHAR}
       </if>
       <if test="patientName != null" >
         and patient_name  LIKE CONCAT(#{patientName,jdbcType=VARCHAR},'%')
@@ -197,6 +207,9 @@
       <if test="ageType != null and ageType != ''" >
         and  age_type = #{ageType,jdbcType=VARCHAR}
       </if>
+      <if test="userId != null and userId != ''" >
+        and  user_id = #{userId,jdbcType=VARCHAR}
+      </if>
       <if test="patientName != null" >
         and patient_name  LIKE CONCAT(#{patientName,jdbcType=VARCHAR},'%')
       </if>
@@ -232,6 +245,7 @@
   <update id="deleteByNos">
     update  recipe_info set status = 'INVALID',
     update_time = current_timestamp() where
+    user_id = #{userId,jdbcType=VARCHAR} and
     `recipe_no` in
     <foreach item="item" index="index" collection="nos" open="(" separator="," close=")">
       #{item}
@@ -253,7 +267,7 @@
       <if test="num!=null">num=#{num},</if>
       update_time = current_timestamp(),
     </trim>
-    WHERE recipe_no=#{recipeNo}
+    WHERE recipe_no=#{recipeNo} and user_id = #{userId}
   </update>
 
   <select id="selelctByNo" parameterType="java.lang.String" resultMap="BaseResultMap">

@@ -15,4 +15,6 @@ public class RecipeListRequest extends BasePaginationRequest {
 
     private String disease;
 
+    private String userId;
+
 }

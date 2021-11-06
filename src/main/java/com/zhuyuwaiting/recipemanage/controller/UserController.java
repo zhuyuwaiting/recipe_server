@@ -38,7 +38,7 @@ public class UserController {
             throw new CommonException(UserResultEnum.LOGIN_ERROR);
         }
         session.setAttribute("user", userInfo);
-        response.setCurrentAuthority("admin");
+        response.setCurrentAuthority(userInfo.getRoleId());
         return response;
     }
 

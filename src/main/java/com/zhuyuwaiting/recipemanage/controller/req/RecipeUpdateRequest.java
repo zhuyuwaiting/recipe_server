@@ -28,4 +28,6 @@ public class RecipeUpdateRequest extends BaseRequest {
     private Integer num;
 
     private List<RecipeDetailVO> recipeDetailVOS;
+
+    private String userId;
 }

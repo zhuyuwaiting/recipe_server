@@ -35,6 +35,8 @@ public class RecipeAddRequest extends BaseRequest {
 
     private List<RecipeDetailVO> recipeDetailVOS;
 
+    private String userId;
+
 
 
 }

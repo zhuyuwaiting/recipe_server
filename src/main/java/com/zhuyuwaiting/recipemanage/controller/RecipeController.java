@@ -6,6 +6,7 @@ import com.zhuyuwaiting.recipemanage.enums.CommonResultEnum;
 import com.zhuyuwaiting.recipemanage.enums.RecipeTypeEnum;
 import com.zhuyuwaiting.recipemanage.exception.CommonException;
 import com.zhuyuwaiting.recipemanage.service.RecipeService;
+import com.zhuyuwaiting.recipemanage.vo.UserInfoVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping("/api/recipe")
@@ -26,13 +29,15 @@ public class RecipeController {
 
     @RequestMapping("/list")
     @ResponseBody
-    public RecipeListResponse list(RecipeListRequest request){
+    public RecipeListResponse list(HttpSession session, RecipeListRequest request){
+        UserInfoVO userInfo = (UserInfoVO) session.getAttribute("user");
+        request.setUserId(userInfo.getUid());
         return recipeService.list(request);
     }
 
     @RequestMapping("/add")
     @ResponseBody
-    public RecipeAddResponse add(@RequestBody RecipeAddRequest request){
+    public RecipeAddResponse add(HttpSession session,@RequestBody RecipeAddRequest request){
         // 参数检查
         if(StringUtils.isEmpty(request.getRecipeType()) || RecipeTypeEnum.getByCode(request.getRecipeType())==null){
             throw new CommonException(CommonResultEnum.PARAM_ERROR);
@@ -46,26 +51,32 @@ public class RecipeController {
         if(CollectionUtils.isEmpty(request.getRecipeDetailVOS())){
             throw new CommonException(CommonResultEnum.PARAM_ERROR);
         }
+        UserInfoVO userInfo = (UserInfoVO) session.getAttribute("user");
+        request.setUserId(userInfo.getUid());
         return recipeService.add(request);
     }
 
 
     @RequestMapping("/del")
     @ResponseBody
-    public RecipeDelResponse del(@RequestBody RecipeDelRequest request){
+    public RecipeDelResponse del(HttpSession session,@RequestBody RecipeDelRequest request){
         if(CollectionUtils.isEmpty(request.getRecipeNos())){
             throw new CommonException(CommonResultEnum.PARAM_ERROR);
         }
+        UserInfoVO userInfo = (UserInfoVO) session.getAttribute("user");
+        request.setUserId(userInfo.getUid());
         return recipeService.del(request);
     }
 
 
     @RequestMapping("/update")
     @ResponseBody
-    public RecipeUpdateResponse update(@RequestBody RecipeUpdateRequest request){
+    public RecipeUpdateResponse update(HttpSession session,@RequestBody RecipeUpdateRequest request){
         if(CollectionUtils.isEmpty(request.getRecipeDetailVOS())){
             throw new CommonException(CommonResultEnum.PARAM_ERROR);
         }
+        UserInfoVO userInfo = (UserInfoVO) session.getAttribute("user");
+        request.setUserId(userInfo.getUid());
         return recipeService.update(request);
     }
 
